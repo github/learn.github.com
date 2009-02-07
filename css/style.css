@@ -1,0 +1,19 @@
+#welcome h1 {
+  padding: 20px; 
+  text-align: center; 
+  background: #cdf; 
+  }
+  
+h2 { background: #ddd; text-align: center; padding: 4px; }
+
+#welcome p { font-size: 1.3em; color: #444; }
+
+#header { }
+  
+#header #links { text-align:right; }
+#header #links a { color: #555; font-size: 1.2em; padding: 5px; margin: 10px; }
+
+.button { text-align: center; padding: 10px; font-size: 1.2em; }
+.red { border: 3px solid #a88; background: #fee;}
+.green { border: 3px solid #8a8; background: #efe;}
+.blue { border: 3px solid #88a; background: #eef;}

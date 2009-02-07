@@ -1,142 +1,100 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title>GitHub Pages - Home</title>
-    <link href="http://github.com/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div id="main">
-      <div id="header" class="basic">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Learn.GitHub </title>
+	<script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="css/thickbox.css" type="text/css" media="screen"/>
+</head>
 
-        <div class="site">
-          <div class="logo">
-            <a href="/"><img src="http://github.com/images/modules/header/logo_pages.png" alt="github pages" /></a>
-          </div>
-          <div class="actions">
-            <a href="http://github.com">home</a>
-            <a href="http://github.com/login">login</a>
-            <a href="http://github.com/signup">signup!</a>
-          </div>
-        </div>
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="http://github.com/images/modules/header/logo_pages.png" alt="github pages" /></a>
       </div>
 
-      <div id="content" class="site">
-
-        
-<div class="wikistyle">
-
-<h1 id='introduction_to_pages'>Introduction to Pages</h1>
-
-<p>The GitHub Pages feature allows you to publish content to the web by simply pushing content to one of your GitHub hosted repositories. There are two different kinds of Pages that you can create: User Pages and Project Pages.</p>
-
-<h2 id='user_pages'>User Pages</h2>
-
-<p>Let&#8217;s say your GitHub username is &#8220;alice&#8221;. If you create a GitHub repository named <code>alice.github.com</code> and then commit a file named <code>index.html</code> there and push it to GitHub, then this file will be automatically published to <a href='http://alice.github.com/'>http://alice.github.com/</a>.</p>
-
-<p>On the first push, it can take up to ten minutes before the content is available.</p>
-
-<p>Real World Example: <a href='http://github.com/defunkt/defunkt.github.com/'>defunkt.github.com</a> &#8594; <a href='http://defunkt.github.com/'>http://defunkt.github.com/</a>.</p>
-
-<h2 id='project_pages'>Project Pages</h2>
-
-<p>Let&#8217;s say your GitHub username is &#8220;bob&#8221; and you have an existing repository named <code>fancypants</code>. If you create a new root branch named <code>gh-pages</code> in your repository, any content pushed there will be published to <a href='http://bob.github.com/fancypants/'>http://bob.github.com/fancypants/</a>.</p>
-
-<p>In order to create a new root branch, first ensure that your working directory is clean by committing or stashing any changes. <span style='color: #a00;'>The following operation will lose any uncommitted changes!</span></p>
-
-<pre><code>cd /path/to/fancypants
-git symbolic-ref HEAD refs/heads/gh-pages
-rm .git/index
-git clean -fdx</code></pre>
-
-<p>After running this you&#8217;ll have an empty working directory (don&#8217;t worry, your main repo is still on the <code>master</code> branch). Now you can create some content in this branch and push it to GitHub. For example:</p>
-
-<pre><code>echo &quot;My GitHub Page&quot; &gt; index.html
-git add .
-git commit -a -m &quot;First pages commit&quot;
-git push origin gh-pages</code></pre>
-
-<p>On the first push, it can take up to ten minutes before the content is available.</p>
-
-<p>Real World Example: <a href='http://github.com/defunkt/ambition/tree/gh-pages'>github.com/defunkt/ambition@gh-pages</a> &#8594; <a href='http://defunkt.github.com/ambition'>http://defunkt.github.com/ambition</a>.</p>
-
-<h1 id='using_jekyll_for_complex_layouts'>Using Jekyll For Complex Layouts</h1>
-
-<p>In addition to supporting regular HTML content, GitHub Pages support <a href='http://github.com/mojombo/jekyll/'>Jekyll</a>, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<p>Every GitHub Page is run through Jekyll when you push content to your repo. Because a normal HTML site is also a valid Jekyll site, you don&#8217;t have to do anything special to keep your standard HTML files unchanged. Jekyll has a thorough <a href='http://github.com/mojombo/jekyll/blob/master/README.textile'>README</a> that covers its features and usage.</p>
-
-<p>If your Jekyll site is not transforming properly after you push it to GitHub, it&#8217;s useful to run the converter locally so you can see any parsing errors. In order to do this, you&#8217;ll want to use the same version that we use.</p>
-
-<p>We currently use <span style='font-weight: bold; color: #0a0;'>Jekyll 0.4.0</span> and run it as follows:</p>
-
-<pre><code>jekyll --pygments</code></pre>
-
-<p>If there&#8217;s a feature you wish that Jekyll had, feel free to fork it and send a pull request. We&#8217;re happy to accept user contributions.</p>
-
-<p>Real World Example: <a href='http://github.com/dustin/dustin.github.com/'>dustin.github.com</a> &#8594; <a href='http://dustin.github.com/'>http://dustin.github.com/</a>.</p>
-
-<h1 id='cname_support'>CNAME Support</h1>
-
-<p>If you have a paid account or one of the collaborators on your repository has a piad account, GitHub Pages allows you to direct a domain name of your choice at your Page.</p>
-
-<p>Let&#8217;s say you own the domain name <a href='http://example.com'>example.com</a>. Furthermore, your GitHub username is &#8220;charlie&#8221; and you have published a User Page at <a href='http://charlie.github.com/'>http://charlie.github.com/</a>. Now you&#8217;d like to load up <a href='http://example.com'>http://example.com/</a> in your browser and have it show the content from <a href='http://charlie.github.com/'>http://charlie.github.com/</a>.</p>
-
-<p>Start by creating a file named <code>CNAME</code> in the root of your repository. It should contain your domain name like so:</p>
-
-<pre><code>example.com</code></pre>
-
-<p>Push this new file up to GitHub.</p>
-
-<p>Next, you&#8217;ll need to visit your domain registrar or DNS host and add a CNAME record for your domain name. In this example, you would point <a href='http://example.com'>example.com</a> at <a href='http://charlie.github.com/'>charlie.github.com</a>. It may take up to a full day for this change to propagate, so be patient.</p>
-
-<p>Real World Example: <a href='http://github.com/mojombo/mojombo.github.com/'>mojombo.github.com</a> &#8594; <a href='http://tom.preston-werner.com/'>http://tom.preston-werner.com/</a>.</p>
-
-</div>
-
+      <div id="links" class="span-11 last">
+        <a href="http://github.com">home</a>
+        <a href="http://github.com/login">login</a>
+        <a href="http://github.com/signup">signup!</a>
       </div>
-
-      <div class="push"></div>
+    </div>
+    
+    <div class="span-21" id="welcome">
+      <h1>Welcome to the GitHub Learning site</h1>
+      <p>Here we have tried to compile the
+      best online learning Git resource available.  There are a number of 
+      articles and screencasts, written and arranged to try to make learning 
+      Git as quick and easy as possible.</p>
     </div>
 
-    <div id="footer">
-      <div class="site">
+    <div class="span-7" id="start">
+      <div class="button red">
+        Start the Course
+      </div>
+    </div>
 
-        <div class="info">
-          <div class="links">
-            <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
-            <a href="http://github.com/blog">Blog</a> |
-            <a href="http://support.github.com/">Support</a> |
-            <a href="http://github.com/training">Git Training</a> |
-            <a href="http://github.com/contact">Contact</a> |
-            <a href="http://groups.google.com/group/github/">Google Group</a> |
-            <a href="http://github.wordpress.com">Status</a>
-          </div>
-          <div class="company">
-            GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
-          </div>
+    <div class="span-7" id="how">
+      <div class="button green">
+        5 Minute Crash Course
+      </div>
+    </div>
+    
+    <div class="span-7 last" id="why">
+      <div class="button blue">
+        "Why Git" in 5 Minutes
+      </div>
+    </div>
+    
+    <div class="span-21 last">
+      <br clear="both"/>
+      <hr/>
+    </div>
+    
+    <div class="span-5"><h2>Beginner</h2><div class='episode'><b>Introduction To Git</b><p>What Git is, why you would want to use it and where to get it and learn about it.</p></div><div class='episode'><b>Setup and Initialization</b><p>Setup your Git environment, then create a new Git repository and clone an existing one.</p></div><div class='episode'><b>Normal Workflow</b><p>Syncronize with a remote repository, make changes, then stage and commit them.</p></div><div class='episode'><b>Basic Branching and Merging</b><p>Create and work on topic and long running branches, merge between them and delete them.</p></div><div class='episode'><b>Git Log</b><p>Browse your project history, find specific commits and visualize the branching and merging actions.</p></div><div class='episode'><b>Git Diff</b><p>Show differences between different versions of your projects or specific files within your project.</p></div><div class='episode'><b>Customizing Git</b><p>Setup aliases for common commands and other personal options in Git - color, crlf and more.</p></div></div><div class="span-5"><h2>Intermediate</h2><div class='episode'><b>Undoing</b><p>Revert, unmodify or unstage a file or project state at any point.</p></div><div class='episode'><b>Rebasing</b><p>Replay changes from one branch onto another branch to preserve a linear history.</p></div><div class='episode'><b>Stashing</b><p>Temporarily save changes to your working directory and staging area without having to commit, then reapply the changes later.</p></div><div class='episode'><b>Interactive Adding</b><p>Stage and unstage changes to files or partial files with an interactive Git tool.</p></div><div class='episode'><b>Distributed Workflows</b><p>Fetch, merge, pull and push between multiple remote repositories.</p></div><div class='episode'><b>Amending Commits</b><p>Change the latest commit message, or redo the last commit by adding or removing files from it.</p></div><div class='episode'><b>Interactive Rebasing</b><p>Rebase multiple files interactively, squashing, reordering or amending commits in between.</p></div></div><div class="span-5"><h2>Advanced</h2><div class='episode'><b>Filter Branch</b><p>Modify large sections of your commit history at once, changing emails, names or files globally.</p></div><div class='episode'><b>Maintaining Git</b><p>Learn the fsck and gc commands to diagnose problems and keep your repository small.</p></div><div class='episode'><b>Data Recovery</b><p>Find lost commits or branches and restore them, or recover from partial database corruption.</p></div><div class='episode'><b>Git Hooks</b><p>Learn the client and server side pre and post action hooks and some useful example scripts to use with them.</p></div><div class='episode'><b>Revision Selection</b><p>Selecting individual commits or ranges of commits using helpful Git shorthands.</p></div><div class='episode'><b>Git Internals</b><p>Explore the internal workings of Git - the different object types and how to view the raw data via several useful plumbing commands.</p></div><div class='episode'><b>Git Submodules</b><p>Submodule usage and other tips for keeping subprojects in your Git repository.</p></div></div><div class="span-6 last"><h2>Special Interest</h2><div class='episode'><b>Git and Windows - General</b><p>Install and use Git on a Windows environment using the default mSysGit tools.</p></div><div class='episode'><b>Git and Windows - Extensions</b><p>Installing and using the Git Extensions shell extensions tools on Windows.</p></div><div class='episode'><b>Git and Subversion</b><p>Using the git-svn client with a Subversion server.  Specifically for existing SVN users, how Git is a better Subversion client than Subversion.</p></div><div class='episode'><b>Migrating from Subversion</b><p>Ready to move your project from Subversion?  A few ways to do the migration, from hosted services to really custom methods.</p></div><div class='episode'><b>Git and Textmate</b><p>Using Git and GitHub from Textmate using the TM Git bundle.</p></div><div class='episode'><b>Git and Capistrano</b><p>Deploying Git projects using the Capistrano deployment tool, including how to deploy from GitHub.</p></div></div>
+
+    <div class="span-21">
+      <div class="info">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
         </div>
-        <div class="sponsor">
-          <a href="http://engineyard.com"><img src="http://github.com/images/modules/footer/engine_yard_logo.png" alt="Engine Yard" /></a>
-          <div>
-            Hosting provided by our<br /> partners at Engine Yard
-          </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
         </div>
       </div>
     </div>
 
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-    var pageTracker = _gat._getTracker("UA-3769691-2");
-    pageTracker._initData();
-    pageTracker._trackPageview();
-    </script>
+  </div>
 
-  </body>
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
 </html>
