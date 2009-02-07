@@ -1,7 +1,7 @@
 #welcome h1 {
   padding: 20px; 
   text-align: center; 
-  background: #cdf; 
+  background: #ccf; 
   }
   
 h2 { background: #ddd; text-align: center; padding: 4px; }
@@ -9,7 +9,13 @@ h2 { background: #ddd; text-align: center; padding: 4px; }
 #welcome p { font-size: 1.3em; color: #444; }
 
 #header { }
-  
+#footer { background: #ddd;}
+#footer a { color: #444; }
+
+.info, .fork { padding: 10px; }
+
+#links { padding: 10px; }
+
 #header #links { text-align:right; }
 #header #links a { color: #555; font-size: 1.2em; padding: 5px; margin: 10px; }
 
