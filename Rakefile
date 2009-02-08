@@ -4,14 +4,23 @@ require 'maruku'
 
 def generate_page(page_data)
   page = page_data['page']
+  puts "generating #{page}"
+  
   @title = page_data['name']
   @desc = page_data['desc']
   @pcontent = '<div class="span-21">'
   
+  if s = page_data['size']
+    w, h = s.split('x')
+  else
+    w = '640'
+    h = '360'
+  end
+  
   # add video if present
   if code = page_data['cast']
     @pcontent += '<center><embed src="http://blip.tv/play/' + code  
-    @pcontent += '" type="application/x-shockwave-flash" width="640" height="360" '
+    @pcontent += '" type="application/x-shockwave-flash" width="' + w + '" height="' + h + '" '
     @pcontent += 'allowscriptaccess="always" allowfullscreen="true"></embed></center>'
   end
   
@@ -28,6 +37,18 @@ def generate_page(page_data)
 
   @pcontent += '</div>'
   
+  @pcontent += "<div class=\"span-10\">"
+  if n = @nextlast[:last][page]
+    @pcontent += "<a href=\"#{n}.html\">last</a>"
+  else
+    @pcontent += "&nbsp;"
+  end
+  @pcontent += "</div>"
+
+  if n = @nextlast[:next][page]
+    @pcontent += "<div style=\"text-align:right\" class=\"span-11 last\"><a href=\"#{n}.html\">next</a></div>"
+  end
+    
   pname = "p/#{page}.html"
   out = ERB.new(File.read('template/page.erb.html')).result
   File.open(pname, 'w') { |f| f.write(out) }
@@ -40,6 +61,20 @@ task :gensite do
 
   counter = 0
   @content = ''
+
+  # finding the next and last pages
+  last = nil
+  @nextlast = {:last => {}, :next => {}}
+  ep['episodes'].each do |section|
+    section['values'].each do |episode|
+      if p = episode['page']
+        @nextlast[:last][p] = last
+        @nextlast[:next][last] = p
+        last = p
+      end
+    end
+  end
+  
   ep['episodes'].each do |section|
     if(counter += 1) == 4
       @content += '<div class="span-6 last">'

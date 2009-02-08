@@ -3,7 +3,8 @@ episodes:
     values:
       - name: Introduction To Git
         page: intro
-        cast: AeD_CQA
+        cast: Aeu2CAA
+        size: 790x430
         desc: What Git is, why you would want to use it
               and where to get it and learn about it.
 
