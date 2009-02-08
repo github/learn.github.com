@@ -1,0 +1,23 @@
+welcome to the first episode of the github learning course
+
+my name is scott chacon, and in this episode were going to learn what git is - just a quick introduction before we start using it
+
+Git is a fast, open source, distributed version control system that is quickly
+replacing subversion in open source and corporate programming communities.
+
+# version control system
+git --version
+git help
+
+# open source
+
+# snapshots, not changesets
+
+# offline and fast
+
+# small (vs svn)
+du -d 1 -h
+
+# cheap branching and easy merging
+
+# git-scm.com

@@ -1,0 +1,26 @@
+# setup
+
+git config --global user.name
+git config --global user.name
+git config user.name
+cat ~/.gitconfig
+
+# init
+
+rails
+git init
+ls -la
+git add .
+git status
+git commit (vim)
+git config core.editor
+git log
+
+# cloning
+
+git clone git://github.com/schacon/munger.git
+cd munger
+git log
+
+git clone http://github.com/schacon/munger.git
+

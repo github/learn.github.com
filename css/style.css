@@ -13,6 +13,10 @@ h2 { background: #ddd; text-align: center; padding: 4px; }
 #footer a { color: #444; }
 
 .info, .fork { padding: 10px; }
+.content { font-size: 1.3em; }
+.content h3 { background: #eee; padding: 5px 2px; }
+
+pre { padding: 20px; background: #ffd; }
 
 #links { padding: 10px; }
 

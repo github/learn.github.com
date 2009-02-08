@@ -41,8 +41,113 @@
       <p>What Git is, why you would want to use it and where to get it and learn about it.</p>
     </div>
     
-    <div class="span-21"><embed src="http://blip.tv/play/AeD_CQA" type="application/x-shockwave-flash" width="790" height="400" allowscriptaccess="always" allowfullscreen="true"></embed><hr/>hello
-<br/><br/><hr/></div>
+    <div class="content">
+      <div class="span-21"><embed src="http://blip.tv/play/AeD_CQA" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed><hr/><p>Welcome to the first lesson of the GitHub Learning course. This course will lead you through a series of lessons that will demonstrate how to use Git quickly and easily - many of the lessons will have screencasts that you can watch as well, if you learn better that way.</p>
+
+<p>This chapter is about what Git is and why you should use it - just a quick introduction before we start using it.</p>
+
+<p>Git is a <strong>fast, open source, distributed version</strong> control system that is quickly replacing subversion in open source and corporate programming communities.</p>
+
+<h3 id='version_control_system'>version control system</h3>
+
+<p>First off, Git is a <em>version control system</em>, a simple command line tool for keeping a history on the state of your source code projects. You use it as you might use something like Subversion, CVS or Perforce.</p>
+
+<p>You tell it to track files in your project and periodically commit the state of the project when you want a saved point. Then you can share that history with other developers for collaboration, merge between their work and yours, and compare or revert to previous versions of the project or individual files.</p>
+
+<p>As it is primarily a command line tool, most of the examples in this course will show the command line versions of the functions. We will be using a recent version of Git (the 1.6 series) for the examples in this course. We recommend upgrading to the 1.6 series if your version of Git is older - there have been a number of UI improvements that make Git a bit easier to use.</p>
+
+<pre><code>$ git --version
+git version 1.6.1.2</code></pre>
+
+<p>If you need help with any of the commands, you can type &#8217;&#8211;help&#8217; and it will show you the <em>man</em> page. You can also type &#8216;git help <em>command</em>&#8217; for the same thing.</p>
+
+<pre><code>$ git log --help
+$ git help log</code></pre>
+
+<h3 id='open_source'>open source</h3>
+
+<p>Git is an open source project, that has been active for several years and is written mostly in C.</p>
+
+<p><img src='../images/git-lang.png' alt='Git Language Breakdown' /></p>
+
+<p>At any time you can get the full source code to analyze or improve upon. To get a download of the source code, visit <a href='http://git-scm.com/download'>git-scm.com/download</a>. Git is licensed under the GNU General Public License.</p>
+
+<h3 id='offline_and_fast'>offline and fast</h3>
+
+<p>Git is fully distributed, which means that it can work almost entirely offline. In stark contrast to VCS tools like Perforce or Subversion, Git does nearly all of it&#8217;s operations without needing a network connection, including history viewing, difference viewing and commiting.</p>
+
+<p>This also means that Git is very fast compared to those systems partially due to the fact that none of these operations has any dependency on network latency. For example, take a look at how fast the simple &#8216;log&#8217; command takes to run in Git and in Subversion.</p>
+
+<pre><code>[master]$ time git log &gt; /dev/null
+
+real	0m0.352s
+user	0m0.300s
+sys	0m0.034s 
+
+$ time svn log &gt; /dev/null
+
+real	0m3.709s
+user	0m0.482s
+sys	0m0.168s</code></pre>
+
+<p>Git at 0.3 seconds vs Subversion at 3.7 seconds. That is a difference of a full order of magnatude. You&#8217;ll find similar differences with nearly any command comparison. For example, adding the popular famfamfam icon set and committing them. Since you can seperate the commit from the network &#8216;push&#8217; in Git, this action takes a quarter of a second in Git, but 45 seconds in Subversion.</p>
+
+<pre><code>time &#39;git add icons; git commit -m &quot;added icons&quot;&#39;
+
+real	0m0.273s
+user	0m0.032s
+sys	0m0.008s
+
+time &#39;svn add icons; svn commit -m &quot;added icons&quot;&#39;
+
+real 	0m45.276s
+user	0m15.997s
+sys	0m5.503s</code></pre>
+
+<p>Even if you needed to push to a shared repository at that time as well, it still takes far, far less time than Subversion.</p>
+
+<pre><code>time git push
+
+real	0m6.219s
+user	0m0.023s
+sys	0m0.011s	</code></pre>
+
+<p>If you just want to commit and keep working, you&#8217;re looking at a huge time difference - one that severely changes your workflow. Most commands in Git seem instantaneous - no more typing &#8216;svn commit&#8217; and then going for a cup of coffee.</p>
+
+<h3 id='small_vs_svn'>small (vs svn)</h3>
+
+<p>Git is also very space efficient. For example, the Django project has mirrors in several currently popular source control systems, and of all of them, the Git clone is the smallest.</p>
+
+<pre><code>$ du -d 1 -h
+108M	./django-bzr
+ 44M	./django-git
+ 53M	./django-hg
+ 53M	./django-svn</code></pre>
+
+<p>Interestingly, it is even smaller than the Subversion checkout, which is pretty amazing, considering that the Git clone contains the entire history of the project - every version of every file back to the first commit, whereas the Subversion checkout is just the last version of the project.</p>
+
+<h3 id='snapshots_not_changesets'>snapshots, not changesets</h3>
+
+<p>Unlike most other VCSs, Git is snapshot based. That is, instead of thinking about and storing commit points as file based patches or deltas, it stores it as a simple snapshot of what your project looked like when you committed.</p>
+
+<p>Commits, then, are simply objects that contain some metadata about the commit (the message, author, date, etc), a pointer to a single snapshot of the project and pointers to the commit(s) that came directly before it. Git&#8217;s commit history and data model is really just a directed graph - a simple series of snapshots.</p>
+
+<p><img src='../images/snapshots.png' alt='Git Data Model' /></p>
+
+<p>Keeping this in mind is helpful when you&#8217;re thinking about what Git will do in a given situation.</p>
+
+<p>For a more in-depth examination of how Git stores data, checkout <a href='http://eagain.net/articles/git-for-computer-scientists/'>Git for Computer Scientists</a>.</p>
+
+<h3 id='cheap_branching_and_easy_merging'>cheap branching and easy merging</h3>
+
+<h3 id='installing_git'>installing git</h3>
+
+<p>See the <a href='http://book.git-scm.com/2_installing_git.html'>Git Community Book</a> for details on how to install Git on your particular operating system.</p>
+
+<h3 id='resources'>resources</h3>
+
+<p>For more information on Git, the homepage is at <a href='http://git-scm.com'>git-scm.com</a>.</p><br/><br/><hr/></div>
+    </div>
 
     <div id="footer" class="span-21">
       <div class="info span-12">

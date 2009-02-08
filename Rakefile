@@ -1,4 +1,6 @@
+require 'rubygems'
 require 'erb'
+require 'maruku'
 
 def generate_page(page_data)
   page = page_data['page']
@@ -9,7 +11,7 @@ def generate_page(page_data)
   # add video if present
   if code = page_data['cast']
     @pcontent += '<embed src="http://blip.tv/play/' + code  
-    @pcontent += '" type="application/x-shockwave-flash" width="790" height="400" '
+    @pcontent += '" type="application/x-shockwave-flash" width="640" height="360" '
     @pcontent += 'allowscriptaccess="always" allowfullscreen="true"></embed>'
     @pcontent += '<hr/>'
   end
@@ -18,7 +20,8 @@ def generate_page(page_data)
   mpage = "pages/#{page}.markdown"
   if File.exists?(mpage)
     content = File.read(mpage)
-    @pcontent += content
+    doc = Maruku.new(content)
+    @pcontent += doc.to_html
     @pcontent += '<br/><br/><hr/>'
   end
 
