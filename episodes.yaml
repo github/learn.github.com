@@ -13,6 +13,7 @@ episodes:
               new Git repository and clone an existing one. 
 
       - name: Normal Workflow
+        page: normal
         desc: Syncronize with a remote repository, make changes, 
               then stage and commit them. 
 

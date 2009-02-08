@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Learn.GitHub Normal Workflow</title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21" id="welcome">
+      <h1>Normal Workflow</h1>
+      <p>Syncronize with a remote repository, make changes, then stage and commit them.</p>
+    </div>
+    
+    <div class="content">
+      <div class="span-21"><hr/><p>So you have a Git repository and everything is all setup. What now?</p>
+
+<p>Generally, it is not going to be much different than working with any other source control system, the only real difference should be the staging process. The workflow will generally go something like this:</p>
+
+<ul>
+<li>syncronize with upstream</li>
+
+<li>modify files</li>
+
+<li>see what you&#8217;ve changed</li>
+
+<li>stage the changes you want to commit</li>
+
+<li>commit your staging area</li>
+
+<li>rinse, repeat</li>
+
+<li>push upstream</li>
+</ul>
+
+<p>That is the most complex case - if you&#8217;re not collaborating with anyone and so have no upstream repository to push to, and you want to ignore the staging area, it can be as simple as:</p>
+
+<ul>
+<li>modify files</li>
+
+<li>commit your changes</li>
+
+<li>repeat</li>
+</ul>
+
+<p>Easy peasy. Remember, Git is decentralized, so you don&#8217;t actually need a public or shared server to commit to - you can use it like RCS if you want and just track local changes. So, let&#8217;s look at that use case first, then we&#8217;ll do the more complicated one where we have to syncronize our work with other collaborators.</p>
+
+<h3 id='the_simple_case'>the simple case</h3>
+
+<p>The first thing we&#8217;re going to do is modify some files. Let&#8217;s say we&#8217;re working on a simple library that wraps the Git command line in a Ruby library. If you want to follow along, you can clone the project from <a href='http://github.com/schacon/simplegit'>its GitHub page</a>.</p>
+
+<p>For this first example we&#8217;ll modify the README file to add ourselves as an author on the project. So we simply edit the file. Now we want to commit that change, so we run the &#8216;git commit -a&#8217; command. The &#8216;-a&#8217; tells Git to stage all modified files and then commit - we&#8217;ll cover the &#8216;staging area&#8217; next, but for now just running &#8216;git commit -a&#8217; will act something like the &#8216;commit&#8217; command in SVN.</p>
+
+<p>A prompt for a commit message will open in our editor (the $EDITOR environment variable or &#8216;core.editor&#8217; git config variable - by default it uses &#8216;vim&#8217;) that looks like this:</p>
+
+<pre><code>_
+# Please enter the commit message for your changes. Lines starting
+# with &#39;#&#39; will be ignored, and an empty message aborts the commit.
+# On branch main
+# Changes to be committed:
+#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+#
+# modified:   README
+#                                                                      
+~                                                                                      
+~                                                                                      
+&quot;.git/COMMIT_EDITMSG&quot; 9L, 253C</code></pre>
+
+<p>We simply type our commit message and exit the editor.</p>
+
+<pre><code>$ git commit -a
+[master]: created 5896d4d: &quot;added myself to the README as an author&quot;
+ 1 files changed, 2 insertions(+), 1 deletions(-)</code></pre>
+
+<p>Git will show us the commit message we typed and some statistics about what changes were introduced in that commit. It will also give us a checksum of the commit, &#8216;5896d4d&#8217;, that we can use to refer to this exact commit at any other time.</p>
+
+<p>That&#8217;s it - that&#8217;s the simple case. Edit files, &#8216;git commit -a&#8217;, repeat.</p>
+
+<h3 id='the_more_complete_case'>the more complete case</h3>
+
+<p>Now we&#8217;ll expand that use case a bit to include a remote repository we&#8217;re pushing to so we can collaborate with other developers. We&#8217;ll also introduce the staging area so we don&#8217;t have to commit every file we&#8217;ve changed each time we commit.</p>
+
+<ul>
+<li>syncronize with upstream</li>
+
+<li>modify files</li>
+
+<li>see what you&#8217;ve changed</li>
+
+<li>stage the changes you want to commit</li>
+
+<li>commit your staging area</li>
+
+<li>rinse, repeat</li>
+
+<li>push upstream</li>
+</ul><br/><br/><hr/></div>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/learn/learn.github.com">open source</a>.  
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>

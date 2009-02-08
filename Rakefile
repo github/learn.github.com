@@ -10,12 +10,13 @@ def generate_page(page_data)
   
   # add video if present
   if code = page_data['cast']
-    @pcontent += '<embed src="http://blip.tv/play/' + code  
+    @pcontent += '<center><embed src="http://blip.tv/play/' + code  
     @pcontent += '" type="application/x-shockwave-flash" width="640" height="360" '
-    @pcontent += 'allowscriptaccess="always" allowfullscreen="true"></embed>'
-    @pcontent += '<hr/>'
+    @pcontent += 'allowscriptaccess="always" allowfullscreen="true"></embed></center>'
   end
   
+  @pcontent += '<hr/>'
+
   # render markdown from page, if present
   mpage = "pages/#{page}.markdown"
   if File.exists?(mpage)
