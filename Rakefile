@@ -39,15 +39,17 @@ def generate_page(page_data)
   
   @pcontent += "<div class=\"span-10\">"
   if n = @nextlast[:last][page]
-    @pcontent += "<a href=\"#{n}.html\">last</a>"
+    @pcontent += "<a href=\"#{n}.html\">&laquo; previous</a>"
   else
     @pcontent += "&nbsp;"
   end
   @pcontent += "</div>"
 
   if n = @nextlast[:next][page]
-    @pcontent += "<div style=\"text-align:right\" class=\"span-11 last\"><a href=\"#{n}.html\">next</a></div>"
+    @pcontent += "<div style=\"text-align:right\" class=\"span-11 last\"><a href=\"#{n}.html\">next &raquo;</a></div>"
   end
+
+  @pcontent += '<hr/>'
     
   pname = "p/#{page}.html"
   out = ERB.new(File.read('template/page.erb.html')).result

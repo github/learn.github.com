@@ -70,7 +70,7 @@ episodes:
               or amending commits in between. 
 
   - section: Advanced
-    values: 
+    values:       
       - name: Filter Branch
         desc: Modify large sections of your commit history at once,
               changing emails, names or files globally.
@@ -78,6 +78,10 @@ episodes:
       - name: Maintaining Git
         desc: Learn the fsck and gc commands to diagnose problems and 
               keep your repository small.
+
+      - name: The Git Reflog
+        desc: Browse the history of your local references even if they're not
+              referenced anywhere else anymore.
 
       - name: Data Recovery
         desc: Find lost commits or branches and restore them, or 

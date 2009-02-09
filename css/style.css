@@ -9,24 +9,24 @@ a { color: #008; }
   
 h2 { background: #ddd; text-align: center; padding: 4px; }
 
-#welcome p { font-size: 1.3em; color: #444; }
+#welcome p { font-size: 1.3em; color: #444; text-align:center;}
 
 #header { }
 #footer { background: #ddd;}
 #footer a { color: #444; }
 
 .info, .fork { padding: 10px; }
-.content { font-size: 1.3em; }
-.content h3 { background: #eee; padding: 5px 2px; }
+.content { font-size: 1.2em; }
+.content h3 { background: #dfd; font-size: 1.7em; padding: 6px 2px; }
 
-pre { padding: 20px; background: #ffd; }
+pre { padding: 20px; background: #ffd; font-size: 0.9em; }
 
 #links { padding: 10px; }
 
 #header #links { text-align:right; }
 #header #links a { color: #555; font-size: 1.2em; padding: 5px; margin: 10px; }
 
-.button { text-align: center; padding: 10px; font-size: 1.2em; }
+.button { text-align: center; padding: 10px; font-size: 1.2em; font-weight:bold; }
 .red   { border: 3px solid #a88; background: #fee;}
 .red a { color: #a44; }
 .green { border: 3px solid #8a8; background: #efe;}
