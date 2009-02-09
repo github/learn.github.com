@@ -42,7 +42,45 @@
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><br/><br/><hr/></div><div class="span-10"><a href="branching.html">last</a></div><div style="text-align:right" class="span-11 last"><a href="diff.html">next</a></div>
+      <div class="span-21"><hr/><p>One of the most commonly used commands is the &#8216;git log&#8217; command. This command shows you the commit history of your project, so you can see what has happened up to this point. With no options, it will start from the last commit on the branch you&#8217;re currently on and show you all the commits that are ancestors of that in reverse chronological order.</p>
+
+<pre><code>commit 166ae0c4d3f420721acbb115cc33848dfcc2121a
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Sun Feb 8 16:50:43 2009 -0800
+
+    started write support
+
+commit 9fceb02d0ae598e95dc970b74767f19372d61af8
+Author: Magnus Chacon &lt;mchacon@gmail.com&gt;
+Date:   Sun Apr 27 20:43:35 2008 -0700
+
+    updated rakefile
+
+commit 964f16d36dfccde844893cac5b347e7b3d44abbc
+Author: Magnus Chacon &lt;mchacon@gmail.com&gt;
+Date:   Sun Apr 27 20:34:23 2008 -0700
+
+    commit the todo</code></pre>
+
+<p>There you can see three commits - each with:</p>
+
+<ul>
+<li>the checksum of the commit</li>
+
+<li>the author name and email</li>
+
+<li>the date the author committed it</li>
+
+<li>the full commit message</li>
+</ul>
+
+<p>This is the default format and the output is paged for you automatically. In most situations, this will be fine - you just want to see the last few commits in the branch. However, sometimes you want to see more interesting data, or do some data mining, and &#8216;git log&#8217; can do a number of interesting things.</p>
+
+<h3 id='log_output_formatting'>log output formatting</h3>
+
+<p>There are a number of other ways you can see the</p>
+
+<h3 id='log_limiting'>log limiting</h3><br/><br/><hr/></div><div class="span-10"><a href="branching.html">last</a></div><div style="text-align:right" class="span-11 last"><a href="diff.html">next</a></div>
     </div>
 
     <div id="footer" class="span-21">
