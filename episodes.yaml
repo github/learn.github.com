@@ -19,20 +19,24 @@ episodes:
               then stage and commit them. 
 
       - name: Basic Branching and Merging
+        page: branching
         desc: Create and work on topic and long running branches,
               merge between them and delete them.
 
       - name: Git Log
+        page: log
         desc: Browse your project history, find specific commits
               and visualize the branching and merging actions.
 
       - name: Git Diff
+        page: diff
         desc: Show differences between different versions of your
               projects or specific files within your project.
 
       - name: Customizing Git
+        page: customizing
         desc: Setup aliases for common commands and other personal
-              options in Git - color, crlf and more.
+              options in Git - autocompletion, bash branch, colors and more.
 
   - section: Intermediate
     values:

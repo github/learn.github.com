@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Learn.GitHub Basic Branching and Merging</title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21" id="welcome">
+      <h1>Basic Branching and Merging</h1>
+      <p>Create and work on topic and long running branches, merge between them and delete them.</p>
+    </div>
+    
+    <div class="content">
+      <div class="span-21"><hr/><p>As we touched on in the first lesson, the way that Git handles branching and merging is pretty unique. First of all, it&#8217;s incredibly fast, both to create new branches and to switch between them. Git has a single working directory that it replaces with the contents of the branch you&#8217;re working on, so you don&#8217;t have to have seperate directories for each branch.</p>
+
+<p>In this lesson, we&#8217;ll create a new branch, do a bit of work, switch back to our stable branch (generally called &#8216;master&#8217; in Git by default), do some work there, switch back to our temporary branch to complete our work, and then merge it into our stable branch.</p>
+
+<p>To view our available branches, we run the &#8216;git branch&#8217; command with no arguments.</p>
+
+<pre><code>$ git branch
+* master</code></pre>
+
+<p>We can see that we only have one branch &#8216;master&#8217; and the &#8217;*&#8217; indicates that we are currently on it. For the purposes of illustrating this, I will show the commit history model. Here, the green boxes are each commit and the arrows are where each commit points to for its parent or parents. This is basically how Git actually stores it&#8217;s commit data.</p>
+
+<p><img src='../images/branch/step1.png' alt='Branch Step 1' /></p>
+
+<p>You can see, in Git, branches are simply lightweight pointers to a particular commit. The history is simply figured out by traversing the parents, one commit at a time.</p>
+
+<h3 id='creating_new_branches'>creating new branches</h3>
+
+<p>To create a new branch, we can use &#8216;git branch (branchname)&#8217; which will create a branch at the point we&#8217;re currently at.</p>
+
+<pre><code>$ git branch experiment</code></pre>
+
+<p><img src='../images/branch/step2.png' alt='Branch Step 2' /></p>
+
+<p>To switch to that branch so that the work we do is saved to it instead of the &#8216;master&#8217; branch, we run the &#8216;git checkout&#8217; command&#8217;</p>
+
+<pre><code>$ git checkout experiment
+Switched to branch &quot;experiment&quot;
+$ git branch
+* experiment
+  master</code></pre>
+
+<p>Now we can see that we have a new branch and that we&#8217;re on it. Now we can edit files and commit without worrying about messing up our pristine &#8216;master&#8217; branch that we know works perfectly. We don&#8217;t have to share the changes we make in our &#8216;experiment&#8217; branch until we are certain they are ready.</p>
+
+<h3 id='working_in_multiple_branches'>working in multiple branches</h3>
+
+<p>So, lets add a TODO file, make a change to the &#8216;simplegit.rb&#8217; file, and then make a commit with both changes in it.</p>
+
+<pre><code>$ vim lib/simplegit.rb
+$ vim TODO
+$ git add TODO
+$ git commit -am &#39;added a todo and added simplegit functions&#39;
+[experiment]: created 4682c32: &quot;added a todo and added simplegit functions&quot;
+ 2 files changed, 10 insertions(+), 0 deletions(-)
+ create mode 100644 TODO</code></pre>
+
+<p><img src='../images/branch/step3.png' alt='Branch Step 3' /></p>
+
+<p>Now if we take a look, we can see that we have 3 files and one subdirectory.</p>
+
+<pre><code>$ ls
+README		Rakefile	TODO		lib</code></pre>
+
+<p>So, let&#8217;s now suppose that we need to go back and make a bugfix on our original verison of the simplegit.rb file. We can revert back to where our project was before we branched with the &#8216;checkout command.</p>
+
+<pre><code>$ git checkout master
+Switched to branch &quot;master&quot;
+$ ls
+README		Rakefile	lib</code></pre>
+
+<p>Now we can see that our working directory no longer has the TODO file it in - that&#8217;s because the master branch didn&#8217;t have that file. If we do a commit here and then switch back, we&#8217;ll see the TODO file there again, and the simplegit.rb file reverted back to where we left it in the experiment branch.</p>
+
+<pre><code>$ vim lib/simplegit.rb 
+$ git commit -am &#39;added a commit function&#39;
+[master]: created 0b7434d: &quot;added a commit function&quot;
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+$ git checkout experiment
+Switched to branch &quot;experiment&quot;
+$ ls
+README		Rakefile	TODO		lib</code></pre>
+
+<p><img src='../images/branch/step4.png' alt='Branch Step 4' /></p>
+
+<p>We could even go back to the master branch and create a new branch and start committing there. Most Git developers will have several branches running at the same time, each with a specific theme or focus - a new feature or bug fix that lasts hours or even minutes, or longer running branches for large scale refactorings that periodically merge in changes from mainline branches.</p>
+
+<p>This practice of cooking your features and changes in branch silos makes it easy and cheap to context switch rapidly and without complications. If you want to work on a longer running branch with another developer, you can push branches up to a shared server. For example, if you wanted to work on the experiment branch with someone else, you can push it to your server like so:</p>
+
+<pre><code>$ git push origin experiment</code></pre>
+
+<p>The next pull your collaborator does will pull that work down and let them work on it with you. However, Git also importantly lets you keep these branches private if you want - simply don&#8217;t push them.</p>
+
+<h3 id='merging_and_removing_finished_branches'>merging and removing finished branches</h3>
+
+<p>When you are done with work on a branch, you can either remove it and ignore the changes made on it if the work is not acceptable, or you can merge it into one of your long running branches (some developers will have &#8216;master&#8217; only contain stable code, a parallel &#8216;develop&#8217; branch that you use to integrate and test changes, and shorter lived topic branches for day to day work).</p>
+
+<p>To merge a branch in, switch to the branch you want to merge into and run the &#8216;git merge&#8217; command. If it can merge cleanly, you&#8217;ll simply see something like this:</p>
+
+<pre><code>$ git merge experiment
+Auto-merging lib/simplegit.rb
+Merge made by recursive.
+ lib/simplegit.rb |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)</code></pre>
+
+<p>Easy peasy - you&#8217;re merged.</p>
+
+<p><img src='../images/branch/step5.png' alt='Branch Step 5' /></p>
+
+<h3 id='merge_conflict_resolution'>merge conflict resolution</h3>
+
+<p>However, sometimes things don&#8217;t go so smoothly If you get a merge conflict, you&#8217;ll see something like this instead.</p>
+
+<pre><code>$ git merge experiment
+Auto-merging lib/simplegit.rb
+CONFLICT (content): Merge conflict in lib/simplegit.rb
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+
+<p>In this case it will tell you the files that did not merge cleanly, and you can simply resolve the conflicts manually. If I open up the file it says failed, I&#8217;ll see normal merge conflict markers in it.</p>
+
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:lib/simplegit.rb
+  def commit(message)
+    command(&quot;git commit -m &#39;#{message}&#39;&quot;)
+=======
+  def add(path)
+    command(&quot;git add #{path}&quot;)
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; experiment:lib/simplegit.rb
+  end</code></pre>
+
+<p>When you&#8217;re done fixing it, all you have to do is run &#8216;git add&#8217; on the file to re-stage it, which marks it as resolved. Then commit the merge.</p>
+
+<pre><code>$ git add lib/simplegit.rb
+$ git commit
+[master]: created 6d52a27: &quot;Merge branch &#39;experiment&#39;&quot;</code></pre>
+
+<h3 id='merging_multiple_times'>merging multiple times</h3>
+
+<p>I point this out because it&#8217;s something that is generally difficult to do in some other VCSs, but is very easy in Git. That is, merging from a branch, then continuing to do work in it and merging again. This is often the case if you have a &#8216;development&#8217; branch that you do integration testing and merge experimental changes into and then periodically merge it into your stable &#8216;master&#8217; branch.</p>
+
+<p>For example, let&#8217;s say we switched back to the &#8216;experiment&#8217; branch, made a few changes, then at some point merged it back into &#8216;master&#8217; again, making our history look something like this.</p>
+
+<p><img src='../images/branch/step6.png' alt='Branch Step 6' /></p>
+
+<p>Since Git does it&#8217;s merges as a simple 3 way merge based on the commit history snapshots, doing multiple merges is often very easy. It will only have to merge in changes introduced on both branches since the last merge - it will not have to re-merge anything.</p>
+
+<p>When you are done with a branch, say in this case the &#8216;experiment&#8217; branch, we can simply delete it with &#8216;git branch -d&#8217;</p>
+
+<pre><code>$ git branch -d experiment</code></pre>
+
+<p>If the branch has not been merged in at some point, in which case deleting the branch would lose changes, Git will not allow you to do it. If you <em>want</em> to lose the changes, simply use the &#8216;-D&#8217; flag instead - that will force the deletion.</p>
+
+<p>So, that is basic branching and merging in Git and should give you a good baseline for being able to effectively use this powerful and ultimately pretty simple tool.</p><br/><br/><hr/></div><div class="span-10"><a href="normal.html">last</a></div><div style="text-align:right" class="span-11 last"><a href="log.html">next</a></div>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/learn/learn.github.com">open source</a>.  
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>
