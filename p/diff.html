@@ -42,7 +42,29 @@
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><br/><br/><hr/></div><div class="span-10"><a href="log.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="customizing.html">next &raquo;</a></div><hr/>
+      <div class="span-21"><hr/><h3 id='changes_that_have_not_been_staged'>changes that have not been staged</h3>
+
+<pre><code>$ git diff</code></pre>
+
+<h3 id='changes_that_are_staged_but_not_committed'>changes that are staged but not committed</h3>
+
+<pre><code>$ git diff --staged</code></pre>
+
+<h3 id='all_changes_since_the_last_commit'>all changes since the last commit</h3>
+
+<pre><code>$ git diff HEAD</code></pre>
+
+<h3 id='how_a_file_has_changed_since_a_specific_time'>how a file has changed since a specific time</h3>
+
+<pre><code>$ git diff v1.0 -- file.c</code></pre>
+
+<h3 id='changes_between_two_commits'>changes between two commits</h3>
+
+<pre><code>$ git diff v1.0 v1.1</code></pre>
+
+<h3 id='what_a_merge_would_introduce'>what a merge would introduce</h3>
+
+<pre><code>$ git diff master...experiemnt</code></pre><br/><br/><hr/></div><div class="span-10"><a href="log.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="customizing.html">next &raquo;</a></div><hr/>
     </div>
 
     <div id="footer" class="span-21">

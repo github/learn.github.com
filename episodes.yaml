@@ -23,6 +23,11 @@ episodes:
         desc: Create and work on topic and long running branches,
               merge between them and delete them.
 
+      - name: Git Tagging
+        page: tagging
+        desc: Create signed, unsigned or lightweight tags to permanantly
+              mark important points in your project history.
+        
       - name: Git Log
         page: log
         desc: Browse your project history, find specific commits
