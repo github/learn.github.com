@@ -49,7 +49,7 @@ def generate_page(page_data)
     @pcontent += "<div style=\"text-align:right\" class=\"span-11 last\"><a href=\"#{n}.html\">next &raquo;</a></div>"
   end
 
-  @pcontent += '<hr/>'
+  @pcontent += '<div class="span-21 last">&nbsp;</div><hr/>'
     
   pname = "p/#{page}.html"
   out = ERB.new(File.read('template/page.erb.html')).result

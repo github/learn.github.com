@@ -42,7 +42,30 @@
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><br/><br/><hr/></div><div class="span-10"><a href="diff.html">&laquo; previous</a></div><hr/>
+      <div class="span-21"><hr/><h3 id='common_aliases'>common aliases</h3>
+
+<h4 id='ci'>ci</h4>
+
+<pre><code>$ git ci</code></pre>
+
+<h4 id='git_serve'>git serve</h4>
+
+<pre><code>git config --global alias.serve &#39;daemon --reuseaddr --verbose  --base-path=. --export-all ./.git&#39;</code></pre>
+
+<p>Then if you want to start up a quick git server, you can do this:</p>
+
+<pre><code>$ touch .git/git-daemon-export-ok  
+$ git serve</code></pre>
+
+<p>Then people can clone from it</p>
+
+<pre><code>$ git clone git://your-host-name/</code></pre>
+
+<h3 id='autocompletion'>autocompletion</h3>
+
+<h3 id='bash_branch'>bash branch</h3>
+
+<h3 id='colors'>colors</h3><br/><br/><hr/></div><div class="span-10"><a href="diff.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">

@@ -38,11 +38,6 @@ episodes:
         desc: Show differences between different versions of your
               projects or specific files within your project.
 
-      - name: Customizing Git
-        page: customizing
-        desc: Setup aliases for common commands and other personal
-              options in Git - autocompletion, bash branch, colors and more.
-
   - section: Intermediate
     values:
       - name: Undoing 
@@ -73,6 +68,10 @@ episodes:
       - name: Interactive Rebasing
         desc: Rebase multiple files interactively, squashing, reordering
               or amending commits in between. 
+
+      - name: Customizing Git
+        desc: Setup aliases for common commands and other personal
+              options in Git - autocompletion, bash branch, colors and more.
 
   - section: Advanced
     values:       
