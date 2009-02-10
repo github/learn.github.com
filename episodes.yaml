@@ -41,14 +41,21 @@ episodes:
   - section: Intermediate
     values:
       - name: Undoing 
+        page: undoing
         desc: Revert, unmodify or unstage a file or project state
               at any point.
+              
+      - name: Distributed Workflows
+        desc: Fetch, merge, pull and push between multiple remote 
+              repositories.
 
-      - name: Rebasing 
+      - name: Rebasing
+        page: rebasing
         desc: Replay changes from one branch onto another branch
               to preserve a linear history.
 
       - name: Stashing
+        page: stashing
         desc: Temporarily save changes to your working directory and 
               staging area without having to commit, then reapply the
               changes later.
@@ -56,10 +63,6 @@ episodes:
       - name: Interactive Adding
         desc: Stage and unstage changes to files or partial files 
               with an interactive Git tool.
-
-      - name: Distributed Workflows
-        desc: Fetch, merge, pull and push between multiple remote 
-              repositories.
 
       - name: Amending Commits
         desc: Change the latest commit message, or redo the last commit

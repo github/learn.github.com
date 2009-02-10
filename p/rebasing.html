@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Learn.GitHub - Rebasing</title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21" id="welcome">
+      <h1>Rebasing</h1>
+      <p>Replay changes from one branch onto another branch to preserve a linear history.</p>
+    </div>
+    
+    <div class="content">
+      <div class="span-21"><hr/><p>In Git, there are two main ways to integrate changes from one branch into another - the &#8216;merge&#8217; and the &#8216;rebase&#8217;. In this section we will learn what &#8216;rebasing&#8217; is, how to do it and in what cases it may not be a good idea to.</p>
+
+<h3 id='the_basic_rebase'>the basic rebase</h3>
+
+<p>If we go back to an earlier example from the Merge chapter, we can see that we diverged our work and made commits on two different branches.</p>
+
+<p><img src='../images/rebase/step1.png' alt='Rebase Step 1' /></p>
+
+<p>The easiest way to integrate them, which we&#8217;ve already covered, is the <em>merge</em> command. This performs a 3-way merge between the two latest branch snapshots (C3 and C4) and the most recent common ancestor of the two (C2), creating a new snapshot (and commit).</p>
+
+<p><img src='../images/rebase/step2.png' alt='Rebase Step 2' /></p>
+
+<p>However, there is another way, which is to take the patch that was introduced in C3 and re-apply it on top of C4. In Git, this is called <em>rebasing</em> - with the &#8216;rebase&#8217; command, you can take all of the changes that were committed on one branch and replay them on another one.</p>
+
+<p>In this example, we would run this:</p>
+
+<pre><code>$ git checkout experiment
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added staged command</code></pre>
+
+<p>It works by going to the common ancestor of the two branches (the one you are on and the one you are rebasing onto), getting the diff introduced by each commit of the branch you are on, saving them to temporary files, then moving the branch over to the rebasing branch and applying each change in turn.</p>
+
+<p><img src='../images/rebase/step3.png' alt='Rebase Step 3' /></p>
+
+<p>At this point, you can go back to the master branch and do a fast-forward merge.</p>
+
+<p><img src='../images/rebase/step4.png' alt='Rebase Step 4' /></p>
+
+<p>Now the snapshot pointed to by C3&#8217; is exactly the same as the one that was pointed to by C5 in the &#8216;merge&#8217; example, so there is not really any difference in the end product of the integration, but it does make for a cleaner history.</p>
+
+<p>If you look at the log of a rebased branch, it just looks like a linear history, like all of the work happened in series, even when it actually happened in parallel.</p>
+
+<p>Often one will do this to make sure that commits they did will apply cleanly on a remote branch, maybe to a project they are trying to contribute to that they are not the maintainer of. In this case, the contributor would do thier work in a branch, then rebase thier work onto &#8216;origin/master&#8217; when they are ready to submit thier patches to the main project so the maintainer doesn&#8217;t have to do any integration work, it&#8217;ll just be a fast forward or a clean apply.</p>
+
+<h3 id='more_interesting_rebases'>more interesting rebases</h3>
+
+<p>You can also have your rebase replay on something other than the rebase branch. Let&#8217;s take a history like this, for example. We branched a topic branch (&#8216;server&#8217;), say to add some server-side functionality to our project and made a few commits. Then we branched off of that to make the client side changes (&#8216;client&#8217;) and committed a few times.</p>
+
+<p><img src='../images/rebase/onto1.png' alt='Rebase Onto Step 1' /></p>
+
+<p>Then we decide that we want to merge our client side changes into our mainline for a release but we want to hold off on the server side changes until it is further tested. We can take the changes on &#8216;client&#8217; that are not on &#8216;server&#8217; and replay them on our master branch by using the <strong>&#8211;onto</strong> option to &#8216;git rebase&#8217;.</p>
+
+<pre><code>$ git rebase --onto master server client</code></pre>
+
+<p>This basically says &#8220;checkout the &#8216;client&#8217; branch, figure out the patches from the common ancestor of it and the &#8216;server&#8217; branch, then replay them onto master&#8221;. A bit complex, but the result is pretty cool.</p>
+
+<p><img src='../images/rebase/onto2.png' alt='Rebase Onto Step 2' /></p>
+
+<p>Now we can simply fast-forward our master branch.</p>
+
+<pre><code>$ git checkout master
+$ git merge client</code></pre>
+
+<p><img src='../images/rebase/onto3.png' alt='Rebase Onto Step 3' /></p>
+
+<p>Boom. We roll the release out off of our &#8216;master&#8217; branch. A bit later we get our results from the field and it is concluded that the &#8216;server&#8217; changes are working well and should be rolled in. We can either merge in the &#8216;server&#8217; branch or we can rebase it in.</p>
+
+<p>The we can rebase the server branch onto the master branch without having to check it out first by running &#8216;git rebase (base branch) (work branch)&#8217; - which will check out the <em>work branch</em> (server) for you and replay it onto the <em>base branch</em> (master).</p>
+
+<pre><code>$ git rebase master server</code></pre>
+
+<p><img src='../images/rebase/onto4.png' alt='Rebase Onto Step 4' /></p>
+
+<p>Then you can just fast forward the <em>base branch</em> (master).</p>
+
+<pre><code>$ git checkout master
+$ git merge server</code></pre>
+
+<p>Now we can remove the &#8216;client&#8217; and &#8216;server&#8217; branches because all the work is integrated and we don&#8217;t really need them anymore.</p>
+
+<pre><code>$ git branch -d client
+$ git branch -d server</code></pre>
+
+<p><img src='../images/rebase/onto5.png' alt='Rebase Onto Step 5' /></p>
+
+<h3 id='the_perils_of_rebasing'>the perils of rebasing</h3>
+
+<p>Ahh, but the bliss of rebasing is not without its drawbacks. It can be summed up in a single line:</p>
+
+<h2 id='do_not_rebase_commits_that_you_have_pushed_to_a_public_repository'>&#8220;do not rebase commits that you have pushed to a public repository&#8221;</h2>
+
+<p>If you follow that, you&#8217;ll be cool. If you do not, people will hate you and you will be scorned by friends and family.</p>
+
+<p>When you rebase stuff, you are abandoning existing commits and creating new ones that are similar but still different. That means that if you push commits somewhere that others can pull them down and base work off of them, then you rewrite those commits and push them up again, you collaborators will have to re-merge their work again and things will get messy when you try to pull thier work back into yours.</p>
+
+<p>If you treat rebase as a way to clean up and work with commits <em>before</em> you push them, and only ever rebase commits that have never been available publicly, then you&#8217;ll be living the sweet life.</p><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="stashing.html">next &raquo;</a></div><div class="span-21 last">&nbsp;</div><hr/>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/learn/learn.github.com">open source</a>.  
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>
