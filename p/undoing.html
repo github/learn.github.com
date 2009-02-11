@@ -42,13 +42,133 @@
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><h3 id='unstaging_files'>unstaging files</h3>
+      <div class="span-21"><hr/><p>There are a number of situations in Git where you may want to undo or revert a change that you made. Perhaps you staged a file and then decided that you didn&#8217;t want it staged, or you edited a file and then wanted to &#8216;un-edit&#8217; it. This section will explore a couple of ways you can undo or revert actions in Git.</p>
+
+<h3 id='unstaging_files'>unstaging files</h3>
+
+<p>Here we&#8217;ve staged changes to both our REAME and simplegit.rb files, but then we decide that we want the changes to be two seperate commits. So, we need to unstage one, do a commit, then stage it again and do our second commit. Luckily, Git reminds you how to do this right in the &#8216;git status&#8217; command output.</p>
+
+<pre><code>$ git status
+# On branch nolimit
+# Changes to be committed:
+#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+#
+#	modified:   README
+#	modified:   lib/simplegit.rb
+#</code></pre>
+
+<p>If you ever forget how to unstage a file, just run the &#8216;git status&#8217; command to remind yourself with the <em>(use &#8220;git reset HEAD (file)&#8230;&#8221; to unstage)</em> text. So lets use that to unstage the README file.</p>
+
+<pre><code>$ git reset HEAD README 
+README: locally modified</code></pre>
+
+<p>Now if we run the &#8216;status&#8217; command again, we can see that the README file is no longer staged.</p>
+
+<pre><code>$ git status
+# On branch nolimit
+# Changes to be committed:
+#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+#
+#	modified:   lib/simplegit.rb
+#
+# Changed but not updated:
+#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#	modified:   README
+#</code></pre>
+
+<p>If you want an easier way of remembering this, you can add an &#8216;unstage&#8217; alias in your Git config file.</p>
+
+<pre><code>$ git config --global alias.unstage &#39;reset HEAD&#39;</code></pre>
+
+<p>Then you can just run:</p>
+
+<pre><code>$ git unstage README</code></pre>
+
+<p>A bit nicer, yes?</p>
 
 <h3 id='unmodifying_files'>unmodifying files</h3>
 
+<p>Now, lets say that we want to completely throw away the changes we made to the README file altogether. <strong>Be careful - this is almost never a great idea and there is no way to get changes back if you do this!</strong> Things you commit are almost always recoverable, but if you throw them away before you commit, you&#8217;re out of luck if you ever want them back. However, if you DID want to do this, &#8216;git status&#8217; again gives you a nice tip.</p>
+
+<pre><code>$ git status
+# On branch nolimit
+# Changed but not updated:
+#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#	modified:   README
+#	modified:   lib/simplegit.rb
+#</code></pre>
+
+<p>So, to &#8216;discard changes in working directory&#8217;, you simply run</p>
+
+<pre><code>$ git checkout -- README
+$ git status
+# On branch nolimit
+# Changed but not updated:
+#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+#
+#	modified:   lib/simplegit.rb
+#</code></pre>
+
+<p>And the README changes are gone. If you instantly regret that choice, your only recourse is weeping upon your pillow.</p>
+
 <h3 id='resetting_a_project'>resetting a project</h3>
 
-<h4 id='breaking_work_into_a_topic_branch'>breaking work into a topic branch</h4><br/><br/><hr/></div><div class="span-10"><a href="diff.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="rebasing.html">next &raquo;</a></div><div class="span-21 last">&nbsp;</div><hr/>
+<p>Another powerful and easily destructive tool is the &#8216;reset &#8211;hard&#8217; command. This will forcefully replace your staging area and working directory with an older version and move your current branch there. So, lets say you did a couple of commits and then completely change your mind and want to just wipe them away.</p>
+
+<p>Let&#8217;s say your history log looked like this:</p>
+
+<pre><code>$ git log --pretty=oneline
+5ddae49fa3f36d892851cbb28549af98d36338fc added staged command
+92a4920c418f7545f995d0c9562f63d1b0f0b48f introduced shortlog and a new author
+a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
+0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc added a commit function
+9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
+964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo</code></pre>
+
+<p>and you want to completely throw away the top two commits. All you have to do is reset your current branch to the sha of the commit you want to rewind to. In this case, the &#8216;beginning write support&#8217; or &#8216;a6b4c974&#8217;.</p>
+
+<p><img src='../images/undo/step1.png' alt='Reset 1' /></p>
+
+<pre><code>$ git reset --hard a6b4c974
+HEAD is now at a6b4c97 beginning write support</code></pre>
+
+<p><img src='../images/undo/step2.png' alt='Reset 2' /></p>
+
+<p>So, whatever branch we were on (in this case, &#8216;master&#8217;), is now pointing at our older commit, and commits we do from that point forward will move forward from there, leaving the ones we rewound past behind.</p>
+
+<p><img src='../images/undo/step3.png' alt='Reset 3' /></p>
+
+<h3 id='breaking_work_into_a_topic_branch'>breaking work into a topic branch</h3>
+
+<p>You can also use the &#8217;&#8211;hard&#8217; option for good. Let&#8217;s say you did a couple of commits on your &#8216;master&#8217; branch that after you&#8217;ve committed them you decide should really have been on a topic branch. How do we move those commits to a topic branch? Turns out it&#8217;s pretty easy, actually - you just create the branch where you are, then move the &#8216;master&#8217; pointer back to where you should have left it. Let&#8217;s do the same example, but this time leave our commits in a topic branch for later.</p>
+
+<p><img src='../images/undo/step1.png' alt='Reset 1' /></p>
+
+<p>First, we drop a &#8216;bookmark&#8217; where we are. This is generally a useful idea - if you&#8217;re going to try something you are not sure is going to work, just create a branch where you are, so you can always get back to there.</p>
+
+<pre><code>$ git branch test</code></pre>
+
+<p><img src='../images/undo/topic2.png' alt='Reset Topic 2' /></p>
+
+<p>Now we have a branch at the point we were and can move around the &#8216;master&#8217; branch with the &#8216;reset&#8217; command. Let&#8217;s do our reset to the older commit.</p>
+
+<pre><code>$ git reset --hard a6b4c974
+HEAD is now at a6b4c97 beginning write support</code></pre>
+
+<p><img src='../images/undo/topic3.png' alt='Reset Topic 3' /></p>
+
+<p>Now we can start working again and our master branch will move forward as if we had branched seperately from our &#8216;test&#8217; branch originally.</p>
+
+<pre><code>$ git commit</code></pre>
+
+<p><img src='../images/undo/topic4.png' alt='Reset Topic 4' /></p>
+
+<p>And now our commits are tucked away in a branch that we can come back to later if we want to.</p><br/><br/><hr/></div><div class="span-10"><a href="stashing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">

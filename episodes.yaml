@@ -39,12 +39,7 @@ episodes:
               projects or specific files within your project.
 
   - section: Intermediate
-    values:
-      - name: Undoing 
-        page: undoing
-        desc: Revert, unmodify or unstage a file or project state
-              at any point.
-              
+    values:   
       - name: Distributed Workflows
         desc: Fetch, merge, pull and push between multiple remote 
               repositories.
@@ -63,7 +58,12 @@ episodes:
       - name: Interactive Adding
         desc: Stage and unstage changes to files or partial files 
               with an interactive Git tool.
-
+              
+      - name: Undoing 
+        page: undoing
+        desc: Revert, unmodify or unstage a file or project state
+              at any point.
+                      
       - name: Amending Commits
         desc: Change the latest commit message, or redo the last commit
               by adding or removing files from it. 
