@@ -10,6 +10,8 @@ episodes:
 
       - name: Setup and Initialization
         page: setup
+        cast: AeyWYQAI 
+        size: 790x444
         desc: Setup your Git environment, then create a
               new Git repository and clone an existing one. 
 
@@ -40,7 +42,8 @@ episodes:
 
   - section: Intermediate
     values:   
-      - name: Distributed Workflows
+      - name: Distributed Git
+        page: distributed
         desc: Fetch, merge, pull and push between multiple remote 
               repositories.
 
@@ -50,7 +53,6 @@ episodes:
               to preserve a linear history.
 
       - name: Stashing
-        page: stashing
         desc: Temporarily save changes to your working directory and 
               staging area without having to commit, then reapply the
               changes later.
