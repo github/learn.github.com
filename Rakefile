@@ -101,3 +101,5 @@ task :gensite do
   out = ERB.new(File.read('template/index.erb.html')).result
   File.open('index.html', 'w') { |f| f.write(out) }
 end
+
+task :default => [:gensite]
