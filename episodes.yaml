@@ -43,7 +43,6 @@ episodes:
   - section: Intermediate
     values:   
       - name: Distributed Git
-        page: distributed
         desc: Fetch, merge, pull and push between multiple remote 
               repositories.
 
