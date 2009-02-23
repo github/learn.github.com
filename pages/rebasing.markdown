@@ -66,7 +66,7 @@ a few times.
 Then we decide that we want to merge our client side changes into
 our mainline for a release but we want to hold off on the server side changes
 until it is further tested.  We can take the changes on 'client' that are not
-on 'server' and replay them on our master branch by using the **--onto** option
+on 'server' and replay them on our master branch by using the `--onto` option
 to 'git rebase'.
 
 	$ git rebase --onto master server client

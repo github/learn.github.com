@@ -165,7 +165,7 @@ that those two commits point to, as if they were both constituted in two
 directories and you ran the unix 'diff' tool on them.
 
 You can also use some of the formatting options that you can pass to 'log', 
-such as **--stat**.  If I wanted to see an overview of what all changed between
+such as `--stat`.  If I wanted to see an overview of what all changed between
 version 1.6.1.1 and 1.6.1.2 in the Git project, I could run this:
 
 	$ git diff v1.6.1.1 v1.6.1.2 --stat
