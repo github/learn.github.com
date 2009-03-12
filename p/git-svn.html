@@ -83,7 +83,38 @@ Applying: Local git commit.</code></pre>
 
 <p>Remember that, with a Subversion repository, you don&#8217;t have the concept of offline commits. So when &#8216;svn update&#8217; executes, all it does is pull down all of the commits from the Subversion repository, and replay the changes in your working copy.</p>
 
-<p>Under Git, you&#8217;ve likely been making a series of changes and committing them in nice small pieces (you <em>are</em> making regular commits, aren&#8217;t you?). So, when &#8216;git svn rebase&#8217; is executed, it rolls back all of your local commits, pulls down all of the commits from Subversion, and then <em>reapplies</em> your local commits as if you had made them on the current HEAD of the Subversion branch. This has much the same logical effect as &#8216;svn update&#8217; (all of your local changes are applied on top of the current Subversion HEAD), but may appear a little odd at first glance.</p><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
+<p>Under Git, you&#8217;ve likely been making a series of changes and committing them in nice small pieces (you <em>are</em> making regular commits, aren&#8217;t you?). So, when &#8216;git svn rebase&#8217; is executed, it rolls back all of your local commits, pulls down all of the commits from Subversion, and then <em>reapplies</em> your local commits as if you had made them on the current HEAD of the Subversion branch. This has much the same logical effect as &#8216;svn update&#8217; (all of your local changes are applied on top of the current Subversion HEAD), but may appear a little odd at first glance.</p>
+
+<p>Just like &#8216;svn update&#8217;, it&#8217;s a good idea to execute &#8216;git svn rebase&#8217; periodically in order to limit the number of conflicts you encounter when it comes time to integrate your changes back into the main repository.</p>
+
+<h3 id='pushing_changes_upstream'>Pushing Changes Upstream</h3>
+
+<p>So you&#8217;ve been hacking away in your Git repository and now have a series of local commits that need to be pushed back to the main Subversion repository. The first step is to execute &#8216;git svn rebase&#8217; and make sure your local Git repository is up-to-date with the Subversion repository. Next, use the command &#8216;git svn dcommit&#8217; to push all of your local Git commits back to the Subversion repository.</p>
+
+<pre><code>bucky:git_repo blair$ git svn dcommit
+Committing to file:///Users/blair/git-svn/SVNROOT/trunk ...
+	M	file1.c
+Committed r4
+	M	file1.c
+r4 = 31a4b40b05e1b42f34dd22c34936f43dd5be90ec (git-svn)
+No changes between current HEAD and refs/remotes/git-svn
+Resetting to the latest refs/remotes/git-svn</code></pre>
+
+<p>Now all of your local Git commits are present in the Subversion repository and you can continue hacking away locally.</p>
+
+<h3 id='rules_and_guidelines'>Rules and Guidelines</h3>
+
+<p>There are a few rules you should follow when using Git as a Subversion client. Many of these are due to the fact that Git is a much more capable system than Subversion and some of the Git features simply do not work in Subversion.</p>
+
+<ul>
+<li>
+<p>Do not dcommit Git merge commits to the Subversion repository. Subversion doesn&#8217;t handle merges in the same way as Git, and this will cause problems. This means you should keep your Git development history linear (i.e., no merging from other branches, just rebasing).</p>
+</li>
+
+<li>
+<p>Do not amend, reorder, or otherwise change commits that have been dcommited to Subversion. This is essentially the same rule as not changing Git commits that have been pushed to public repositories. Subversion cannot handle modifying or reordering commits.</p>
+</li>
+</ul><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
