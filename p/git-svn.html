@@ -80,7 +80,15 @@
 
 <p>This will create a new Git repository in the directory named &#8216;MyGitRepository&#8217;, populate the Git history with all Subversion commits to the trunk, and checkout the latest HEAD.</p>
 
-<p>Note that this operation <em>will</em> take longer than a corresponding &#8216;git clone&#8217; command, as the entire history for the Subversion repository in question must be downloaded, commit, by commit. For large projects, this process can take hours. Thus it&#8217;s best to execute this command only when you have some time to kill.</p><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
+<p>Note that this operation <em>will</em> take longer than a corresponding &#8216;git clone&#8217; command, as the entire history for the Subversion repository in question must be downloaded, commit, by commit. For large projects, this process can take hours. Thus it&#8217;s best to execute this command only when you have some time to kill.</p>
+
+<h3 id='synchronizing_with_upstream'>Synchronizing With Upstream</h3>
+
+<p>When using Subversion, you synchronize with upstream changes by running &#8216;svn update&#8217;, which pulls down all of the changes made to your Subversion branch and merges your working copy with those changes.</p>
+
+<p>With git-svn, you accomplish a similar task via the &#8216;git svn rebase&#8217; command. Note that this operation is similar, but not identical. Remember that, with a Subversion repository, you don&#8217;t have the concept of offline commits. So when &#8216;svn update&#8217; executes, all it does is pull down all of the commits from the Subversion repository, and replay the changes in your working copy.</p>
+
+<p>Under Git, you&#8217;ve likely been making a series of changes and committing them in nice small pieces (you <em>are</em> making regular commits, aren&#8217;t you?). So, when &#8216;git svn rebase&#8217; is executed, it rolls back all of your local commits, pulls down all of the commits from Subversion, and then <em>replays</em> your local commits as if you had made them on the current HEAD of the Subversion branch. This has much the same logical effect as &#8216;svn update&#8217; (all of your local changes are applied on top of the current Subversion HEAD), but may appear a little odd at first glance.</p><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">

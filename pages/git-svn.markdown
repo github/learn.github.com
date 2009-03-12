@@ -30,3 +30,11 @@ For example,
 This will create a new Git repository in the directory named 'MyGitRepository', populate the Git history with all Subversion commits to the trunk, and checkout the latest HEAD.
 
 Note that this operation _will_ take longer than a corresponding 'git clone' command, as the entire history for the Subversion repository in question must be downloaded, commit, by commit.  For large projects, this process can take hours.  Thus it's best to execute this command only when you have some time to kill.
+
+### Synchronizing With Upstream ###
+
+When using Subversion, you synchronize with upstream changes by running 'svn update', which pulls down all of the changes made to your Subversion branch and merges your working copy with those changes.
+
+With git-svn, you accomplish a similar task via the 'git svn rebase' command.  Note that this operation is similar, but not identical.  Remember that, with a Subversion repository, you don't have the concept of offline commits.  So when 'svn update' executes, all it does is pull down all of the commits from the Subversion repository, and replay the changes in your working copy.
+
+Under Git, you've likely been making a series of changes and committing them in nice small pieces (you _are_ making regular commits, aren't you?).  So, when 'git svn rebase' is executed, it rolls back all of your local commits, pulls down all of the commits from Subversion, and then _replays_ your local commits as if you had made them on the current HEAD of the Subversion branch.  This has much the same logical effect as 'svn update' (all of your local changes are applied on top of the current Subversion HEAD), but may appear a little odd at first glance.
