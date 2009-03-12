@@ -4,7 +4,7 @@ Generally, it is not going to be much different than working with any other
 source control system, the only real difference should be the staging process.
 The workflow will generally go something like this:
 
-* syncronize with upstream
+* synchronize with upstream
 * modify files
 * see what you've changed
 * stage the changes you want to commit
