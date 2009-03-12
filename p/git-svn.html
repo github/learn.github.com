@@ -46,49 +46,44 @@
 
 <p>Git and Subversion actually play fairly well together, provided you follow certain rules and guidelines. The &#8216;git svn&#8217; command provides two-way communication between a Git and Subversion repository. This guide provides a brief overview of the general Subversion to Git to Subversion workflow.</p>
 
-<h3 id='the_gitsvn_workflow'>The git-svn Workflow</h3>
-
-<p>As described earlier, the general Git workflow is as follows:</p>
-
-<ul>
-<li>synchronize with upstream</li>
-
-<li>modify files</li>
-
-<li>see what you&#8217;ve changed</li>
-
-<li>stage the changes you want to commit</li>
-
-<li>commit your staging area</li>
-
-<li>rinse, repeat</li>
-
-<li>push upstream</li>
-</ul>
-
-<p>We&#8217;ll address each of these actions, and how they are affected by git-svn, individually.</p>
-
 <h3 id='cloning_a_subversion_repository'>Cloning a Subversion Repository</h3>
 
-<p>The first step is to actually clone a Subversion repository using Git. In the most basic case, this is accomplished by executing the following:</p>
+<p>The first step is to actually clone a Subversion repository using Git. This is accomplished by executing the &#8216;git svn clone&#8217;:</p>
 
 <pre><code>$ git svn clone &lt;subversion-url&gt; ?optional-directory-name?</code></pre>
 
 <p>For example,</p>
 
-<pre><code>$ git svn clone svn://localhost/MyRepository/trunk MyGitRepository</code></pre>
+<pre><code>$ git svn clone file:///Users/blair/git-svn/SVNROOT git_repo
+Initialized empty Git repository in /Users/blair/git-svn/git_repo/.git/
+r1 = e1e2a18c6537614f2bebc5c0dfb4ac6f8c829a3b (git-svn)
+	A	file1.c
+	A	Makefile
+r2 = 58e044c16678b0a8b92e4dbed8f0a69d48ba9ec1 (git-svn)
+Checked out HEAD:
+  file:///Users/blair/git-svn/SVNROOT/trunk r2</code></pre>
 
-<p>This will create a new Git repository in the directory named &#8216;MyGitRepository&#8217;, populate the Git history with all Subversion commits to the trunk, and checkout the latest HEAD.</p>
+<p>As you can see, this creates a new Git repository in the directory named &#8216;MyGitRepository&#8217;, populates the Git history with all Subversion commits to the trunk, and checks out the latest HEAD.</p>
 
-<p>Note that this operation <em>will</em> take longer than a corresponding &#8216;git clone&#8217; command, as the entire history for the Subversion repository in question must be downloaded, commit, by commit. For large projects, this process can take hours. Thus it&#8217;s best to execute this command only when you have some time to kill.</p>
+<p>Note that this operation will generally take longer than a corresponding &#8216;git clone&#8217; command, as the entire history for the Subversion repository in question must be downloaded commit by commit. For large projects, this process can take hours. Thus it&#8217;s best to execute this command only when you have some time to kill.</p>
 
 <h3 id='synchronizing_with_upstream'>Synchronizing With Upstream</h3>
 
 <p>When using Subversion, you synchronize with upstream changes by running &#8216;svn update&#8217;, which pulls down all of the changes made to your Subversion branch and merges your working copy with those changes.</p>
 
-<p>With git-svn, you accomplish a similar task via the &#8216;git svn rebase&#8217; command. Note that this operation is similar, but not identical. Remember that, with a Subversion repository, you don&#8217;t have the concept of offline commits. So when &#8216;svn update&#8217; executes, all it does is pull down all of the commits from the Subversion repository, and replay the changes in your working copy.</p>
+<p>With git-svn, you accomplish a similar task via the &#8216;git svn rebase&#8217; command.</p>
 
-<p>Under Git, you&#8217;ve likely been making a series of changes and committing them in nice small pieces (you <em>are</em> making regular commits, aren&#8217;t you?). So, when &#8216;git svn rebase&#8217; is executed, it rolls back all of your local commits, pulls down all of the commits from Subversion, and then <em>replays</em> your local commits as if you had made them on the current HEAD of the Subversion branch. This has much the same logical effect as &#8216;svn update&#8217; (all of your local changes are applied on top of the current Subversion HEAD), but may appear a little odd at first glance.</p><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
+<pre><code>bucky:git_repo blair$ git svn rebase
+	M	Makefile
+r3 = ae409c2f5fe0831f22d6dc891652b5f9159f35de (git-svn)
+First, rewinding head to replay your work on top of it...
+Applying: Local git commit.</code></pre>
+
+<p>So what does this tell us? Well, first, you see a list of modified files. The next line informs us that revision 3 from Subversion is being stored as commit ae409c2 in our local Git repository. No problems thus far. But, what about that line informing us Git is rewinding and replaying our work? Well, this is where &#8216;svn update&#8217; and &#8216;git svn rebase&#8217; differ slightly.</p>
+
+<p>Remember that, with a Subversion repository, you don&#8217;t have the concept of offline commits. So when &#8216;svn update&#8217; executes, all it does is pull down all of the commits from the Subversion repository, and replay the changes in your working copy.</p>
+
+<p>Under Git, you&#8217;ve likely been making a series of changes and committing them in nice small pieces (you <em>are</em> making regular commits, aren&#8217;t you?). So, when &#8216;git svn rebase&#8217; is executed, it rolls back all of your local commits, pulls down all of the commits from Subversion, and then <em>reapplies</em> your local commits as if you had made them on the current HEAD of the Subversion branch. This has much the same logical effect as &#8216;svn update&#8217; (all of your local changes are applied on top of the current Subversion HEAD), but may appear a little odd at first glance.</p><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
