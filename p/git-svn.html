@@ -42,7 +42,45 @@
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
+      <div class="span-21"><hr/><p>Does your IT staff mandate Subversion but you want to work in Git? Hack on an open-source project that hasn&#8217;t yet moved beyond Subversion? Then git-svn, and by extension, this lesson, are for you.</p>
+
+<p>Git and Subversion actually play fairly well together, provided you follow certain rules and guidelines. The &#8216;git svn&#8217; command provides two-way communication between a Git and Subversion repository. This guide provides a brief overview of the general Subversion to Git to Subversion workflow.</p>
+
+<h3 id='the_gitsvn_workflow'>The git-svn Workflow</h3>
+
+<p>As described earlier, the general Git workflow is as follows:</p>
+
+<ul>
+<li>synchronize with upstream</li>
+
+<li>modify files</li>
+
+<li>see what you&#8217;ve changed</li>
+
+<li>stage the changes you want to commit</li>
+
+<li>commit your staging area</li>
+
+<li>rinse, repeat</li>
+
+<li>push upstream</li>
+</ul>
+
+<p>We&#8217;ll address each of these actions, and how they are affected by git-svn, individually.</p>
+
+<h3 id='cloning_a_subversion_repository'>Cloning a Subversion Repository</h3>
+
+<p>The first step is to actually clone a Subversion repository using Git. In the most basic case, this is accomplished by executing the following:</p>
+
+<pre><code>$ git svn clone &lt;subversion-url&gt; ?optional-directory-name?</code></pre>
+
+<p>For example,</p>
+
+<pre><code>$ git svn clone svn://localhost/MyRepository/trunk MyGitRepository</code></pre>
+
+<p>This will create a new Git repository in the directory named &#8216;MyGitRepository&#8217;, populate the Git history with all Subversion commits to the trunk, and checkout the latest HEAD.</p>
+
+<p>Note that this operation <em>will</em> take longer than a corresponding &#8216;git clone&#8217; command, as the entire history for the Subversion repository in question must be downloaded, commit, by commit. For large projects, this process can take hours. Thus it&#8217;s best to execute this command only when you have some time to kill.</p><br/><br/><hr/></div><div class="span-10"><a href="undoing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
