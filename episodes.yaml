@@ -123,6 +123,7 @@ episodes:
               on Windows.
 
       - name: Git and Subversion
+        page: git-svn
         desc: Using the git-svn client with a Subversion server.  Specifically
               for existing SVN users, how Git is a better Subversion client
               than Subversion.
