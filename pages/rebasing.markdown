@@ -89,7 +89,7 @@ our results from the field and it is concluded that the 'server' changes are
 working well and should be rolled in.  We can either merge in the 'server'
 branch or we can rebase it in.
 
-The we can rebase the server branch onto the master branch without having to 
+Then we can rebase the server branch onto the master branch without having to 
 check it out first by running 'git rebase (base branch) (work branch)' - which
 will check out the _work branch_ (server) for you and replay it onto 
 the _base branch_ (master).  
