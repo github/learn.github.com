@@ -1,6 +1,6 @@
 In Git, there are two main ways to integrate changes from one branch into
 another - the 'merge' and the 'rebase'.  In this section we will learn what
-'rebasing' is, how to do it and in what cases it may not be a good idea to.
+'rebasing' is, how to do it and in what cases it may not be a good idea to do.
 
 ### the basic rebase ###
 
