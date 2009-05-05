@@ -179,7 +179,7 @@ history look something like this.
 
 ![Branch Step 6](../images/branch/step6.png)
 
-Since Git does it's merges as a simple 3 way merge based on the commit history
+Since Git does its merges as a simple 3 way merge based on the commit history
 snapshots, doing multiple merges is often very easy.  It will only have to 
 merge in changes introduced on both branches since the last merge - it will not
 have to re-merge anything.
