@@ -51,7 +51,7 @@ the GNU General Public License.
 
 Git is fully distributed, which means that it can work almost entirely offline.
 In stark contrast to VCS tools like Perforce or Subversion, Git does nearly all
-of it's operations without needing a network connection, including history
+of its operations without needing a network connection, including history
 viewing, difference viewing and commiting.
 
 This also means that Git is very fast compared to those systems partially due
