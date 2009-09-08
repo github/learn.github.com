@@ -38,7 +38,7 @@
     
     <div class="span-21" id="welcome">
       <h1>Basic Branching and Merging</h1>
-      <p>Create and work on topic and long running branches, merge between them and delete them.</p>
+      <p>Create and work on topic and long running branches, merge between them and delete them.</p>
     </div>
     
     <div class="content">
@@ -53,7 +53,7 @@
 
 <p>We can see that we only have one branch &#8216;master&#8217; and the &#8217;*&#8217; indicates that we are currently on it. For the purposes of illustrating this, I will show the commit history model. Here, the green boxes are each commit and the arrows are where each commit points to for its parent or parents. This is basically how Git actually stores it&#8217;s commit data.</p>
 
-<p><img src='../images/branch/step1.png' alt='Branch Step 1' /></p>
+<p><img alt='Branch Step 1' src='../images/branch/step1.png' /></p>
 
 <p>You can see, in Git, branches are simply lightweight pointers to a particular commit. The history is simply figured out by traversing the parents, one commit at a time.</p>
 
@@ -63,7 +63,7 @@
 
 <pre><code>$ git branch experiment</code></pre>
 
-<p><img src='../images/branch/step2.png' alt='Branch Step 2' /></p>
+<p><img alt='Branch Step 2' src='../images/branch/step2.png' /></p>
 
 <p>To switch to that branch so that the work we do is saved to it instead of the &#8216;master&#8217; branch, we run the &#8216;git checkout&#8217; command&#8217;</p>
 
@@ -87,7 +87,7 @@ $ git commit -am &#39;added a todo and added simplegit functions&#39;
  2 files changed, 10 insertions(+), 0 deletions(-)
  create mode 100644 TODO</code></pre>
 
-<p><img src='../images/branch/step3.png' alt='Branch Step 3' /></p>
+<p><img alt='Branch Step 3' src='../images/branch/step3.png' /></p>
 
 <p>Now if we take a look, we can see that we have 3 files and one subdirectory.</p>
 
@@ -112,7 +112,7 @@ Switched to branch &quot;experiment&quot;
 $ ls
 README		Rakefile	TODO		lib</code></pre>
 
-<p><img src='../images/branch/step4.png' alt='Branch Step 4' /></p>
+<p><img alt='Branch Step 4' src='../images/branch/step4.png' /></p>
 
 <p>We could even go back to the master branch and create a new branch and start committing there. Most Git developers will have several branches running at the same time, each with a specific theme or focus - a new feature or bug fix that lasts hours or even minutes, or longer running branches for large scale refactorings that periodically merge in changes from mainline branches.</p>
 
@@ -136,7 +136,7 @@ Merge made by recursive.
 
 <p>Easy peasy - you&#8217;re merged.</p>
 
-<p><img src='../images/branch/step5.png' alt='Branch Step 5' /></p>
+<p><img alt='Branch Step 5' src='../images/branch/step5.png' /></p>
 
 <h3 id='merge_conflict_resolution'>merge conflict resolution</h3>
 
@@ -170,7 +170,7 @@ $ git commit
 
 <p>For example, let&#8217;s say we switched back to the &#8216;experiment&#8217; branch, made a few changes, then at some point merged it back into &#8216;master&#8217; again, making our history look something like this.</p>
 
-<p><img src='../images/branch/step6.png' alt='Branch Step 6' /></p>
+<p><img alt='Branch Step 6' src='../images/branch/step6.png' /></p>
 
 <p>Since Git does it&#8217;s merges as a simple 3 way merge based on the commit history snapshots, doing multiple merges is often very easy. It will only have to merge in changes introduced on both branches since the last merge - it will not have to re-merge anything.</p>
 

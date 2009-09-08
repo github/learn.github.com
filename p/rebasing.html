@@ -48,11 +48,11 @@
 
 <p>If we go back to an earlier example from the Merge chapter, we can see that we diverged our work and made commits on two different branches.</p>
 
-<p><img src='../images/rebase/step1.png' alt='Rebase Step 1' /></p>
+<p><img alt='Rebase Step 1' src='../images/rebase/step1.png' /></p>
 
 <p>The easiest way to integrate them, which we&#8217;ve already covered, is the <em>merge</em> command. This performs a 3-way merge between the two latest branch snapshots (C3 and C4) and the most recent common ancestor of the two (C2), creating a new snapshot (and commit).</p>
 
-<p><img src='../images/rebase/step2.png' alt='Rebase Step 2' /></p>
+<p><img alt='Rebase Step 2' src='../images/rebase/step2.png' /></p>
 
 <p>However, there is another way, which is to take the patch that was introduced in C3 and re-apply it on top of C4. In Git, this is called <em>rebasing</em> - with the &#8216;rebase&#8217; command, you can take all of the changes that were committed on one branch and replay them on another one.</p>
 
@@ -65,11 +65,11 @@ Applying: added staged command</code></pre>
 
 <p>It works by going to the common ancestor of the two branches (the one you are on and the one you are rebasing onto), getting the diff introduced by each commit of the branch you are on, saving them to temporary files, then moving the branch over to the rebasing branch and applying each change in turn.</p>
 
-<p><img src='../images/rebase/step3.png' alt='Rebase Step 3' /></p>
+<p><img alt='Rebase Step 3' src='../images/rebase/step3.png' /></p>
 
 <p>At this point, you can go back to the master branch and do a fast-forward merge.</p>
 
-<p><img src='../images/rebase/step4.png' alt='Rebase Step 4' /></p>
+<p><img alt='Rebase Step 4' src='../images/rebase/step4.png' /></p>
 
 <p>Now the snapshot pointed to by C3&#8217; is exactly the same as the one that was pointed to by C5 in the &#8216;merge&#8217; example, so there is not really any difference in the end product of the integration, but it does make for a cleaner history.</p>
 
@@ -81,7 +81,7 @@ Applying: added staged command</code></pre>
 
 <p>You can also have your rebase replay on something other than the rebase branch. Let&#8217;s take a history like this, for example. We branched a topic branch (&#8216;server&#8217;), say to add some server-side functionality to our project and made a few commits. Then we branched off of that to make the client side changes (&#8216;client&#8217;) and committed a few times.</p>
 
-<p><img src='../images/rebase/onto1.png' alt='Rebase Onto Step 1' /></p>
+<p><img alt='Rebase Onto Step 1' src='../images/rebase/onto1.png' /></p>
 
 <p>Then we decide that we want to merge our client side changes into our mainline for a release but we want to hold off on the server side changes until it is further tested. We can take the changes on &#8216;client&#8217; that are not on &#8216;server&#8217; and replay them on our master branch by using the <strong>&#8211;onto</strong> option to &#8216;git rebase&#8217;.</p>
 
@@ -89,14 +89,14 @@ Applying: added staged command</code></pre>
 
 <p>This basically says &#8220;checkout the &#8216;client&#8217; branch, figure out the patches from the common ancestor of it and the &#8216;server&#8217; branch, then replay them onto master&#8221;. A bit complex, but the result is pretty cool.</p>
 
-<p><img src='../images/rebase/onto2.png' alt='Rebase Onto Step 2' /></p>
+<p><img alt='Rebase Onto Step 2' src='../images/rebase/onto2.png' /></p>
 
 <p>Now we can simply fast-forward our master branch.</p>
 
 <pre><code>$ git checkout master
 $ git merge client</code></pre>
 
-<p><img src='../images/rebase/onto3.png' alt='Rebase Onto Step 3' /></p>
+<p><img alt='Rebase Onto Step 3' src='../images/rebase/onto3.png' /></p>
 
 <p>Boom. We roll the release out off of our &#8216;master&#8217; branch. A bit later we get our results from the field and it is concluded that the &#8216;server&#8217; changes are working well and should be rolled in. We can either merge in the &#8216;server&#8217; branch or we can rebase it in.</p>
 
@@ -104,7 +104,7 @@ $ git merge client</code></pre>
 
 <pre><code>$ git rebase master server</code></pre>
 
-<p><img src='../images/rebase/onto4.png' alt='Rebase Onto Step 4' /></p>
+<p><img alt='Rebase Onto Step 4' src='../images/rebase/onto4.png' /></p>
 
 <p>Then you can just fast forward the <em>base branch</em> (master).</p>
 
@@ -116,7 +116,7 @@ $ git merge server</code></pre>
 <pre><code>$ git branch -d client
 $ git branch -d server</code></pre>
 
-<p><img src='../images/rebase/onto5.png' alt='Rebase Onto Step 5' /></p>
+<p><img alt='Rebase Onto Step 5' src='../images/rebase/onto5.png' /></p>
 
 <h3 id='the_perils_of_rebasing'>the perils of rebasing</h3>
 

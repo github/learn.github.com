@@ -19,7 +19,7 @@ For example,
 	Checked out HEAD:
 	  file:///Users/blair/git-svn/SVNROOT/trunk r2
 	
-As you can see, this creates a new Git repository in the directory named 'MyGitRepository', populates the Git history with all Subversion commits to the trunk, and checks out the latest HEAD.
+As you can see, this creates a new Git repository in the directory named 'git_repo', populates the Git history with all Subversion commits to the trunk, and checks out the latest HEAD.
 
 Note that this operation will generally take longer than a corresponding 'git clone' command, as the entire history for the Subversion repository in question must be downloaded commit by commit.  For large projects, this process can take hours.  Thus it's best to execute this command only when you have some time to kill.
 

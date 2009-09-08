@@ -132,43 +132,43 @@ a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
 
 <p>and you want to completely throw away the top two commits. All you have to do is reset your current branch to the sha of the commit you want to rewind to. In this case, the &#8216;beginning write support&#8217; or &#8216;a6b4c974&#8217;.</p>
 
-<p><img src='../images/undo/step1.png' alt='Reset 1' /></p>
+<p><img alt='Reset 1' src='../images/undo/step1.png' /></p>
 
 <pre><code>$ git reset --hard a6b4c974
 HEAD is now at a6b4c97 beginning write support</code></pre>
 
-<p><img src='../images/undo/step2.png' alt='Reset 2' /></p>
+<p><img alt='Reset 2' src='../images/undo/step2.png' /></p>
 
 <p>So, whatever branch we were on (in this case, &#8216;master&#8217;), is now pointing at our older commit, and commits we do from that point forward will move forward from there, leaving the ones we rewound past behind.</p>
 
-<p><img src='../images/undo/step3.png' alt='Reset 3' /></p>
+<p><img alt='Reset 3' src='../images/undo/step3.png' /></p>
 
 <h3 id='breaking_work_into_a_topic_branch'>breaking work into a topic branch</h3>
 
 <p>You can also use the &#8217;&#8211;hard&#8217; option for good. Let&#8217;s say you did a couple of commits on your &#8216;master&#8217; branch that after you&#8217;ve committed them you decide should really have been on a topic branch. How do we move those commits to a topic branch? Turns out it&#8217;s pretty easy, actually - you just create the branch where you are, then move the &#8216;master&#8217; pointer back to where you should have left it. Let&#8217;s do the same example, but this time leave our commits in a topic branch for later.</p>
 
-<p><img src='../images/undo/step1.png' alt='Reset 1' /></p>
+<p><img alt='Reset 1' src='../images/undo/step1.png' /></p>
 
 <p>First, we drop a &#8216;bookmark&#8217; where we are. This is generally a useful idea - if you&#8217;re going to try something you are not sure is going to work, just create a branch where you are, so you can always get back to there.</p>
 
 <pre><code>$ git branch test</code></pre>
 
-<p><img src='../images/undo/topic2.png' alt='Reset Topic 2' /></p>
+<p><img alt='Reset Topic 2' src='../images/undo/topic2.png' /></p>
 
 <p>Now we have a branch at the point we were and can move around the &#8216;master&#8217; branch with the &#8216;reset&#8217; command. Let&#8217;s do our reset to the older commit.</p>
 
 <pre><code>$ git reset --hard a6b4c974
 HEAD is now at a6b4c97 beginning write support</code></pre>
 
-<p><img src='../images/undo/topic3.png' alt='Reset Topic 3' /></p>
+<p><img alt='Reset Topic 3' src='../images/undo/topic3.png' /></p>
 
 <p>Now we can start working again and our master branch will move forward as if we had branched seperately from our &#8216;test&#8217; branch originally.</p>
 
 <pre><code>$ git commit</code></pre>
 
-<p><img src='../images/undo/topic4.png' alt='Reset Topic 4' /></p>
+<p><img alt='Reset Topic 4' src='../images/undo/topic4.png' /></p>
 
-<p>And now our commits are tucked away in a branch that we can come back to later if we want to.</p><br/><br/><hr/></div><div class="span-10"><a href="rebasing.html">&laquo; previous</a></div><div class="span-21 last">&nbsp;</div><hr/>
+<p>And now our commits are tucked away in a branch that we can come back to later if we want to.</p><br/><br/><hr/></div><div class="span-10"><a href="rebasing.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="git-svn.html">next &raquo;</a></div><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
