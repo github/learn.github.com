@@ -100,7 +100,7 @@ $ git merge client</code></pre>
 
 <p>Boom. We roll the release out off of our &#8216;master&#8217; branch. A bit later we get our results from the field and it is concluded that the &#8216;server&#8217; changes are working well and should be rolled in. We can either merge in the &#8216;server&#8217; branch or we can rebase it in.</p>
 
-<p>The we can rebase the server branch onto the master branch without having to check it out first by running &#8216;git rebase (base branch) (work branch)&#8217; - which will check out the <em>work branch</em> (server) for you and replay it onto the <em>base branch</em> (master).</p>
+<p>Then we can rebase the server branch onto the master branch without having to check it out first by running &#8216;git rebase (base branch) (work branch)&#8217; - which will check out the <em>work branch</em> (server) for you and replay it onto the <em>base branch</em> (master).</p>
 
 <pre><code>$ git rebase master server</code></pre>
 
