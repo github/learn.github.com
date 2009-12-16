@@ -2,7 +2,7 @@ As we touched on in the first lesson, the way that Git handles branching and
 merging is pretty unique.  First of all, it's incredibly fast, both to create
 new branches and to switch between them. Git has a single working directory 
 that it replaces with the contents of the branch you're working on, so you 
-don't have to have seperate directories for each branch.
+don't have to have separate directories for each branch.
 
 In this lesson, we'll create a new branch, do a bit of work, switch back to
 our stable branch (generally called 'master' in Git by default), do some work
@@ -19,7 +19,7 @@ We can see that we only have one branch 'master' and the '\*' indicates that we
 are currently on it.  For the purposes of illustrating this, I will show the
 commit history model.  Here, the green boxes are each commit and the arrows
 are where each commit points to for its parent or parents.  This is basically
-how Git actually stores it's commit data.
+how Git actually stores its commit data.
 
 ![Branch Step 1](../images/branch/step1.png)
 
@@ -179,7 +179,7 @@ history look something like this.
 
 ![Branch Step 6](../images/branch/step6.png)
 
-Since Git does it's merges as a simple 3 way merge based on the commit history
+Since Git does its merges as a simple 3 way merge based on the commit history
 snapshots, doing multiple merges is often very easy.  It will only have to 
 merge in changes introduced on both branches since the last merge - it will not
 have to re-merge anything.

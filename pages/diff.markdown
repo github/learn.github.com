@@ -1,6 +1,6 @@
 We saw in the 'log' section that adding a '-p' will show you the differences
 that each commit introduces by showing [diff](http://en.wikipedia.org/wiki/Diff)
-of the snapshots of each commit and it's parent.
+of the snapshots of each commit and its parent.
 
 The 'diff' command in Git will show you the same thing - the changes between
 two snapshots or files in unified diff format.  This section will show you 

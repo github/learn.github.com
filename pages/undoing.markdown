@@ -7,7 +7,7 @@ Git.
 ### unstaging files ###
 
 Here we've staged changes to both our REAME and simplegit.rb files, but then
-we decide that we want the changes to be two seperate commits.  So, we need to
+we decide that we want the changes to be two separate commits.  So, we need to
 unstage one, do a commit, then stage it again and do our second commit.  Luckily,
 Git reminds you how to do this right in the 'git status' command output.
 
@@ -154,7 +154,7 @@ branch with the 'reset' command.  Let's do our reset to the older commit.
 ![Reset Topic 3](../images/undo/topic3.png)
 
 Now we can start working again and our master branch will move forward as
-if we had branched seperately from our 'test' branch originally.
+if we had branched separately from our 'test' branch originally.
 
 	$ git commit
 

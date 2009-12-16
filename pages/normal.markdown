@@ -91,7 +91,7 @@ since the last time you pulled, and Git will merge in the new changes.
 
 Now you can update your files like we did in the previous section.  However, 
 now let's imagine that we wanted to commit the changes we've made in two
-seperate commits.  We can see what has been changed in our working directory
+separate commits.  We can see what has been changed in our working directory
 by using the 'git status' command.
 
 	$ git status
