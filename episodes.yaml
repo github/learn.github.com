@@ -17,7 +17,7 @@ episodes:
 
       - name: Normal Workflow
         page: normal
-        desc: Syncronize with a remote repository, make changes, 
+        desc: Synchronize with a remote repository, make changes, 
               then stage and commit them. 
 
       - name: Basic Branching and Merging
@@ -27,7 +27,7 @@ episodes:
 
       - name: Git Tagging
         page: tagging
-        desc: Create signed, unsigned or lightweight tags to permanantly
+        desc: Create signed, unsigned or lightweight tags to permanently
               mark important points in your project history.
         
       - name: Git Log
