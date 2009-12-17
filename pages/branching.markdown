@@ -72,7 +72,7 @@ Now if we take a look, we can see that we have 3 files and one subdirectory.
 
 So, let's now suppose that we need to go back and make a bugfix on our original
 verison of the simplegit.rb file.  We can revert back to where our project 
-was before we branched with the 'checkout command.
+was before we branched with the 'checkout' command.
 
 	$ git checkout master
 	Switched to branch "master"
