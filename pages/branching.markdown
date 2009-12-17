@@ -52,7 +52,7 @@ that we know works perfectly.  We don't have to share the changes we make in our
 
 ### working in multiple branches ###
 
-So, lets add a TODO file, make a change to the 'simplegit.rb' file, and then
+So, let's add a TODO file, make a change to the 'simplegit.rb' file, and then
 make a commit with both changes in it.
 
 	$ vim lib/simplegit.rb

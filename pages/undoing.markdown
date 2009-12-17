@@ -22,7 +22,7 @@ Git reminds you how to do this right in the 'git status' command output.
 
 If you ever forget how to unstage a file, just run the 'git status' command
 to remind yourself with the _(use "git reset HEAD (file)..." to unstage)_
-text.  So lets use that to unstage the README file.
+text.  So let's use that to unstage the README file.
 
 	$ git reset HEAD README 
 	README: locally modified
@@ -57,7 +57,7 @@ A bit nicer, yes?
 	
 ### unmodifying files ###
 
-Now, lets say that we want to completely throw away the changes we made to 
+Now, let's say that we want to completely throw away the changes we made to 
 the README file altogether.  **Be careful - this is almost never a great idea
 and there is no way to get changes back if you do this!**  Things you commit
 are almost always recoverable, but if you throw them away before you commit,
@@ -93,7 +93,7 @@ only recourse is weeping upon your pillow.
 
 Another powerful and easily destructive tool is the 'reset --hard' command.
 This will forcefully replace your staging area and working directory with
-an older version and move your current branch there.  So, lets say you did
+an older version and move your current branch there.  So, let's say you did
 a couple of commits and then completely change your mind and want to just
 wipe them away.
 
