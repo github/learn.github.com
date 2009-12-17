@@ -1,4 +1,4 @@
-So you have a Git repository and everything is all setup.  What now?
+So you have a Git repository and everything is all set up.  What now?
 
 Generally, it is not going to be much different than working with any other
 source control system, the only real difference should be the staging process.
