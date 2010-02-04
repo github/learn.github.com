@@ -57,7 +57,7 @@ make a commit with both changes in it.
 
 	$ vim lib/simplegit.rb
 	$ vim TODO
-	$ git add TODO
+	$ git add TODO lib/simplegit.rb
 	$ git commit -am 'added a todo and added simplegit functions'
 	[experiment]: created 4682c32: "added a todo and added simplegit functions"
 	 2 files changed, 10 insertions(+), 0 deletions(-)
@@ -146,8 +146,8 @@ If you get a merge conflict, you'll see something like this instead.
 	Automatic merge failed; fix conflicts and then commit the result.
 
 In this case it will tell you the files that did not merge cleanly, and you
-can simply resolve the conflicts manually.  If I open up the file it says
-failed, I'll see normal merge conflict markers in it.
+can simply resolve the conflicts manually.  If you open up the file it says
+failed, you'll see normal merge conflict markers in it.
 
 	<<<<<<< HEAD:lib/simplegit.rb
 	  def commit(message)
@@ -170,7 +170,7 @@ to re-stage it, which marks it as resolved.  Then commit the merge.
 I point this out because it's something that is generally difficult to do in
 some other VCSs, but is very easy in Git.  That is, merging from a branch, then 
 continuing to do work in it and merging again.  This is often the case if you
-have a 'development' branch that you do integration testing and merge experimental
+have a 'development' branch that you do integration testing on and merge experimental
 changes into and then periodically merge it into your stable 'master' branch.
 
 For example, let's say we switched back to the 'experiment' branch, made a few
@@ -189,11 +189,11 @@ can simply delete it with 'git branch -d'
 
 	$ git branch -d experiment
 
-If the branch has not been merged in at some point, in which case deleting the
-branch would lose changes, Git will not allow you to do it.  If you _want_ to 
-lose the changes, simply use the '-D' flag instead - that will force the
-deletion.
-	
+This works if the branch has not been merged in to a remaining branch at some point, 
+in which case deleting the branch would lose changes, and Git will not allow you to 
+delete the branch.  If you _want_ to lose the changes, simply use the '-D' flag instead, 
+this will force a deletion.
+
 So, that is basic branching and merging in Git and should give you a good
 baseline for being able to effectively use this powerful and ultimately pretty
 simple tool.
