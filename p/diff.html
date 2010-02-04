@@ -171,7 +171,7 @@ index 548142c..5fa41b7 100644
 
 <p>That would give you a big diff of all the changes between the two snapshots that those two commits point to, as if they were both constituted in two directories and you ran the unix &#8216;diff&#8217; tool on them.</p>
 
-<p>You can also use some of the formatting options that you can pass to &#8216;log&#8217;, such as <strong>&#8211;stat</strong>. If I wanted to see an overview of what all changed between version 1.6.1.1 and 1.6.1.2 in the Git project, I could run this:</p>
+<p>You can also use some of the formatting options that you can pass to &#8216;log&#8217;, such as <code>--stat</code>. If I wanted to see an overview of what all changed between version 1.6.1.1 and 1.6.1.2 in the Git project, I could run this:</p>
 
 <pre><code>$ git diff v1.6.1.1 v1.6.1.2 --stat
  Documentation/RelNotes-1.6.1.2.txt |   39 +++++++++++++

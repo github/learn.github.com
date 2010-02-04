@@ -83,7 +83,7 @@ Applying: added staged command</code></pre>
 
 <p><img src='../images/rebase/onto1.png' alt='Rebase Onto Step 1' /></p>
 
-<p>Then we decide that we want to merge our client side changes into our mainline for a release but we want to hold off on the server side changes until it is further tested. We can take the changes on &#8216;client&#8217; that are not on &#8216;server&#8217; and replay them on our master branch by using the <strong>&#8211;onto</strong> option to &#8216;git rebase&#8217;.</p>
+<p>Then we decide that we want to merge our client side changes into our mainline for a release but we want to hold off on the server side changes until it is further tested. We can take the changes on &#8216;client&#8217; that are not on &#8216;server&#8217; and replay them on our master branch by using the <code>--onto</code> option to &#8216;git rebase&#8217;.</p>
 
 <pre><code>$ git rebase --onto master server client</code></pre>
 

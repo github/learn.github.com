@@ -134,7 +134,7 @@ index dd6b7b3..e7dfaa9 100644
 
 <h4 id='viewing_statistics'>Viewing Statistics</h4>
 
-<p>You can view statistics about which files have changed and how many lines were added and removed from each file by adding the <strong>&#8211;stat</strong> option.</p>
+<p>You can view statistics about which files have changed and how many lines were added and removed from each file by adding the <code>--stat</code> option.</p>
 
 <pre><code>$ git log --stat
 commit 0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc
@@ -157,7 +157,7 @@ Date:   Sun Feb 8 16:50:43 2009 -0800
 
 <h4 id='preset_formats'>Preset Formats</h4>
 
-<p>There are a couple of other preset formats you can use to view your commit history which you can trigger with the <strong>&#8211;pretty</strong> option. You can specify one of : oneline, short, medium, full, fuller, email, or raw. They are somewhat self-explanatory in how much information they show. For example, &#8216;raw&#8217; looks like this:</p>
+<p>There are a couple of other preset formats you can use to view your commit history which you can trigger with the <code>--pretty</code> option. You can specify one of : oneline, short, medium, full, fuller, email, or raw. They are somewhat self-explanatory in how much information they show. For example, &#8216;raw&#8217; looks like this:</p>
 
 <pre><code>$ git log --pretty=raw
 commit 0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc
@@ -210,7 +210,7 @@ The title was &gt;&gt;updated readme&lt;&lt;</code></pre>
 
 <h4 id='branch_graph'>Branch Graph</h4>
 
-<p>One of the more interesting command line output options for log is <strong>&#8211;graph</strong>. If you combine it with <strong>&#8211;pretty=oneline</strong> you can very effectively visualize your commit history and branch topology.</p>
+<p>One of the more interesting command line output options for log is <code>--graph</code>. If you combine it with <strong>&#8211;pretty=oneline</strong> you can very effectively visualize your commit history and branch topology.</p>
 
 <pre><code>$ git log --pretty=oneline --graph
 *   15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch &#39;experiment&#39;
@@ -237,7 +237,7 @@ The title was &gt;&gt;updated readme&lt;&lt;</code></pre>
 
 <h4 id='date_ranges'>Date Ranges</h4>
 
-<p>The log command will take <strong>&#8211;before</strong> and <strong>&#8211;after</strong> commands that restrict the commits shown to ones that are older or newer than those dates, respectively. You can specify several different date formats, including relative dates. For example, if I wanted to see commits to the Git project that happened between Jan 26 and two weeks ago, I can run:</p>
+<p>The log command will take <code>--before</code> and <code>--after</code> commands that restrict the commits shown to ones that are older or newer than those dates, respectively. You can specify several different date formats, including relative dates. For example, if I wanted to see commits to the Git project that happened between Jan 26 and two weeks ago, I can run:</p>
 
 <pre><code>$ git log --before=&quot;2 weeks ago&quot; --after=&quot;2009-01-26&quot; --pretty=oneline
 dfb047b9e4f7f66c5322ef642f21fd92b0a975e3 Mention &quot;local convention&quot; rule in t
@@ -253,7 +253,7 @@ dfb047b9e4f7f66c5322ef642f21fd92b0a975e3 Mention &quot;local convention&quot; ru
 
 <p>Git also allows you to filter the shown commits to only those that were created by certain individuals. There are actually two people recorded in the commit object - one is the <em>author</em>, which is the person who originally made the commit. The second is the <em>committer</em>, which is the person who applied it to that repo. This is often the same, but under some circumstances they differ - for instance, if a patch was sent over email - the author would be the person who wrote the patch, the committer would be the project maintainer that applied it.</p>
 
-<p>Most of the time when you&#8217;re searching, you&#8217;re probably looking for the author, but you can search for either with the <strong>&#8211;author</strong> and <strong>&#8211;committer</strong> log options. For instance, here we can look through the Git source history for all the commits in the last 2 weeks that Johannes Schindelin authored.</p>
+<p>Most of the time when you&#8217;re searching, you&#8217;re probably looking for the author, but you can search for either with the <code>--author</code> and <code>--committer</code> log options. For instance, here we can look through the Git source history for all the commits in the last 2 weeks that Johannes Schindelin authored.</p>
 
 <pre><code>$ git log --author=johannes.schindelin --since=&quot;14 days ago&quot; --pretty=oneline
 26be15f09db15d2b53a13d0f184d77fb54367f33 filter-branch: do not consider diver
@@ -289,7 +289,7 @@ $ git log --author=gmail --pretty=format:&quot;%ae&quot; | sort -u | wc -l
 
 <h4 id='search_commit_messages'>Search Commit Messages</h4>
 
-<p>If we&#8217;re more interested in the commit message than the author, we can search for a specific phrase in the message with the <strong>&#8211;grep</strong> option. For instance, if we wanted to see all the commits in the Git commit history that referenced C90 C compilers, we could search for &#8216;C90&#8217;:</p>
+<p>If we&#8217;re more interested in the commit message than the author, we can search for a specific phrase in the message with the <code>--grep</code> option. For instance, if we wanted to see all the commits in the Git commit history that referenced C90 C compilers, we could search for &#8216;C90&#8217;:</p>
 
 <pre><code>$ git log --grep=&#39;C90&#39; --pretty=oneline
 8ff8eea016f27d22d0264b140843470c7f14e004 Merge branch &#39;jc/revlist&#39; into next
@@ -326,7 +326,7 @@ faa4bc35a05ddb1822f3770cd8c51859e3b929ee http-push: add regression tests</code><
 
 <h4 id='other_useful_options'>Other Useful Options</h4>
 
-<p>Many times you won&#8217;t want to see merge commits in these results, so you can filter them out by adding the <strong>&#8211;no-merges</strong> option.</p>
+<p>Many times you won&#8217;t want to see merge commits in these results, so you can filter them out by adding the <code>--no-merges</code> option.</p>
 
 <pre><code>$ git log --grep=&#39;C90&#39; --pretty=oneline --no-merges
 8c9e7947c2a76fb21bda11816c544d50e271156d http-push.c: squelch C90 warnings.
