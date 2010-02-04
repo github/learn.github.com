@@ -72,7 +72,7 @@ Git and in Subversion.
 	sys	0m0.168s
 	
 Git at 0.3 seconds vs Subversion at 3.7 seconds. That is a difference of a 
-full order of magnatude.  You'll find similar 
+full order of magnitude.  You'll find similar 
 differences with nearly any command comparison.  For example, adding the popular
 famfamfam icon set and committing them.  Since you can seperate the commit from the
 network 'push' in Git, this action takes a quarter of a second in Git, but 45 seconds
