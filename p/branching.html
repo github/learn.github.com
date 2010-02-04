@@ -42,7 +42,7 @@
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><p>As we touched on in the first lesson, the way that Git handles branching and merging is pretty unique. First of all, it&#8217;s incredibly fast, both to create new branches and to switch between them. Git has a single working directory that it replaces with the contents of the branch you&#8217;re working on, so you don&#8217;t have to have seperate directories for each branch.</p>
+      <div class="span-21"><hr/><p>As we touched on in the first lesson, the way that Git handles branching and merging is pretty unique. First of all, it&#8217;s incredibly fast, both to create new branches and to switch between them. Git has a single working directory that it replaces with the contents of the branch you&#8217;re working on, so you don&#8217;t have to have separate directories for each branch.</p>
 
 <p>In this lesson, we&#8217;ll create a new branch, do a bit of work, switch back to our stable branch (generally called &#8216;master&#8217; in Git by default), do some work there, switch back to our temporary branch to complete our work, and then merge it into our stable branch.</p>
 
@@ -51,7 +51,7 @@
 <pre><code>$ git branch
 * master</code></pre>
 
-<p>We can see that we only have one branch &#8216;master&#8217; and the &#8217;*&#8217; indicates that we are currently on it. For the purposes of illustrating this, I will show the commit history model. Here, the green boxes are each commit and the arrows are where each commit points to for its parent or parents. This is basically how Git actually stores it&#8217;s commit data.</p>
+<p>We can see that we only have one branch &#8216;master&#8217; and the &#8217;*&#8217; indicates that we are currently on it. For the purposes of illustrating this, I will show the commit history model. Here, the green boxes are each commit and the arrows are where each commit points to for its parent or parents. This is basically how Git actually stores its commit data.</p>
 
 <p><img src='../images/branch/step1.png' alt='Branch Step 1' /></p>
 
@@ -77,7 +77,7 @@ $ git branch
 
 <h3 id='working_in_multiple_branches'>working in multiple branches</h3>
 
-<p>So, lets add a TODO file, make a change to the &#8216;simplegit.rb&#8217; file, and then make a commit with both changes in it.</p>
+<p>So, let&#8217;s add a TODO file, make a change to the &#8216;simplegit.rb&#8217; file, and then make a commit with both changes in it.</p>
 
 <pre><code>$ vim lib/simplegit.rb
 $ vim TODO
@@ -94,7 +94,7 @@ $ git commit -am &#39;added a todo and added simplegit functions&#39;
 <pre><code>$ ls
 README		Rakefile	TODO		lib</code></pre>
 
-<p>So, let&#8217;s now suppose that we need to go back and make a bugfix on our original verison of the simplegit.rb file. We can revert back to where our project was before we branched with the &#8216;checkout command.</p>
+<p>So, let&#8217;s now suppose that we need to go back and make a bugfix on our original verison of the simplegit.rb file. We can revert back to where our project was before we branched with the &#8216;checkout&#8217; command.</p>
 
 <pre><code>$ git checkout master
 Switched to branch &quot;master&quot;
@@ -172,7 +172,7 @@ $ git commit
 
 <p><img src='../images/branch/step6.png' alt='Branch Step 6' /></p>
 
-<p>Since Git does it&#8217;s merges as a simple 3 way merge based on the commit history snapshots, doing multiple merges is often very easy. It will only have to merge in changes introduced on both branches since the last merge - it will not have to re-merge anything.</p>
+<p>Since Git does its merges as a simple 3 way merge based on the commit history snapshots, doing multiple merges is often very easy. It will only have to merge in changes introduced on both branches since the last merge - it will not have to re-merge anything.</p>
 
 <p>When you are done with a branch, say in this case the &#8216;experiment&#8217; branch, we can simply delete it with &#8216;git branch -d&#8217;</p>
 

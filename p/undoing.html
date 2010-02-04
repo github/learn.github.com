@@ -46,7 +46,7 @@
 
 <h3 id='unstaging_files'>unstaging files</h3>
 
-<p>Here we&#8217;ve staged changes to both our REAME and simplegit.rb files, but then we decide that we want the changes to be two seperate commits. So, we need to unstage one, do a commit, then stage it again and do our second commit. Luckily, Git reminds you how to do this right in the &#8216;git status&#8217; command output.</p>
+<p>Here we&#8217;ve staged changes to both our REAME and simplegit.rb files, but then we decide that we want the changes to be two separate commits. So, we need to unstage one, do a commit, then stage it again and do our second commit. Luckily, Git reminds you how to do this right in the &#8216;git status&#8217; command output.</p>
 
 <pre><code>$ git status
 # On branch nolimit
@@ -57,7 +57,7 @@
 #	modified:   lib/simplegit.rb
 #</code></pre>
 
-<p>If you ever forget how to unstage a file, just run the &#8216;git status&#8217; command to remind yourself with the <em>(use &#8220;git reset HEAD (file)&#8230;&#8221; to unstage)</em> text. So lets use that to unstage the README file.</p>
+<p>If you ever forget how to unstage a file, just run the &#8216;git status&#8217; command to remind yourself with the <em>(use &#8220;git reset HEAD (file)&#8230;&#8221; to unstage)</em> text. So let&#8217;s use that to unstage the README file.</p>
 
 <pre><code>$ git reset HEAD README 
 README: locally modified</code></pre>
@@ -90,7 +90,7 @@ README: locally modified</code></pre>
 
 <h3 id='unmodifying_files'>unmodifying files</h3>
 
-<p>Now, lets say that we want to completely throw away the changes we made to the README file altogether. <strong>Be careful - this is almost never a great idea and there is no way to get changes back if you do this!</strong> Things you commit are almost always recoverable, but if you throw them away before you commit, you&#8217;re out of luck if you ever want them back. However, if you DID want to do this, &#8216;git status&#8217; again gives you a nice tip.</p>
+<p>Now, let&#8217;s say that we want to completely throw away the changes we made to the README file altogether. <strong>Be careful - this is almost never a great idea and there is no way to get changes back if you do this!</strong> Things you commit are almost always recoverable, but if you throw them away before you commit, you&#8217;re out of luck if you ever want them back. However, if you DID want to do this, &#8216;git status&#8217; again gives you a nice tip.</p>
 
 <pre><code>$ git status
 # On branch nolimit
@@ -118,7 +118,7 @@ $ git status
 
 <h3 id='resetting_a_project'>resetting a project</h3>
 
-<p>Another powerful and easily destructive tool is the &#8216;reset &#8211;hard&#8217; command. This will forcefully replace your staging area and working directory with an older version and move your current branch there. So, lets say you did a couple of commits and then completely change your mind and want to just wipe them away.</p>
+<p>Another powerful and easily destructive tool is the &#8216;reset &#8211;hard&#8217; command. This will forcefully replace your staging area and working directory with an older version and move your current branch there. So, let&#8217;s say you did a couple of commits and then completely change your mind and want to just wipe them away.</p>
 
 <p>Let&#8217;s say your history log looked like this:</p>
 
@@ -162,7 +162,7 @@ HEAD is now at a6b4c97 beginning write support</code></pre>
 
 <p><img src='../images/undo/topic3.png' alt='Reset Topic 3' /></p>
 
-<p>Now we can start working again and our master branch will move forward as if we had branched seperately from our &#8216;test&#8217; branch originally.</p>
+<p>Now we can start working again and our master branch will move forward as if we had branched separately from our &#8216;test&#8217; branch originally.</p>
 
 <pre><code>$ git commit</code></pre>
 

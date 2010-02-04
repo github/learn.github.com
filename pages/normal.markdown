@@ -1,4 +1,4 @@
-So you have a Git repository and everything is all setup.  What now?
+So you have a Git repository and everything is all set up.  What now?
 
 Generally, it is not going to be much different than working with any other
 source control system, the only real difference should be the staging process.
@@ -23,7 +23,7 @@ it can be as simple as:
 Easy peasy.  Remember, Git is decentralized, so you don't actually need a public
 or shared server to commit to - you can use it like RCS if you want and just 
 track local changes.  So, let's look at that use case first, then we'll do the more 
-complicated one where we have to syncronize our work with other collaborators.
+complicated one where we have to synchronize our work with other collaborators.
 
 ### the simple case ###
 
@@ -91,7 +91,7 @@ since the last time you pulled, and Git will merge in the new changes.
 
 Now you can update your files like we did in the previous section.  However, 
 now let's imagine that we wanted to commit the changes we've made in two
-seperate commits.  We can see what has been changed in our working directory
+separate commits.  We can see what has been changed in our working directory
 by using the 'git status' command.
 
 	$ git status

@@ -124,7 +124,7 @@ were added and removed from each file by adding the **--stat** option.
 There are a couple of other preset formats you can use to view your commit
 history which you can trigger with the **--pretty** option. You can specify 
 one of : oneline, short, medium, full, fuller, email, or raw. They are somewhat
-self explanatory in how much information they show.  For example, 'raw' looks
+self-explanatory in how much information they show.  For example, 'raw' looks
 like this:
 
 	$ git log --pretty=raw
@@ -262,7 +262,7 @@ all the commits in the last 2 weeks that Johannes Schindelin authored.
 	b8469ad0578d6b84ec92752a5f8df3ca5828af77 test-path-utils: Fix off by one, fou
 	f265458f6116a0c03200477ae3b839f2a75bf0fa get_sha1_basic(): fix invalid memory
 
-You can specify either the persons name or the email address to search.  You 
+You can specify either the person's name or the email address to search.  You 
 can also specify partial values - in the above example, it matches Johannes's
 email address.  We could, for example, search for Junio Hamano with any of the 
 following values:
