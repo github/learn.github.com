@@ -208,7 +208,7 @@ Now we can see that we've tagged the commit:
 ### sharing tags ###
 
 By default, the 'git push' command will not transfer tags to remote servers.
-To do so, you have to explicitly add a **--tags** to the 'git push' command.
+To do so, you have to explicitly add a `--tags` to the 'git push' command.
 
 	[master]$ git push --tags
 	Counting objects: 50, done.
