@@ -10,7 +10,8 @@ projects with others.
 
 ### adding remotes  ###
 
-Fetch, merge, pull and push between multiple remote repositories.
+When you do a clone of a repository, Git will automatically add a remote reference
+for the 
 
 ### fetching and pulling ###
 
