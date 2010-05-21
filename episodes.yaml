@@ -10,66 +10,47 @@ episodes:
 
       - name: Setup and Initialization
         page: setup
-        cast: AeyWYQAI 
+        cast: AeyWYQAI
         size: 790x444
         desc: Setup your Git environment, then create a
-              new Git repository and clone an existing one. 
+              new Git repository and clone an existing one.
 
       - name: Normal Workflow
         page: normal
-        desc: Syncronize with a remote repository, make changes, 
-              then stage and commit them. 
+        desc: Syncronize with a remote repository, make changes,
+              then stage and commit them.
 
       - name: Branching and Merging
         page: branching
         desc: Create and work on topic and long running branches,
               merge between them and delete them.
-        
+
+      - name: Distributed Git
+        page: remotes
+        desc: Fetch, merge, pull and push between multiple remote
+              repositories.
+
       - name: Git History
         page: log
         desc: Browse your project history, find specific commits
               and visualize the branching and merging actions.
 
-      - name: Distributed Git
-        page: remotes
-        desc: Fetch, merge, pull and push between multiple remote 
-              repositories.
-
   - section: Learn GitHub
-    values:       
+    values:
       - name: Signup and Setup
         desc: Create a new account, generate and upload your SSH key and clone your first repository.
-        
+
       - name: Site Overview
         desc: An overview of the GitHub site tabs and main features.  How to navigate and get familiar with GitHub.com.
 
       - name: Sharing your Code
         desc: Take a locally created Git repository and upload it to GitHub to share with others.
-        
+
       - name: Contributing
         desc: Fork an existing project, add a feature and send a pull request to the maintainer.
-        
+
       - name: Customizing
         desc: Use the existing or custom post-receive hooks and the API to customize your Git workflow.
 
       - name: Maintaining a Project
         desc: Accept pull requests and foster an active community around your GitHub project.
-
-      - name: Network Graph
-        desc: What is the network graph and how can you use it effectively to maintain your project?
-      
-      - name: Issues
-        desc: A simple and easy to use issues/ticketing system for your open source project.
-            
-      - name: GitHub Pages
-        desc: Using the GitHub pages system to generate Jeykll or static-html based sites for your project or user home page.
-      
-      - name: Compare View
-        desc: Using the compare view and branch list pages to effectively peer-review a projects feature branches.
-      
-      - name: the Fork Queue
-        desc: How to use the Fork Queue to cherry-pick commits from contributed branches on the server.
-
-      - name: Subversion Integration
-        desc: The features and limitations of GitHub's Subversion access.
-      

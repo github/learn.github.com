@@ -44,7 +44,7 @@
     <div class="content">
       <div class="span-21"><center><embed src="http://blip.tv/play/AeyWYQAI" type="application/x-shockwave-flash" width="790" height="444" allowscriptaccess="always" allowfullscreen="true"></embed></center><hr/><h3 id='setting_up_git'>setting up git</h3>
 
-<p>When you first start using Git, there are a few things you will likely want to get setup before you start. Git records your name and email address when you create commits, so you need to tell Git what those are. You can use the &#8216;git config&#8217; command to set those. If you pass &#8217;&#8211;global&#8217;, it will save the values in the &#8216;~/.gitconfig&#8217; file so they are the default for all of your repositories.</p>
+<p>When you first start using Git, there are a few things you will likely want to get setup before you start. Git records your name and email address when you create commits, so you need to tell Git what those are. You can use the <code>git config</code> command to set those. If you pass <code>--global</code>, it will save the values in the &#8216;~/.gitconfig&#8217; file so they are the default for all of your repositories.</p>
 
 <pre><code>$ git config --global user.name &quot;Scott Chacon&quot;
 $ git config --global user.email &quot;schacon@gmail.com&quot;</code></pre>
@@ -66,18 +66,18 @@ $ git config --global user.email &quot;schacon@gmail.com&quot;</code></pre>
 
 <h3 id='initializing_a_new_git_repo'>initializing a new git repo</h3>
 
-<p>To initialize a Git repository from an existing directory, simply type &#8216;git init&#8217; while in that directory. That will create the skeleton of the basic Git repository for you in that directory.</p>
+<p>To initialize a Git repository from an existing directory, simply type <code>git init</code> while in that directory. That will create the skeleton of the basic Git repository for you in that directory.</p>
 
 <pre><code>$ rails myproject
 $ cd myproject
 $ git init</code></pre>
 
-<p>Now you have an empty git repository (you can see the new &#8216;.git&#8217; directory there). Now you can stage and commit files to it with the &#8216;git add&#8217; and &#8216;git commit&#8217; commands. We&#8217;ll cover these commands in depth in the next session.</p>
+<p>Now you have an empty git repository (you can see the new &#8216;.git&#8217; directory there). Now you can stage and commit files to it with the <code>git add</code> and <code>git commit</code> commands. We&#8217;ll cover these commands in depth in the next session.</p>
 
 <pre><code>$ git add .
 $ git commit -m &#39;initial commit&#39;</code></pre>
 
-<p>Now you have a full Git repository with a commit in it, and you can run commands like &#8216;git log&#8217; on it (which we&#8217;ll cover in depth later).</p>
+<p>Now you have a full Git repository with a commit in it, and you can run commands like <code>git log</code> on it to see the history of the project (which we&#8217;ll cover in depth later).</p>
 
 <pre><code>$ git log
 commit eac2f939e6a1cb3189fedd19919888d998ab0431
@@ -90,7 +90,7 @@ Date:   Sun Feb 8 07:55:57 2009 -0800
 
 <p>There are a number of protocols that Git can communicate over, but the three main ones we&#8217;ll deal with are ssh, http and the git protocol (a simple protocol used just for git).</p>
 
-<p>For anonymous access, it is generally over git:// or http.<br />To clone a repository over any protocol, simply type &#8216;git clone <em>uri</em>&#8217;, where the <em>uri</em> is something like &#8220;git://(hostname)/(path).git&#8221;</p>
+<p>For anonymous access, it is generally over git:// or http. To clone a repository over any protocol, simply type <code>git clone [url]</code>, where the <em>url</em> is something like &#8220;git://(hostname)/(path).git&#8221;</p>
 
 <pre><code>$ git clone git://github.com/schacon/munger.git
 $ cd munger

@@ -82,7 +82,7 @@ $ git help log</code></pre>
 
 real	0m0.352s
 user	0m0.300s
-sys	0m0.034s 
+sys	0m0.034s
 
 $ time svn log &gt; /dev/null
 
@@ -110,18 +110,16 @@ sys	0m5.503s</code></pre>
 
 real	0m6.219s
 user	0m0.023s
-sys	0m0.011s	</code></pre>
+sys	0m0.011s</code></pre>
 
 <p>If you just want to commit and keep working, you&#8217;re looking at a huge time difference - one that severely changes your workflow. Most commands in Git seem instantaneous - no more typing &#8216;svn commit&#8217; and then going for a cup of coffee.</p>
 
 <h3 id='small_vs_svn'>small (vs svn)</h3>
 
-<p>Git is also very space efficient. For example, the Django project has mirrors in several currently popular source control systems, and of all of them, the Git clone is the smallest.</p>
+<p>Git is also very space efficient. For example, if you import the Django project from SVN into Git and compare their checkout/clone sizes, Git comes out very favorably.</p>
 
 <pre><code>$ du -d 1 -h
-108M	./django-bzr
  44M	./django-git
- 53M	./django-hg
  53M	./django-svn</code></pre>
 
 <p>Interestingly, it is even smaller than the Subversion checkout, which is pretty amazing, considering that the Git clone contains the entire history of the project - every version of every file back to the first commit, whereas the Subversion checkout is just the last version of the project.</p>
@@ -148,11 +146,11 @@ sys	0m0.011s	</code></pre>
 
 <h3 id='installing_git'>installing git</h3>
 
-<p>See the <a href='http://book.git-scm.com/2_installing_git.html'>Git Community Book</a> for details on how to install Git on your particular operating system.</p>
+<p>See the <a href='http://progit.org/book/ch1-4.html'>Pro Git Book</a> for details on how to install Git on your particular operating system. Or, simply go to the <a href='http://git-scm.com/download'>download</a> page on git-scm.com to get the source or an installer for your system.</p>
 
 <h3 id='resources'>resources</h3>
 
-<p>For more information on Git, the homepage is at <a href='http://git-scm.com'>git-scm.com</a>.</p><br/><br/><hr/></div><div class="span-10">&nbsp;</div><div style="text-align:right" class="span-11 last"><a href="setup.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
+<p>For more information on Git, the homepage is at <a href='http://git-scm.com'>git-scm.com</a>. We will also be referring heavily to the CC-licenced <a href='http://progit.org'>Pro Git Book</a> for more information on each of these sections.</p><br/><br/><hr/></div><div class="span-10">&nbsp;</div><div style="text-align:right" class="span-11 last"><a href="setup.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
