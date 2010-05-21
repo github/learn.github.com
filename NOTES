@@ -1,17 +1,28 @@
 
+* Why Version Control
+
 * Why Switch from Subverison to Git
 
 * 1 Hour Git Crash Course
 
+
 * Git Basics Course
   (links from each to progit.org or gitready)
   - What is Git
+
   - Installing, Setup and Initialization
+    (change links to progit)
+
   - Staging and Committing
+    (introduce diff, too)
+
   - Branching and Merging
-  - Working with Remotes
+
   - Git History 
-  - Importing from Subversion
+    (branch management with range selection)
+
+  - Working with Remotes
+    
 
 * GitHub Features
   (links from each to help.github)

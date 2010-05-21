@@ -49,7 +49,7 @@ def generate_page(page_data)
     @pcontent += "<div style=\"text-align:right\" class=\"span-11 last\"><a href=\"#{n}.html\">next &raquo;</a></div>"
   end
 
-  @pcontent += '<div class="span-21 last">&nbsp;</div><hr/>'
+  @pcontent += '<div class="span-24 last">&nbsp;</div><hr/>'
     
   pname = "p/#{page}.html"
   out = ERB.new(File.read('template/page.erb.html')).result
@@ -61,7 +61,6 @@ desc "Generate the html files for the site"
 task :gensite do
   ep = YAML::load( File.open('episodes.yaml') )
 
-  counter = 0
   @content = ''
 
   # finding the next and last pages
@@ -78,14 +77,19 @@ task :gensite do
   end
   
   ep['episodes'].each do |section|
-    if(counter += 1) == 4
-      @content += '<div class="span-6 last">'
-    else
-      @content += '<div class="span-5">'
-    end
+    counter = 0
+    
+    @content += '<div class="span-24 last">'
     @content += "<h2>" +  section['section'] + "</h2>"
+    @content += '</div>'
+
     section['values'].each do |episode|
-      @content += "<div class='episode'>"
+      counter += 1
+      if ((counter % 6) == 0)
+        @content += "<div class='span-4 episode last'>"
+      else
+        @content += "<div class='span-4 episode'>"
+      end
       if episode['page'] 
         @content += "<b><a href=\"p/" + episode['page'] + ".html\">" + episode['name'] + "</a></b>"
         generate_page(episode)
@@ -94,8 +98,10 @@ task :gensite do
       end
       @content += '<p>' + episode['desc'] + '</p>'
       @content += "</div>"
+      if ((counter % 6) == 0)
+        @content += "<div class='span-24 last'><br/></div>"
+      end
     end
-    @content += "</div>"
   end
   
   out = ERB.new(File.read('template/index.erb.html')).result
