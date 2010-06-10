@@ -47,19 +47,15 @@
 <p>Generally, it is not going to be much different than working with any other source control system, the only real difference should be the staging process. The workflow will generally go something like this:</p>
 
 <ul>
-<li>synchronize with upstream</li>
-
 <li>modify files</li>
 
 <li>see what you&#8217;ve changed</li>
 
 <li>stage the changes you want to commit</li>
 
-<li>commit your staging area</li>
+<li>commit your staged changes</li>
 
 <li>rinse, repeat</li>
-
-<li>push upstream</li>
 </ul>
 
 <p>That is the most complex case - if you&#8217;re not collaborating with anyone and so have no upstream repository to push to, and you want to ignore the staging area, it can be as simple as:</p>
@@ -72,11 +68,14 @@
 <li>repeat</li>
 </ul>
 
-<p>Easy peasy. Remember, Git is decentralized, so you don&#8217;t actually need a public or shared server to commit to - you can use it like RCS if you want and just track local changes. So, let&#8217;s look at that use case first, then we&#8217;ll do the more complicated one where we have to syncronize our work with other collaborators.</p>
+<p>Easy peasy. Remember, Git is decentralized, so you don&#8217;t actually need a public or shared server to commit to - you can use it like RCS if you want and just track local changes.</p>
 
 <h3 id='the_simple_case'>the simple case</h3>
 
 <p>The first thing we&#8217;re going to do is modify some files. Let&#8217;s say we&#8217;re working on a simple library that wraps the Git command line in a Ruby library. If you want to follow along, you can clone the project from <a href='http://github.com/schacon/simplegit'>its GitHub page</a>.</p>
+
+<pre><code>$ git clone git://github.com/schacon/simplegit.git
+$ cd simplegit</code></pre>
 
 <p>For this first example we&#8217;ll modify the README file to add ourselves as an author on the project. So we simply edit the file. Now we want to commit that change, so we run the &#8216;git commit -a&#8217; command. The &#8216;-a&#8217; tells Git to stage all modified files and then commit - we&#8217;ll cover the &#8216;staging area&#8217; next, but for now just running &#8216;git commit -a&#8217; will act something like the &#8216;commit&#8217; command in SVN.</p>
 
@@ -90,9 +89,9 @@
 #   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
 #
 # modified:   README
-#                                                                      
-~                                                                                      
-~                                                                                      
+#
+~
+~
 &quot;.git/COMMIT_EDITMSG&quot; 9L, 253C</code></pre>
 
 <p>We simply type our commit message and exit the editor.</p>
@@ -105,21 +104,9 @@
 
 <p>That&#8217;s it - that&#8217;s the simple case. Edit files, &#8216;git commit -a&#8217;, repeat.</p>
 
-<h3 id='the_more_complete_case'>the more complete case</h3>
+<h3 id='using_the_staging_area'>using the staging area</h3>
 
-<p>Now we&#8217;ll expand that use case a bit to include a remote repository we&#8217;re pushing to so we can collaborate with other developers. We&#8217;ll also introduce the staging area so we don&#8217;t have to commit every file we&#8217;ve changed each time we commit.</p>
-
-<p>If you cloned the repository, synchronizing with the upstream repository is pretty easy - just run &#8216;git pull&#8217;. If there have not been any changes by other developers, you&#8217;ll just get something like this:</p>
-
-<p>Otherwise it will pull down any changes that have been pushed to the server since the last time you pulled, and Git will merge in the new changes.</p>
-
-<pre><code>$ git pull
-Updating c264051..b04dc3d
-Fast forward
- lib/simplegit.rb |    4 ++++
- 1 files changed, 4 insertions(+), 0 deletions(-)</code></pre>
-
-<p>Now you can update your files like we did in the previous section. However, now let&#8217;s imagine that we wanted to commit the changes we&#8217;ve made in two seperate commits. We can see what has been changed in our working directory by using the &#8216;git status&#8217; command.</p>
+<p>Now we&#8217;re going to cover how to more carefully craft commits using what Git calles the &#8216;staging area&#8217;. For this example, let&#8217;s say that we have updated your files like we did in the previous section. However, now let&#8217;s imagine that we wanted to commit the changes we&#8217;ve made as two seperate commits rather than one. We can see what has been changed in our working directory by using the &#8216;git status&#8217; command.</p>
 
 <pre><code>$ git status
 # On branch master
@@ -184,20 +171,6 @@ nothing to commit (working directory clean)</code></pre>
 
 <p>Now we have all our changes stored in two commits thematically, so that it can be easier for our collaborators to understand what we&#8217;ve been working on. After the last file is committed, we can see that the &#8216;git status&#8217; command tells us that our working directory is clean (and also that our current branch has two commits that we haven&#8217;t pushed yet).</p>
 
-<p>So, now let&#8217;s share those changes with our friends by pushing to the server, assuming that we have push access. If we don&#8217;t have push access, we can always create our own repository that we do have push access to, push to that and have our friends pull from that.</p>
-
-<p>Running &#8216;git push&#8217; will push our changes up to the server.</p>
-
-<pre><code>$ git push
-Counting objects: 11, done.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (7/7), 744 bytes, done.
-Total 7 (delta 3), reused 0 (delta 0)
-To git@github.com:schacon/simplegit.git
-   b04dc3d..bbaee85  master -&gt; master</code></pre>
-
-<p>Now we can see that all the new data has been pushed up and the master branch on the server has been updated. Now we can repeat this whole process, allowing us to contribute in a basic manner to any Git based project.</p>
-
 <p>If during the &#8216;staging&#8217; part of this workflow you want to see not just want files have changed or are staged, but what the differences are, you can use the <code>git diff</code> command to find that out.</p>
 
 <h3 id='changes_that_have_not_been_staged'>changes that have not been staged</h3>
@@ -261,41 +234,9 @@ index c526f88..879f0d4 100644
 
 <p>This is a very useful command, because it tells you what changes you&#8217;re introducing were you to run &#8216;git commit&#8217; (without the &#8216;-a&#8217;) at that point.</p>
 
-<h3 id='all_changes_since_the_last_commit'>all changes since the last commit</h3>
+<p>OK, now we&#8217;ve seen how to modify, stage and commit changes to files. Next we&#8217;ll look at one of the killer features of Git, it&#8217;s branching model.</p>
 
-<p>Now, if you want to see all the changes between your working directory files and the last commit, you can directly compare them by specifying &#8216;HEAD&#8217; on the command line:</p>
-
-<pre><code>$ git diff HEAD
-diff --git a/README b/README
-index c526f88..879f0d4 100644
---- a/README
-+++ b/README
-@@ -8,3 +8,4 @@ It is an example for the Git Peepcode book that I&#39;m currently writin
- Author : Scott Chacon (schacon@gmail.com)
-          Orange Peel Chacon (opchacon@gmail.com)
-          Magnus O. Chacon (mchacon@gmail.com)
-+         Josephine Chacon (jo.chacon@gmail.com)
-diff --git a/lib/simplegit.rb b/lib/simplegit.rb
-index dd5ecc4..8ac6604 100644
---- a/lib/simplegit.rb
-+++ b/lib/simplegit.rb
-@@ -25,6 +25,10 @@ class SimpleGit
-     command(&quot;git log -n 25 #{treeish}&quot;)
-   end
-
-+  def log_single(branch = &#39;master&#39;)
-+    command(&quot;git log --pretty=oneline #{branch}&quot;)
-+  end
-+
-   def blame(path)
-     command(&quot;git blame #{path}&quot;)
-   end</code></pre>
-
-<p>You can see that it shows both staged and unstaged changes. This is useful because it shows you what you would commit if you were to run &#8216;git commit -a&#8217; at that point.</p>
-
-<p>We haven&#8217;t covered what <strong>HEAD</strong> means in Git yet - you can read about that in greater detail in the Pro Git book if you wish. It is important to note that it is very different from what HEAD means in SVN, though. In Git, HEAD refers to the last commit of the branch you are currently on. If you are on the &#8216;master&#8217; branch, HEAD refers to the most recent commit on that branch, if you are on the &#8216;experiment&#8217; branch, it refers to the most recent commit there. It is relative to each users local repository, and changes as you switch between branches.</p>
-
-<p>Those three commands (really mostly &#8216;git diff&#8217; and &#8216;git diff &#8211;staged&#8217;) are probably how you will most often be using the &#8216;diff&#8217; command - they are often used sort of like a really detailed &#8216;git status&#8217;.</p><br/><br/><hr/></div><div class="span-10"><a href="setup.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="branching.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
+<p>For more information on basic Git usage, you can read <a href='http://progit.org/book/ch2-0.html'>Chapter 2</a> of the Pro Git book.</p><br/><br/><hr/></div><div class="span-10"><a href="setup.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="branching.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">

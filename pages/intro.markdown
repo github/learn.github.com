@@ -22,12 +22,12 @@ and compare or revert to previous versions of the project or individual files.
 
 As it is primarily a command line tool, most of the examples in this course
 will show the command line versions of the functions.  We will be using a
-recent version of Git (the 1.6 series) for the examples in this course.  We
-recommend upgrading to the 1.6 series if your version of Git is older - there
+recent version of Git (the 1.7 series) for the examples in this course.  We
+recommend upgrading to the 1.7 series if your version of Git is older - there
 have been a number of UI improvements that make Git a bit easier to use.
 
 	$ git --version
-	git version 1.6.1.2
+	git version 1.7.1
 
 If you need help with any of the commands, you can type '--help' and it will
 show you the _man_ page. You can also type 'git help _command_' for the same thing.
@@ -122,7 +122,7 @@ checkout is just the last version of the project.
 ### snapshots, not changesets
 
 Unlike most other VCSs, Git is snapshot based.  That is, instead of thinking
-about and storing commit points as file based patches or deltas, it stores it
+about and storing commit points as file based patches or changes, it stores it
 as a simple snapshot of what your project looked like when you committed.
 
 Commits, then, are simply objects that contain some metadata about the commit

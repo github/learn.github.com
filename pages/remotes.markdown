@@ -33,20 +33,17 @@ it.  Instead you can just run `git fetch origin` (instead of
 	$ cd grack
 	$ git remote
 	origin
-	$ git remote -v
-	origin	git://github.com/schacon/grack.git (fetch)
-	origin	git://github.com/schacon/grack.git (push)
 
 If you created your repository with `git init` or would simply like to add
 another remote to a repository that you cloned, you can do so with the
 `git remote` command.
 
 	$ git remote add writey git@github.com:schacon/grack.git
-	$ git remote -v
-	origin	git://github.com/schacon/grack.git (fetch)
-	origin	git://github.com/schacon/grack.git (push)
-	writey	git@github.com:schacon/grack.git (fetch)
-	writey	git@github.com:schacon/grack.git (push)
+	$ git remote
+	origin
+	writey
+
+### fetching and pulling ###
 
 The name of the alias doesn't really matter - you can call it just about
 anything you want.  Now you have an alias for that URL, so you can use it to
@@ -56,17 +53,14 @@ just run:
 
 	$ git fetch origin
 
+That will fetch down any branches on that remote repository and add bookmarks
+(or `remote`)
+
+### pushing to remotes ###
+
 If I want to then write to my URL (which I named 'writey' when I added it),
 I can run this:
 
 	$ git push writey master
 
 That pushes my `master` branch to the `writey` aliased server.
-
-
-### fetching and pulling ###
-
-
-### pushing to remotes ###
-
-pushing and deleting branches

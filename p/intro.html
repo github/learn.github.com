@@ -54,10 +54,10 @@
 
 <p>You tell it to track files in your project and periodically commit the state of the project when you want a saved point. Then you can share that history with other developers for collaboration, merge between their work and yours, and compare or revert to previous versions of the project or individual files.</p>
 
-<p>As it is primarily a command line tool, most of the examples in this course will show the command line versions of the functions. We will be using a recent version of Git (the 1.6 series) for the examples in this course. We recommend upgrading to the 1.6 series if your version of Git is older - there have been a number of UI improvements that make Git a bit easier to use.</p>
+<p>As it is primarily a command line tool, most of the examples in this course will show the command line versions of the functions. We will be using a recent version of Git (the 1.7 series) for the examples in this course. We recommend upgrading to the 1.7 series if your version of Git is older - there have been a number of UI improvements that make Git a bit easier to use.</p>
 
 <pre><code>$ git --version
-git version 1.6.1.2</code></pre>
+git version 1.7.1</code></pre>
 
 <p>If you need help with any of the commands, you can type &#8217;&#8211;help&#8217; and it will show you the <em>man</em> page. You can also type &#8216;git help <em>command</em>&#8217; for the same thing.</p>
 
@@ -126,7 +126,7 @@ sys	0m0.011s</code></pre>
 
 <h3 id='snapshots_not_changesets'>snapshots, not changesets</h3>
 
-<p>Unlike most other VCSs, Git is snapshot based. That is, instead of thinking about and storing commit points as file based patches or deltas, it stores it as a simple snapshot of what your project looked like when you committed.</p>
+<p>Unlike most other VCSs, Git is snapshot based. That is, instead of thinking about and storing commit points as file based patches or changes, it stores it as a simple snapshot of what your project looked like when you committed.</p>
 
 <p>Commits, then, are simply objects that contain some metadata about the commit (the message, author, date, etc), a pointer to a single snapshot of the project and pointers to the commit(s) that came directly before it. Git&#8217;s commit history and data model is really just a directed graph - a simple series of snapshots.</p>
 

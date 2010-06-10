@@ -103,7 +103,7 @@ README		Rakefile	lib</code></pre>
 
 <p>Now we can see that our working directory no longer has the TODO file it in - that&#8217;s because the master branch didn&#8217;t have that file. If we do a commit here and then switch back, we&#8217;ll see the TODO file there again, and the simplegit.rb file reverted back to where we left it in the experiment branch.</p>
 
-<pre><code>$ vim lib/simplegit.rb 
+<pre><code>$ vim lib/simplegit.rb
 $ git commit -am &#39;added a commit function&#39;
 [master]: created 0b7434d: &quot;added a commit function&quot;
  1 files changed, 4 insertions(+), 0 deletions(-)
@@ -180,7 +180,9 @@ $ git commit
 
 <p>If the branch has not been merged in at some point, in which case deleting the branch would lose changes, Git will not allow you to do it. If you <em>want</em> to lose the changes, simply use the &#8216;-D&#8217; flag instead - that will force the deletion.</p>
 
-<p>So, that is basic branching and merging in Git and should give you a good baseline for being able to effectively use this powerful and ultimately pretty simple tool.</p><br/><br/><hr/></div><div class="span-10"><a href="normal.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="remotes.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
+<p>So, that is basic branching and merging in Git and should give you a good baseline for being able to effectively use this powerful and ultimately pretty simple tool.</p>
+
+<p>For more information on branching and merging in Git, you can read <a href='http://progit.org/book/ch3-0.html'>Chapter 3</a> of the Pro Git book.</p><br/><br/><hr/></div><div class="span-10"><a href="normal.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="remotes.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
