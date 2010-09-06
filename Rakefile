@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'erb'
 require 'maruku'
+require 'yaml'
 
 def generate_page(page_data)
   page = page_data['page']
