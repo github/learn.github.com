@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Learn.GitHub - Basic Branching and Merging</title>
+  <title>Learn.GitHub - Branching and Merging</title>
 	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
 	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
 	<script type="text/javascript" src="../js/jquery.corner.js"></script>
@@ -37,8 +37,8 @@
     </div>
     
     <div class="span-21" id="welcome">
-      <h1>Basic Branching and Merging</h1>
-      <p>Create and work on topic and long running branches, merge between them and delete them.</p>
+      <h1>Branching and Merging</h1>
+      <p>Create and work on topic and long running branches, merge between them and delete them.</p>
     </div>
     
     <div class="content">
@@ -94,7 +94,7 @@ $ git commit -am &#39;added a todo and added simplegit functions&#39;
 <pre><code>$ ls
 README		Rakefile	TODO		lib</code></pre>
 
-<p>So, let&#8217;s now suppose that we need to go back and make a bugfix on our original verison of the simplegit.rb file. We can revert back to where our project was before we branched with the &#8216;checkout&#8217; command.</p>
+<p>So, let&#8217;s now suppose that we need to go back and make a bugfix on our original version of the simplegit.rb file. We can revert back to where our project was before we branched with the &#8216;checkout&#8217; command.</p>
 
 <pre><code>$ git checkout master
 Switched to branch &quot;master&quot;
@@ -103,7 +103,7 @@ README		Rakefile	lib</code></pre>
 
 <p>Now we can see that our working directory no longer has the TODO file it in - that&#8217;s because the master branch didn&#8217;t have that file. If we do a commit here and then switch back, we&#8217;ll see the TODO file there again, and the simplegit.rb file reverted back to where we left it in the experiment branch.</p>
 
-<pre><code>$ vim lib/simplegit.rb 
+<pre><code>$ vim lib/simplegit.rb
 $ git commit -am &#39;added a commit function&#39;
 [master]: created 0b7434d: &quot;added a commit function&quot;
  1 files changed, 4 insertions(+), 0 deletions(-)
@@ -178,9 +178,11 @@ $ git commit
 
 <pre><code>$ git branch -d experiment</code></pre>
 
-<p>This works if the branch has not been merged in to a remaining branch at some point, in which case deleting the branch would lose changes, and Git will not allow you to delete the branch. If you <em>want</em> to lose the changes, simply use the &#8216;-D&#8217; flag instead, this will force a deletion.</p>
+<p>This works if the branch has not been merged in to a remaining branch at some point, in which case deleting the branch would lose changes, and Git will not allow you to delete the branch. If you <em>want</em> to lose the changes, simply use the &#8216;-D&#8217; flag instead, as this will force a deletion.</p>
 
-<p>So, that is basic branching and merging in Git and should give you a good baseline for being able to effectively use this powerful and ultimately pretty simple tool.</p><br/><br/><hr/></div><div class="span-10"><a href="normal.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="tagging.html">next &raquo;</a></div><div class="span-21 last">&nbsp;</div><hr/>
+<p>So, that is basic branching and merging in Git and should give you a good baseline for being able to effectively use this powerful and ultimately pretty simple tool.</p>
+
+<p>For more information on branching and merging in Git, you can read <a href='http://progit.org/book/ch3-0.html'>Chapter 3</a> of the Pro Git book.</p><br/><br/><hr/></div><div class="span-10"><a href="normal.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="tagging.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
@@ -192,10 +194,10 @@ $ git commit
           <a href="http://github.com/training">Git Training</a> |
           <a href="http://github.com/contact">Contact</a> |
           <a href="http://groups.google.com/group/github/">Google Group</a> |
-          <a href="http://github.wordpress.com">Status</a>
+          <a href="http://status.github.com">Status</a>
         </div>
         <div class="company">
-          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+          &copy; 2010 GitHub Inc. All rights reserved. | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
         </div>
       </div>
       <div class="fork span-7">

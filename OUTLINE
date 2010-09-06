@@ -1,0 +1,32 @@
+Introduction To Git
+  - what it is
+  - how it is different/better than subversion
+  - why use it
+
+Setup and Initialization
+  - downloading and installing
+  - setting it up (user/pass)
+  - some defaults to set
+
+Normal Workflow
+  - clone / init
+  - add / status / commit
+  - diff
+  - log (work dir)
+
+Branching and Merging
+  - branch
+  - merge
+
+Distributed Git
+  - push
+  - fetch
+  - (pull)
+
+Git History
+  - log
+  - diff (branches)
+
+Git Reference
+  - list all these commands
+  - faq on commonly used commands

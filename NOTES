@@ -1,0 +1,39 @@
+
+* Why Version Control
+
+* Why Switch from Subverison to Git
+
+* 1 Hour Git Crash Course
+
+
+* Git Basics Course
+  (links from each to progit.org or gitready)
+  - What is Git
+
+  - Installing, Setup and Initialization
+    (change links to progit)
+
+  - Staging and Committing
+    (introduce diff, too)
+
+  - Branching and Merging
+
+  - Git History 
+    (branch management with range selection)
+
+  - Working with Remotes
+    
+
+* GitHub Features
+  (links from each to help.github)
+  - Signup and Key Gen
+  - Sharing your Code
+  - Contributing - Forking and Pull Requests
+  - Customizing with Hooks and API
+  - Issues
+  - Downloads
+  - Wikis
+  - Graphs
+  - Branch List / Compare View
+  - the Fork Queue
+  - Subversion usage

@@ -3,7 +3,7 @@
 When you first start using Git, there are a few things you will likely want
 to get setup before you start.  Git records your name and email address when
 you create commits, so you need to tell Git what those are.  You can use the
-'git config' command to set those.  If you pass '--global', it will save the values
+`git config` command to set those.  If you pass `--global`, it will save the values
 in the '~/.gitconfig' file so they are the default for all of your repositories.
 
 	$ git config --global user.name "Scott Chacon"
@@ -30,23 +30,24 @@ like this:
 
 ### initializing a new git repo
 
-To initialize a Git repository from an existing directory, simply type 'git init'
+To initialize a Git repository from an existing directory, simply type `git init`
 while in that directory.  That will create the skeleton of the basic Git repository
 for you in that directory.
 
 	$ rails myproject
 	$ cd myproject
 	$ git init
-	
+
 Now you have an empty git repository (you can see the new '.git' directory there).
-Now you can stage and commit files to it with the 'git add' and 'git commit'
+Now you can stage and commit files to it with the `git add` and `git commit`
 commands.  We'll cover these commands in depth in the next session.
 
 	$ git add .
 	$ git commit -m 'initial commit'
-	
-Now you have a full Git repository with a commit in it, and you can run 
-commands like 'git log' on it (which we'll cover in depth later).
+
+Now you have a full Git repository with a commit in it, and you can run
+commands like `git log` on it to see the history of the project
+(which we'll cover in depth later).
 
 	$ git log
 	commit eac2f939e6a1cb3189fedd19919888d998ab0431
@@ -59,21 +60,23 @@ commands like 'git log' on it (which we'll cover in depth later).
 
 There are a number of protocols that Git can communicate over, but the three
 main ones we'll deal with are ssh, http and the git protocol (a simple protocol
-used just for git).  
+used just for git).
 
-For anonymous access, it is generally over git:// or http.  
-To clone a repository over any protocol, simply type 'git clone _uri_', where
-the _uri_ is something like "git://(hostname)/(path).git"
+For anonymous access, it is generally over git:// or http.
+To clone a repository over any protocol, simply type `git clone [url]`, where
+the _url_ is something like "git://(hostname)/(path).git"
 
 	$ git clone git://github.com/schacon/munger.git
 	$ cd munger
-	$ git log
+	$ ls
+	README         examples       munger.gemspec
+	Rakefile       lib            spec
 
-You can also clone repositories over http in many cases.  That looks largely 
-the same, but with 'http' instead of 'git'.  
+You can also clone repositories over http in many cases.  That looks largely
+the same, but with 'http' instead of 'git'.
 
 	$ git clone http://github.com/schacon/munger.git
 
-This is only available if the 
+This is only available if the
 server has enabled it - if you are hosting your repository on GitHub, both
 git:// and http:// access are enabled.

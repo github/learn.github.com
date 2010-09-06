@@ -1,5 +1,5 @@
 episodes:
-  - section: Beginner
+  - section: Learn Git
     values:
       - name: Introduction To Git
         page: intro
@@ -10,17 +10,17 @@ episodes:
 
       - name: Setup and Initialization
         page: setup
-        cast: AeyWYQAI 
+        cast: AeyWYQAI
         size: 790x444
         desc: Setup your Git environment, then create a
-              new Git repository and clone an existing one. 
+              new Git repository and clone an existing one.
 
       - name: Normal Workflow
         page: normal
         desc: Synchronize with a remote repository, make changes, 
               then stage and commit them. 
 
-      - name: Basic Branching and Merging
+      - name: Branching and Merging
         page: branching
         desc: Create and work on topic and long running branches,
               merge between them and delete them.
@@ -43,99 +43,31 @@ episodes:
   - section: Intermediate
     values:   
       - name: Distributed Git
-        desc: Fetch, merge, pull and push between multiple remote 
+        page: remotes
+        desc: Fetch, merge, pull and push between multiple remote
               repositories.
 
-      - name: Rebasing
-        page: rebasing
-        desc: Replay changes from one branch onto another branch
-              to preserve a linear history.
+      - name: Git History
+        page: log
+        desc: Browse your project history, find specific commits
+              and visualize the branching and merging actions.
 
-      - name: Stashing
-        desc: Temporarily save changes to your working directory and 
-              staging area without having to commit, then reapply the
-              changes later.
-
-      - name: Interactive Adding
-        desc: Stage and unstage changes to files or partial files 
-              with an interactive Git tool.
-              
-      - name: Undoing 
-        page: undoing
-        desc: Revert, unmodify or unstage a file or project state
-              at any point.
-                      
-      - name: Amending Commits
-        desc: Change the latest commit message, or redo the last commit
-              by adding or removing files from it. 
-
-      - name: Interactive Rebasing
-        desc: Rebase multiple files interactively, squashing, reordering
-              or amending commits in between. 
-
-      - name: Customizing Git
-        desc: Setup aliases for common commands and other personal
-              options in Git - autocompletion, bash branch, colors and more.
-
-  - section: Advanced
-    values:       
-      - name: Filter Branch
-        desc: Modify large sections of your commit history at once,
-              changing emails, names or files globally.
-
-      - name: Maintaining Git
-        desc: Learn the fsck and gc commands to diagnose problems and 
-              keep your repository small.
-
-      - name: The Git Reflog
-        desc: Browse the history of your local references even if they're not
-              referenced anywhere else anymore.
-
-      - name: Data Recovery
-        desc: Find lost commits or branches and restore them, or 
-              recover from partial database corruption.
-
-      - name: Git Hooks
-        desc: Learn the client and server side pre and post action
-              hooks and some useful example scripts to use with them.
-
-      - name: Revision Selection
-        desc: Selecting individual commits or ranges of commits using 
-              helpful Git shorthands.
-
-      - name: Git Internals
-        desc: Explore the internal workings of Git - the different object
-              types and how to view the raw data via several useful
-              plumbing commands.
-
-      - name: Git Submodules
-        desc: Submodule usage and other tips for keeping subprojects in
-              your Git repository.
-
-  - section: Special Interest
+  - section: Learn GitHub
     values:
-      - name: Git and Windows - General
-        desc: Install and use Git on a Windows environment using the default
-              mSysGit tools.
+      - name: Signup and Setup
+        desc: Create a new account, generate and upload your SSH key and clone your first repository.
 
-      - name: Git and Windows - Extensions
-        desc: Installing and using the Git Extensions shell extensions tools 
-              on Windows.
+      - name: Site Overview
+        desc: An overview of the GitHub site tabs and main features.  How to navigate and get familiar with GitHub.com.
 
-      - name: Git and Subversion
-        page: git-svn
-        desc: Using the git-svn client with a Subversion server.  Specifically
-              for existing SVN users, how Git is a better Subversion client
-              than Subversion.
+      - name: Sharing your Code
+        desc: Take a locally created Git repository and upload it to GitHub to share with others.
 
-      - name: Migrating from Subversion
-        desc: Ready to move your project from Subversion?  A few ways to do
-              the migration, from hosted services to really custom methods.
+      - name: Contributing
+        desc: Fork an existing project, add a feature and send a pull request to the maintainer.
 
-      - name: Git and Textmate
-        desc: Using Git and GitHub from Textmate using the TM Git bundle.
+      - name: Customizing
+        desc: Use the existing or custom post-receive hooks and the API to customize your Git workflow.
 
-      - name: Git and Capistrano
-        desc: Deploying Git projects using the Capistrano deployment tool, including
-              how to deploy from GitHub.
-
+      - name: Maintaining a Project
+        desc: Accept pull requests and foster an active community around your GitHub project.

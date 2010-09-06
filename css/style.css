@@ -29,5 +29,7 @@ pre { padding: 20px; background: #ffd; font-size: 0.9em; }
 .button { text-align: center; padding: 10px; font-size: 1.2em; font-weight:bold; }
 .red   { border: 3px solid #a88; background: #fee;}
 .red a { color: #a44; }
-.green { border: 3px solid #8a8; background: #efe;}
-.blue  { border: 3px solid #88a; background: #eef;}
+.green   { border: 3px solid #8a8; background: #efe;}
+.green a { color: #4a4; }
+.blue    { border: 3px solid #88a; background: #eef;}
+.blue a  { color: #44a; }
