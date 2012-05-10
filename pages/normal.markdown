@@ -155,7 +155,7 @@ the last file is committed, we can see that the 'git status' command tells us
 that our working directory is clean (and also that our current branch has two
 commits that we haven't pushed yet).
 
-If during the 'staging' part of this workflow you want to see not just want files
+If during the 'staging' part of this workflow you want to see not just which files
 have changed or are staged, but what the differences are, you can use the `git diff`
 command to find that out.
 
