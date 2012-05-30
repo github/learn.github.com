@@ -4,128 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Learn.GitHub - Distributed Git</title>
-	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
-	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
-	<script type="text/javascript" src="../js/jquery.corner.js"></script>
-	
-	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-  <!--[if IE]>
-    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
-  <![endif]-->
-  
-	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
-  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+  <title>Learn.GitHub</title>
+  <script type="text/javascript">
+    <!--
+    window.location = "http://gitref.org"
+    //-->
+  </script>
 </head>
 
 <body>
-  <div class="container">
-
-    <div class="span-21" id="header">
-      <div class="span-10">
-        <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
-      </div>
-
-      <div class="span-11 last">
-        <div id="links">
-          <a href="http://github.com">home</a>
-          <a href="http://github.com/login">login</a>
-          <a href="http://github.com/signup">signup!</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="span-21" id="welcome">
-      <h1>Distributed Git</h1>
-      <p>Fetch, merge, pull and push between multiple remote repositories.</p>
-    </div>
-    
-    <div class="content">
-      <div class="span-21"><hr/><p>So you&#8217;ve heard that Git is a <strong>distributed</strong> version control system. What does that really mean and how do you take advantage of it?</p>
-
-<p>One of the cool things about Git versus centralized systems is that you can have more than one &#8216;server&#8217; that you can push to and pull from. In Git, this is called a &#8216;remote&#8217; and you can have several of them - some of which you can write to and others you can only read from. Here we&#8217;ll really explore how to use the concept of having remote repositories to share and collaborate on Git projects with others.</p>
-
-<h3 id='what_is_a_remote'>what is a remote?</h3>
-
-<p>A <code>remote</code> in Git is basically a way to tell Git where another version of your repository is. Then you can ask Git to fetch data from it that you don&#8217;t have yet, or push your commits up to it (if you have write access). This is much like the main Subversion server, but you can have several of them.</p>
-
-<h3 id='adding_remotes'>adding remotes</h3>
-
-<p>When you do a clone of a repository, Git will automatically add a remote reference for the repository you cloned, automatically naming it &#8216;origin&#8217;. This is an alias, so you don&#8217;t have to type the whole URL again when getting updates from it. Instead you can just run <code>git fetch origin</code> (instead of <code>git fetch git://server/path.git</code>).</p>
-
-<pre><code>$ git clone git://github.com/schacon/grack.git
-Initialized empty Git repository in /opt/grack/.git/
-remote: Counting objects: 85, done.
-remote: Compressing objects: 100% (76/76), done.
-remote: Total 85 (delta 31), reused 0 (delta 0)
-Receiving objects: 100% (85/85), 19.89 KiB, done.
-Resolving deltas: 100% (31/31), done.
-$ cd grack
-$ git remote
-origin
-$ git remote -v
-origin	git://github.com/schacon/grack.git (fetch)
-origin	git://github.com/schacon/grack.git (push)</code></pre>
-
-<p>If you created your repository with <code>git init</code> or would simply like to add another remote to a repository that you cloned, you can do so with the <code>git remote</code> command.</p>
-
-<pre><code>$ git remote add writey git@github.com:schacon/grack.git
-$ git remote -v
-origin	git://github.com/schacon/grack.git (fetch)
-origin	git://github.com/schacon/grack.git (push)
-writey	git@github.com:schacon/grack.git (fetch)
-writey	git@github.com:schacon/grack.git (push)</code></pre>
-
-<p>The name of the alias doesn&#8217;t really matter - you can call it just about anything you want. Now you have an alias for that URL, so you can use it to push to or fetch from. For instance, in this case if someone pushed to the URL I cloned my project from originally and I wanted to get the updates, I can just run:</p>
-
-<pre><code>$ git fetch origin</code></pre>
-
-<p>If I want to then write to my URL (which I named &#8216;writey&#8217; when I added it), I can run this:</p>
-
-<pre><code>$ git push writey master</code></pre>
-
-<p>That pushes my <code>master</code> branch to the <code>writey</code> aliased server.</p>
-
-<h3 id='fetching_and_pulling'>fetching and pulling</h3>
-
-<h3 id='pushing_to_remotes'>pushing to remotes</h3>
-
-<p>pushing and deleting branches</p><br/><br/><hr/></div><div class="span-10"><a href="branching.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="log.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
-    </div>
-
-    <div id="footer" class="span-21">
-      <div class="info span-12">
-        <div class="links">
-          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
-          <a href="http://github.com/blog">Blog</a> |
-          <a href="http://support.github.com/">Support</a> |
-          <a href="http://github.com/training">Git Training</a> |
-          <a href="http://github.com/contact">Contact</a> |
-          <a href="http://groups.google.com/group/github/">Google Group</a> |
-          <a href="http://status.github.com">Status</a>
-        </div>
-        <div class="company">
-          &copy; 2010 GitHub Inc. All rights reserved. | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="fork span-7">
-        This website is <a href="http://github.com/learn/learn.github.com">open source</a>.  
-        Please help us by forking the project and adding to it.
-      </div>
-    </div>
-
-  </div>
-
-  <script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  var pageTracker = _gat._getTracker("UA-3769691-2");
-  pageTracker._initData();
-  pageTracker._trackPageview();
-  </script>
+  Redirecting to <a href="http://gitref.org">GitRef.org</a>
+</body>
 
 </body>
 </html>
