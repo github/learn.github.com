@@ -74,7 +74,7 @@ $ git help log</code></pre>
 
 <h3 id='offline_and_fast'>offline and fast</h3>
 
-<p>Git is fully distributed, which means that it can work almost entirely offline. In stark contrast to VCS tools like Perforce or Subversion, Git does nearly all of it&#8217;s operations without needing a network connection, including history viewing, difference viewing and commiting.</p>
+<p>Git is fully distributed, which means that it can work almost entirely offline. In stark contrast to VCS tools like Perforce or Subversion, Git does nearly all of its operations without needing a network connection, including history viewing, difference viewing and commiting.</p>
 
 <p>This also means that Git is very fast compared to those systems partially due to the fact that none of these operations has any dependency on network latency. For example, take a look at how fast the simple &#8216;log&#8217; command takes to run in Git and in Subversion.</p>
 
@@ -90,7 +90,7 @@ real	0m3.709s
 user	0m0.482s
 sys	0m0.168s</code></pre>
 
-<p>Git at 0.3 seconds vs Subversion at 3.7 seconds. That is a difference of a full order of magnatude. You&#8217;ll find similar differences with nearly any command comparison. For example, adding the popular famfamfam icon set and committing them. Since you can seperate the commit from the network &#8216;push&#8217; in Git, this action takes a quarter of a second in Git, but 45 seconds in Subversion.</p>
+<p>Git at 0.3 seconds vs Subversion at 3.7 seconds. That is a difference of a full order of magnitude. You&#8217;ll find similar differences with nearly any command comparison. For example, adding the popular famfamfam icon set and committing them.<br />Since you can separate the commit from the network &#8216;push&#8217; in Git, this action takes a quarter of a second in Git, but 45 seconds in Subversion.</p>
 
 <pre><code>time &#39;git add icons; git commit -m &quot;added icons&quot;&#39;
 
@@ -138,7 +138,7 @@ sys	0m0.011s</code></pre>
 
 <h3 id='cheap_branching_and_easy_merging'>cheap branching and easy merging</h3>
 
-<p>Probably the most compelling feature of Git, since it often fundamentally changes the way that many developers work, is Gits branching model. Instead of the popular VCS branching method of simply cloning into a seperate directory for a branch, Git lets you switch between branches in a single working directory. Add to that the fact that creating and switching between branches is nearly instant, not all of your branches need to be shared, and it&#8217;s easy to stash partially completed work - means that the way you work can be incredibly different.</p>
+<p>Probably the most compelling feature of Git, since it often fundamentally changes the way that many developers work, is Gits branching model. Instead of the popular VCS branching method of simply cloning into a separate directory for a branch, Git lets you switch between branches in a single working directory. Add to that the fact that creating and switching between branches is nearly instant, not all of your branches need to be shared, and it&#8217;s easy to stash partially completed work - means that the way you work can be incredibly different.</p>
 
 <p>Instead of only having branches for major development line departures, Git developers routinely create, merge and destroy multiple branches a week, or even per day. Often each feature or bug you are working on can have its own branch, merged in only when it is complete. This model allows you to experiment quickly, easily and safely - without having to go through hoops to get back to where you where. It enables and encourages a <em>non-linear</em> development cycle, where you can work on multiple lines of thought in parallel without them stepping on each other.</p>
 

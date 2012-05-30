@@ -42,106 +42,7 @@
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><p>We saw in the &#8216;log&#8217; section that adding a &#8216;-p&#8217; will show you the differences that each commit introduces by showing <a href='http://en.wikipedia.org/wiki/Diff'>diff</a> of the snapshots of each commit and it&#8217;s parent.</p>
-
-<p>The &#8216;diff&#8217; command in Git will show you the same thing - the changes between two snapshots or files in unified diff format. This section will show you the different ways you can use diff to answer common quesions you might have about your repository.</p>
-
-<h3 id='changes_that_have_not_been_staged'>changes that have not been staged</h3>
-
-<p>One of the most common things you&#8217;ll do with &#8216;git diff&#8217; is to see what changes you&#8217;ve made in your working directory that have not been <em>staged</em> yet.</p>
-
-<p>Let&#8217;s say that we edit the simplegit.rb file to add a function, and we edit the README file to add a new author to the list. Then we stage the README file with &#8216;git add&#8217;. Running &#8216;git status&#8217; will show us that README is staged and simplegit.rb is modified but not yet staged.</p>
-
-<pre><code>$ vim lib/simplegit.rb
-$ vim README
-$ git add README
-$ git status
-# On branch master
-# Changes to be committed:
-#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
-#
-#	modified:   README
-#
-# Changed but not updated:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#	modified:   lib/simplegit.rb
-#</code></pre>
-
-<p>However, what was actually changed in &#8216;simplegit.rb&#8217;? How can I see what changes I&#8217;ve made that I&#8217;m going to stage? The answer is to just run &#8216;git diff&#8217; with no arguments.</p>
-
-<pre><code>$ git diff
-diff --git a/lib/simplegit.rb b/lib/simplegit.rb
-index dd5ecc4..8ac6604 100644
---- a/lib/simplegit.rb
-+++ b/lib/simplegit.rb
-@@ -25,6 +25,10 @@ class SimpleGit
-     command(&quot;git log -n 25 #{treeish}&quot;)
-   end
-
-+  def log_single(branch = &#39;master&#39;)
-+    command(&quot;git log --pretty=oneline #{branch}&quot;)
-+  end
-+
-   def blame(path)
-     command(&quot;git blame #{path}&quot;)
-   end</code></pre>
-
-<p>I can easily see the function that I added and now I can decide if I want to stage the file like this. Notice that it does <em>not</em> show the change to the README file.</p>
-
-<h3 id='changes_that_are_staged_but_not_committed'>changes that are staged but not committed</h3>
-
-<p>In order to see the changes that have been staged already, you can pass the &#8217;&#8211;staged&#8217; option to &#8216;git diff&#8217; (in pre-1.6 versions of Git, use &#8217;&#8211;cached&#8217;).</p>
-
-<pre><code>$ git diff --staged
-diff --git a/README b/README
-index c526f88..879f0d4 100644
---- a/README
-+++ b/README
-@@ -8,3 +8,4 @@ It is an example for the Git Peepcode book that I&#39;m currently writin
- Author : Scott Chacon (schacon@gmail.com)
-          Orange Peel Chacon (opchacon@gmail.com)
-          Magnus O. Chacon (mchacon@gmail.com)
-+         Josephine Chacon (jo.chacon@gmail.com)</code></pre>
-
-<p>This is a very useful command, because it tells you what changes you&#8217;re introducing were you to run &#8216;git commit&#8217; (without the &#8216;-a&#8217;) at that point.</p>
-
-<h3 id='all_changes_since_the_last_commit'>all changes since the last commit</h3>
-
-<p>Now, if you want to see all the changes between your working directory files and the last commit, you can directly compare them by specifying &#8216;HEAD&#8217; on the command line:</p>
-
-<pre><code>$ git diff HEAD
-diff --git a/README b/README
-index c526f88..879f0d4 100644
---- a/README
-+++ b/README
-@@ -8,3 +8,4 @@ It is an example for the Git Peepcode book that I&#39;m currently writin
- Author : Scott Chacon (schacon@gmail.com)
-          Orange Peel Chacon (opchacon@gmail.com)
-          Magnus O. Chacon (mchacon@gmail.com)
-+         Josephine Chacon (jo.chacon@gmail.com)
-diff --git a/lib/simplegit.rb b/lib/simplegit.rb
-index dd5ecc4..8ac6604 100644
---- a/lib/simplegit.rb
-+++ b/lib/simplegit.rb
-@@ -25,6 +25,10 @@ class SimpleGit
-     command(&quot;git log -n 25 #{treeish}&quot;)
-   end
-
-+  def log_single(branch = &#39;master&#39;)
-+    command(&quot;git log --pretty=oneline #{branch}&quot;)
-+  end
-+
-   def blame(path)
-     command(&quot;git blame #{path}&quot;)
-   end</code></pre>
-
-<p>You can see that it shows both staged and unstaged changes. This is useful because it shows you what you would commit if you were to run &#8216;git commit -a&#8217; at that point.</p>
-
-<p>We haven&#8217;t covered what <strong>HEAD</strong> means in Git yet - we&#8217;ll go into that in greater detail in the &#8216;Intermediate&#8217; lessons in this course. It is important to note that it is very different from what HEAD means in SVN, though. In Git, HEAD refers to the last commit of the branch you are currently on. If you are on the &#8216;master&#8217; branch, HEAD refers to the most recent commit on that branch, if you are on the &#8216;experiment&#8217; branch, it refers to the most recent commit there. It is relative to each users local repository, and changes as you switch between branches.</p>
-
-<p>Those three commands (really mostly &#8216;git diff&#8217; and &#8216;git diff &#8211;staged&#8217;) are probably how you will most often be using the &#8216;diff&#8217; command - they are often used sort of like a really detailed &#8216;git status&#8217;. However, there are other cool things you can use it for.</p>
+      <div class="span-21"><hr/><p>We saw in the &#8216;log&#8217; section that adding a &#8216;-p&#8217; will show you the differences that each commit introduces by showing <a href='http://en.wikipedia.org/wiki/Diff'>diff</a> of the snapshots of each commit and its parent.</p>
 
 <h3 id='how_a_file_has_changed_since_a_specific_time'>how a file has changed since a specific time</h3>
 
@@ -171,7 +72,7 @@ index 548142c..5fa41b7 100644
 
 <p>That would give you a big diff of all the changes between the two snapshots that those two commits point to, as if they were both constituted in two directories and you ran the unix &#8216;diff&#8217; tool on them.</p>
 
-<p>You can also use some of the formatting options that you can pass to &#8216;log&#8217;, such as <strong>&#8211;stat</strong>. If I wanted to see an overview of what all changed between version 1.6.1.1 and 1.6.1.2 in the Git project, I could run this:</p>
+<p>You can also use some of the formatting options that you can pass to &#8216;log&#8217;, such as <code>--stat</code>. If I wanted to see an overview of what all changed between version 1.6.1.1 and 1.6.1.2 in the Git project, I could run this:</p>
 
 <pre><code>$ git diff v1.6.1.1 v1.6.1.2 --stat
  Documentation/RelNotes-1.6.1.2.txt |   39 +++++++++++++
@@ -218,7 +119,7 @@ index 52d1ead..ce5ea12 100644
 
 <h3 id='what_a_merge_would_introduce'>what a merge would introduce</h3>
 
-<p>Another intersting question that you can answer with &#8216;diff&#8217; is what a merge would introduce. This is a strange question, because if you have a line of work that diverged into two branches and you directly compare the snapshots, it&#8217;s going to try to tell you how to get from one state to the other.</p>
+<p>Another interesting question that you can answer with &#8216;diff&#8217; is what a merge would introduce. This is a strange question, because if you have a line of work that diverged into two branches and you directly compare the snapshots, it&#8217;s going to try to tell you how to get from one state to the other.</p>
 
 <p>For instance, if you create a &#8216;dev&#8217; branch and add a function to a file, then go back to your &#8216;master&#8217; branch and remove a line from the README, and then run something like this:</p>
 
@@ -236,7 +137,7 @@ index 52d1ead..ce5ea12 100644
 
 <pre><code>$ git diff ...(branch)</code></pre>
 
-<p>Where (branch) is the name of the branch you&#8217;re considering merging.</p><br/><br/><hr/></div><div class="span-10"><a href="log.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="rebasing.html">next &raquo;</a></div><div class="span-21 last">&nbsp;</div><hr/>
+<p>Where (branch) is the name of the branch you&#8217;re considering merging.</p><br/><br/><hr/></div><div class="span-10"><a href="log.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="remotes.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
@@ -248,7 +149,7 @@ index 52d1ead..ce5ea12 100644
           <a href="http://github.com/training">Git Training</a> |
           <a href="http://github.com/contact">Contact</a> |
           <a href="http://groups.google.com/group/github/">Google Group</a> |
-          <a href="http://github.wordpress.com">Status</a>
+          <a href="http://status.github.com">Status</a>
         </div>
         <div class="company">
           &copy; 2010 GitHub Inc. All rights reserved. | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>

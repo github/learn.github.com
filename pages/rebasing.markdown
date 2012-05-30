@@ -1,6 +1,6 @@
 In Git, there are two main ways to integrate changes from one branch into
 another - the 'merge' and the 'rebase'.  In this section we will learn what
-'rebasing' is, how to do it and in what cases it may not be a good idea to.
+'rebasing' is, how to do it and in what cases it may not be a good idea to do.
 
 ### the basic rebase ###
 
@@ -49,8 +49,8 @@ parallel.
 Often one will do this to make sure that commits they did will apply
 cleanly on a remote branch, maybe to a project they are trying to contribute to
 that they are not the maintainer of.  In this case, the contributor would do 
-thier work in a branch, then rebase thier work onto 'origin/master' when they
-are ready to submit thier patches to the main project so the maintainer doesn't
+their work in a branch, then rebase their work onto 'origin/master' when they
+are ready to submit their patches to the main project so the maintainer doesn't
 have to do any integration work, it'll just be a fast forward or a clean apply.
 
 ### more interesting rebases ###
@@ -66,7 +66,7 @@ a few times.
 Then we decide that we want to merge our client side changes into
 our mainline for a release but we want to hold off on the server side changes
 until it is further tested.  We can take the changes on 'client' that are not
-on 'server' and replay them on our master branch by using the **--onto** option
+on 'server' and replay them on our master branch by using the `--onto` option
 to 'git rebase'.
 
 	$ git rebase --onto master server client
@@ -89,7 +89,7 @@ our results from the field and it is concluded that the 'server' changes are
 working well and should be rolled in.  We can either merge in the 'server'
 branch or we can rebase it in.
 
-The we can rebase the server branch onto the master branch without having to 
+Then we can rebase the server branch onto the master branch without having to 
 check it out first by running 'git rebase (base branch) (work branch)' - which
 will check out the _work branch_ (server) for you and replay it onto 
 the _base branch_ (master).  
@@ -126,7 +126,7 @@ abandoning existing commits and creating new ones that are similar but still
 different.  That means that if you push commits somewhere that others can pull
 them down and base work off of them, then you rewrite those commits and push them
 up again, you collaborators will have to re-merge their work again and things
-will get messy when you try to pull thier work back into yours.
+will get messy when you try to pull their work back into yours.
 
 If you treat rebase as a way to clean up and work with commits _before_ you 
 push them, and only ever rebase commits that have never been available publicly,

@@ -1,4 +1,4 @@
-So you have a Git repository and everything is all setup.  What now?
+So you have a Git repository and everything is all set up.  What now?
 
 Generally, it is not going to be much different than working with any other
 source control system, the only real difference should be the staging process.
@@ -19,8 +19,9 @@ it can be as simple as:
 * repeat
 
 Easy peasy.  Remember, Git is decentralized, so you don't actually need a public
-or shared server to commit to - you can use it like RCS if you want and just
-track local changes.
+or shared server to commit to - you can use it like RCS if you want and just 
+track local changes.  So, let's look at that use case first, then we'll do the more 
+complicated one where we have to synchronize our work with other collaborators.
 
 ### the simple case ###
 
@@ -71,12 +72,10 @@ That's it - that's the simple case.  Edit files, 'git commit -a', repeat.
 
 ### using the staging area ###
 
-Now we're going to cover how to more carefully craft commits using what Git
-calles the 'staging area'.  For this example, let's say that we have updated
-your files like we did in the previous section.  However,
-now let's imagine that we wanted to commit the changes we've made as two
-seperate commits rather than one.  We can see what has been changed in our
-working directory by using the 'git status' command.
+Now you can update your files like we did in the previous section.  However, 
+let's imagine now that we wanted to commit changes we've made in two
+separate commits.  We can see what has been changed in our working directory
+by using the 'git status' command.
 
 	$ git status
 	# On branch master

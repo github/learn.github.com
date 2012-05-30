@@ -17,14 +17,31 @@ episodes:
 
       - name: Normal Workflow
         page: normal
-        desc: Syncronize with a remote repository, make changes,
-              then stage and commit them.
+        desc: Synchronize with a remote repository, make changes, 
+              then stage and commit them. 
 
       - name: Branching and Merging
         page: branching
         desc: Create and work on topic and long running branches,
               merge between them and delete them.
 
+      - name: Git Tagging
+        page: tagging
+        desc: Create signed, unsigned or lightweight tags to permanently
+              mark important points in your project history.
+        
+      - name: Git Log
+        page: log
+        desc: Browse your project history, find specific commits
+              and visualize the branching and merging actions.
+
+      - name: Git Diff
+        page: diff
+        desc: Show differences between different versions of your
+              projects or specific files within your project.
+
+  - section: Intermediate
+    values:   
       - name: Distributed Git
         page: remotes
         desc: Fetch, merge, pull and push between multiple remote

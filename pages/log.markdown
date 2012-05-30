@@ -98,7 +98,7 @@ skip to the next commit once you get the idea.
 #### Viewing Statistics ####
 
 You can view statistics about which files have changed and how many lines
-were added and removed from each file by adding the **--stat** option.
+were added and removed from each file by adding the `--stat` option.
 
 	$ git log --stat
 	commit 0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc
@@ -122,9 +122,9 @@ were added and removed from each file by adding the **--stat** option.
 #### Preset Formats ####
 
 There are a couple of other preset formats you can use to view your commit
-history which you can trigger with the **--pretty** option. You can specify 
+history which you can trigger with the `--pretty` option. You can specify 
 one of : oneline, short, medium, full, fuller, email, or raw. They are somewhat
-self explanatory in how much information they show.  For example, 'raw' looks
+self-explanatory in how much information they show.  For example, 'raw' looks
 like this:
 
 	$ git log --pretty=raw
@@ -185,7 +185,7 @@ for all the different options you can put in that string.
 
 #### Branch Graph ####
 
-One of the more interesting command line output options for log is **--graph**.
+One of the more interesting command line output options for log is `--graph`.
 If you combine it with **--pretty=oneline** you can very effectively visualize
 your commit history and branch topology. 
 
@@ -217,7 +217,7 @@ you can't quite recall, etc.
 
 #### Date Ranges ####
 
-The log command will take **--before** and **--after** commands that restrict
+The log command will take `--before` and `--after` commands that restrict
 the commits shown to ones that are older or newer than those dates, respectively.
 You can specify several different date formats, including relative dates.  For
 example, if I wanted to see commits to the Git project that happened between
@@ -245,7 +245,7 @@ if a patch was sent over email - the author would be the person who wrote the
 patch, the committer would be the project maintainer that applied it.  
 
 Most of the time when you're searching, you're probably looking for the author, 
-but you can search for either with the **--author** and **--committer** log 
+but you can search for either with the `--author` and `--committer` log 
 options.  For instance, here we can look through the Git source history for 
 all the commits in the last 2 weeks that Johannes Schindelin authored.
 
@@ -262,7 +262,7 @@ all the commits in the last 2 weeks that Johannes Schindelin authored.
 	b8469ad0578d6b84ec92752a5f8df3ca5828af77 test-path-utils: Fix off by one, fou
 	f265458f6116a0c03200477ae3b839f2a75bf0fa get_sha1_basic(): fix invalid memory
 
-You can specify either the persons name or the email address to search.  You 
+You can specify either the person's name or the email address to search.  You 
 can also specify partial values - in the above example, it matches Johannes's
 email address.  We could, for example, search for Junio Hamano with any of the 
 following values:
@@ -290,7 +290,7 @@ but 81 from a '.mil' (all from one guy).
 #### Search Commit Messages ####
 
 If we're more interested in the commit message than the author, we can search
-for a specific phrase in the message with the **--grep** option.  For instance,
+for a specific phrase in the message with the `--grep` option.  For instance,
 if we wanted to see all the commits in the Git commit history that referenced
 C90 C compilers, we could search for 'C90':
 
@@ -336,7 +336,7 @@ something in the 't/lib-httpd' directory _or_ the notes.c file:
 #### Other Useful Options ####
 
 Many times you won't want to see merge commits in these results, so you can
-filter them out by adding the **--no-merges** option.
+filter them out by adding the `--no-merges` option.
 
 	$ git log --grep='C90' --pretty=oneline --no-merges
 	8c9e7947c2a76fb21bda11816c544d50e271156d http-push.c: squelch C90 warnings.

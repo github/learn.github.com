@@ -63,35 +63,30 @@ Receiving objects: 100% (85/85), 19.89 KiB, done.
 Resolving deltas: 100% (31/31), done.
 $ cd grack
 $ git remote
-origin
-$ git remote -v
-origin	git://github.com/schacon/grack.git (fetch)
-origin	git://github.com/schacon/grack.git (push)</code></pre>
+origin</code></pre>
 
 <p>If you created your repository with <code>git init</code> or would simply like to add another remote to a repository that you cloned, you can do so with the <code>git remote</code> command.</p>
 
 <pre><code>$ git remote add writey git@github.com:schacon/grack.git
-$ git remote -v
-origin	git://github.com/schacon/grack.git (fetch)
-origin	git://github.com/schacon/grack.git (push)
-writey	git@github.com:schacon/grack.git (fetch)
-writey	git@github.com:schacon/grack.git (push)</code></pre>
+$ git remote
+origin
+writey</code></pre>
+
+<h3 id='fetching_and_pulling'>fetching and pulling</h3>
 
 <p>The name of the alias doesn&#8217;t really matter - you can call it just about anything you want. Now you have an alias for that URL, so you can use it to push to or fetch from. For instance, in this case if someone pushed to the URL I cloned my project from originally and I wanted to get the updates, I can just run:</p>
 
 <pre><code>$ git fetch origin</code></pre>
 
+<p>That will fetch down any branches on that remote repository and add bookmarks (or <code>remote</code>)</p>
+
+<h3 id='pushing_to_remotes'>pushing to remotes</h3>
+
 <p>If I want to then write to my URL (which I named &#8216;writey&#8217; when I added it), I can run this:</p>
 
 <pre><code>$ git push writey master</code></pre>
 
-<p>That pushes my <code>master</code> branch to the <code>writey</code> aliased server.</p>
-
-<h3 id='fetching_and_pulling'>fetching and pulling</h3>
-
-<h3 id='pushing_to_remotes'>pushing to remotes</h3>
-
-<p>pushing and deleting branches</p><br/><br/><hr/></div><div class="span-10"><a href="branching.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="log.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
+<p>That pushes my <code>master</code> branch to the <code>writey</code> aliased server.</p><br/><br/><hr/></div><div class="span-10"><a href="diff.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="log.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">

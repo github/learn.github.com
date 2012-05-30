@@ -1,6 +1,6 @@
 We saw in the 'log' section that adding a '-p' will show you the differences
 that each commit introduces by showing [diff](http://en.wikipedia.org/wiki/Diff)
-of the snapshots of each commit and it's parent.
+of the snapshots of each commit and its parent.
 
 
 
@@ -41,7 +41,7 @@ that those two commits point to, as if they were both constituted in two
 directories and you ran the unix 'diff' tool on them.
 
 You can also use some of the formatting options that you can pass to 'log', 
-such as **--stat**.  If I wanted to see an overview of what all changed between
+such as `--stat`.  If I wanted to see an overview of what all changed between
 version 1.6.1.1 and 1.6.1.2 in the Git project, I could run this:
 
 	$ git diff v1.6.1.1 v1.6.1.2 --stat
@@ -90,7 +90,7 @@ and 1.6.1.2 releases of the Git project.
 
 ### what a merge would introduce ###
 
-Another intersting question that you can answer with 'diff' is what a merge
+Another interesting question that you can answer with 'diff' is what a merge
 would introduce.  This is a strange question, because if you have a line of
 work that diverged into two branches and you directly compare the snapshots, 
 it's going to try to tell you how to get from one state to the other.  

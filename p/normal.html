@@ -38,11 +38,11 @@
     
     <div class="span-21" id="welcome">
       <h1>Normal Workflow</h1>
-      <p>Syncronize with a remote repository, make changes, then stage and commit them.</p>
+      <p>Synchronize with a remote repository, make changes, then stage and commit them.</p>
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><p>So you have a Git repository and everything is all setup. What now?</p>
+      <div class="span-21"><hr/><p>So you have a Git repository and everything is all set up. What now?</p>
 
 <p>Generally, it is not going to be much different than working with any other source control system, the only real difference should be the staging process. The workflow will generally go something like this:</p>
 
@@ -68,7 +68,7 @@
 <li>repeat</li>
 </ul>
 
-<p>Easy peasy. Remember, Git is decentralized, so you don&#8217;t actually need a public or shared server to commit to - you can use it like RCS if you want and just track local changes.</p>
+<p>Easy peasy. Remember, Git is decentralized, so you don&#8217;t actually need a public or shared server to commit to - you can use it like RCS if you want and just track local changes. So, let&#8217;s look at that use case first, then we&#8217;ll do the more complicated one where we have to synchronize our work with other collaborators.</p>
 
 <h3 id='the_simple_case'>the simple case</h3>
 
@@ -106,7 +106,7 @@ $ cd simplegit</code></pre>
 
 <h3 id='using_the_staging_area'>using the staging area</h3>
 
-<p>Now we&#8217;re going to cover how to more carefully craft commits using what Git calles the &#8216;staging area&#8217;. For this example, let&#8217;s say that we have updated your files like we did in the previous section. However, now let&#8217;s imagine that we wanted to commit the changes we&#8217;ve made as two seperate commits rather than one. We can see what has been changed in our working directory by using the &#8216;git status&#8217; command.</p>
+<p>Now you can update your files like we did in the previous section. However, let&#8217;s imagine now that we wanted to commit changes we&#8217;ve made in two separate commits. We can see what has been changed in our working directory by using the &#8216;git status&#8217; command.</p>
 
 <pre><code>$ git status
 # On branch master

@@ -51,7 +51,7 @@ the GNU General Public License.
 
 Git is fully distributed, which means that it can work almost entirely offline.
 In stark contrast to VCS tools like Perforce or Subversion, Git does nearly all
-of it's operations without needing a network connection, including history
+of its operations without needing a network connection, including history
 viewing, difference viewing and commiting.
 
 This also means that Git is very fast compared to those systems partially due
@@ -70,13 +70,12 @@ Git and in Subversion.
 	real	0m3.709s
 	user	0m0.482s
 	sys	0m0.168s
-
-Git at 0.3 seconds vs Subversion at 3.7 seconds. That is a difference of a
-full order of magnatude.  You'll find similar
-differences with nearly any command comparison.  For example, adding the popular
-famfamfam icon set and committing them.  Since you can seperate the commit from the
-network 'push' in Git, this action takes a quarter of a second in Git, but 45 seconds
-in Subversion.
+	
+Git at 0.3 seconds vs Subversion at 3.7 seconds. That is a difference of a 
+full order of magnitude.  You'll find similar differences with nearly any command 
+comparison.  For example, adding the popular famfamfam icon set and committing them.  
+Since you can separate the commit from the network 'push' in Git, this action takes 
+a quarter of a second in Git, but 45 seconds in Subversion.
 
 	time 'git add icons; git commit -m "added icons"'
 
@@ -143,7 +142,7 @@ For a more in-depth examination of how Git stores data, checkout
 
 Probably the most compelling feature of Git, since it often fundamentally
 changes the way that many developers work, is Gits branching model.  Instead
-of the popular VCS branching method of simply cloning into a seperate directory
+of the popular VCS branching method of simply cloning into a separate directory 
 for a branch, Git lets you switch between branches in a single working directory.
 Add to that the fact that creating and switching between branches is nearly
 instant, not all of your branches need to be shared, and it's easy to stash

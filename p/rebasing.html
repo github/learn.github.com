@@ -42,7 +42,7 @@
     </div>
     
     <div class="content">
-      <div class="span-21"><hr/><p>In Git, there are two main ways to integrate changes from one branch into another - the &#8216;merge&#8217; and the &#8216;rebase&#8217;. In this section we will learn what &#8216;rebasing&#8217; is, how to do it and in what cases it may not be a good idea to.</p>
+      <div class="span-21"><hr/><p>In Git, there are two main ways to integrate changes from one branch into another - the &#8216;merge&#8217; and the &#8216;rebase&#8217;. In this section we will learn what &#8216;rebasing&#8217; is, how to do it and in what cases it may not be a good idea to do.</p>
 
 <h3 id='the_basic_rebase'>the basic rebase</h3>
 
@@ -75,7 +75,7 @@ Applying: added staged command</code></pre>
 
 <p>If you look at the log of a rebased branch, it just looks like a linear history, like all of the work happened in series, even when it actually happened in parallel.</p>
 
-<p>Often one will do this to make sure that commits they did will apply cleanly on a remote branch, maybe to a project they are trying to contribute to that they are not the maintainer of. In this case, the contributor would do thier work in a branch, then rebase thier work onto &#8216;origin/master&#8217; when they are ready to submit thier patches to the main project so the maintainer doesn&#8217;t have to do any integration work, it&#8217;ll just be a fast forward or a clean apply.</p>
+<p>Often one will do this to make sure that commits they did will apply cleanly on a remote branch, maybe to a project they are trying to contribute to that they are not the maintainer of. In this case, the contributor would do their work in a branch, then rebase their work onto &#8216;origin/master&#8217; when they are ready to submit their patches to the main project so the maintainer doesn&#8217;t have to do any integration work, it&#8217;ll just be a fast forward or a clean apply.</p>
 
 <h3 id='more_interesting_rebases'>more interesting rebases</h3>
 
@@ -83,7 +83,7 @@ Applying: added staged command</code></pre>
 
 <p><img src='../images/rebase/onto1.png' alt='Rebase Onto Step 1' /></p>
 
-<p>Then we decide that we want to merge our client side changes into our mainline for a release but we want to hold off on the server side changes until it is further tested. We can take the changes on &#8216;client&#8217; that are not on &#8216;server&#8217; and replay them on our master branch by using the <strong>&#8211;onto</strong> option to &#8216;git rebase&#8217;.</p>
+<p>Then we decide that we want to merge our client side changes into our mainline for a release but we want to hold off on the server side changes until it is further tested. We can take the changes on &#8216;client&#8217; that are not on &#8216;server&#8217; and replay them on our master branch by using the <code>--onto</code> option to &#8216;git rebase&#8217;.</p>
 
 <pre><code>$ git rebase --onto master server client</code></pre>
 
@@ -100,7 +100,7 @@ $ git merge client</code></pre>
 
 <p>Boom. We roll the release out off of our &#8216;master&#8217; branch. A bit later we get our results from the field and it is concluded that the &#8216;server&#8217; changes are working well and should be rolled in. We can either merge in the &#8216;server&#8217; branch or we can rebase it in.</p>
 
-<p>The we can rebase the server branch onto the master branch without having to check it out first by running &#8216;git rebase (base branch) (work branch)&#8217; - which will check out the <em>work branch</em> (server) for you and replay it onto the <em>base branch</em> (master).</p>
+<p>Then we can rebase the server branch onto the master branch without having to check it out first by running &#8216;git rebase (base branch) (work branch)&#8217; - which will check out the <em>work branch</em> (server) for you and replay it onto the <em>base branch</em> (master).</p>
 
 <pre><code>$ git rebase master server</code></pre>
 
@@ -126,7 +126,7 @@ $ git branch -d server</code></pre>
 
 <p>If you follow that, you&#8217;ll be cool. If you do not, people will hate you and you will be scorned by friends and family.</p>
 
-<p>When you rebase stuff, you are abandoning existing commits and creating new ones that are similar but still different. That means that if you push commits somewhere that others can pull them down and base work off of them, then you rewrite those commits and push them up again, you collaborators will have to re-merge their work again and things will get messy when you try to pull thier work back into yours.</p>
+<p>When you rebase stuff, you are abandoning existing commits and creating new ones that are similar but still different. That means that if you push commits somewhere that others can pull them down and base work off of them, then you rewrite those commits and push them up again, you collaborators will have to re-merge their work again and things will get messy when you try to pull their work back into yours.</p>
 
 <p>If you treat rebase as a way to clean up and work with commits <em>before</em> you push them, and only ever rebase commits that have never been available publicly, then you&#8217;ll be living the sweet life.</p><br/><br/><hr/></div><div class="span-10"><a href="diff.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="undoing.html">next &raquo;</a></div><div class="span-21 last">&nbsp;</div><hr/>
     </div>
