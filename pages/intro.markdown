@@ -154,7 +154,7 @@ developers routinely create, merge and destroy multiple branches a week, or even
 per day.  Often each feature or bug you are working on can have its own branch,
 merged in only when it is complete.  This model allows you to experiment quickly,
 easily and safely - without having to go through hoops to get back to where you
-where.  It enables and encourages a _non-linear_ development cycle, where you
+were.  It enables and encourages a _non-linear_ development cycle, where you
 can work on multiple lines of thought in parallel without them stepping on
 each other.
 
