@@ -1,0 +1,17 @@
+html, body {
+	border-top: 5px solid #000;
+	color: #333;
+	padding: 0 0 40px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+a {
+	color: #000;
+	font-weight:bold;
+	text-decoration: none;
+}
+a:hover {
+	color:#333;
+}
+
