@@ -1,20 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Learn GitHub • GitHub Learning Gateway</title>
+		<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+		<style>
+			ul.gears{
+				list-style-type: none;
+			}
+			ul.gears li{
+				height: 250px;
+				width: 250px;
+			}
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Learn.GitHub</title>
-  <script type="text/javascript">
-    <!--
-    window.location = "http://gitref.org"
-    //-->
-  </script>
-</head>
+			ul.gears li{
+				margin-top: -40px;
+			}
+			ul.gears li:first-child{
+				margin-top: 0;
+			}
+			ul.gears li ul{
+				position: absolute;
+				left: 270px;
+				margin-top: 100px;
+			}
+			ul.gears > li:nth-child(2n){
+				margin-left: 110px;
+			}
+			ul.gears li ul li{
+				display: inline;
+				margin-left: 0;
+			}
+			ul.gears > li:nth-child(2n) ul{
+				margin-left: 100px;
+			}
+			ul.gears > li ul li:nth-child(2n){
+				margin-left: 0px;
+			}
 
-<body>
-  Redirecting to <a href="http://gitref.org">GitRef.org</a>
-</body>
+			ul.gears li ul li{
+				border-right: solid 2px black;
+				padding: .25em;
+			}
+			ul.gears li ul li:last-child{
+			 border-right: none;
+			}
+			.apple{background: url(apple.png) no-repeat; background-size: contain;}
+			.board{background: url(board.png) no-repeat; background-size: contain;}
+			.brain{background: url(brain.png) no-repeat; background-size: contain;}
+			.book{background: url(book.png) no-repeat; background-size: contain;}
+		</style>
+	</head>
 
-</body>
+	<body>
+		<ul class="gears">
+			<li class="apple">
+				<ul>
+					<li><a href="#ComingSoon">Study</a></li>
+					<li><a href="http://try.github.com">Try</a></li>
+					<li><a href="http://help.github.com">Help</a></li>
+				</ul>
+			</li>
+
+			<li class="board">
+				<ul>
+					<li><a href="http://speakerdeck.com">SpeakerDeck</a></li>
+					<li><a href="http://talks.githubapp.com">Talks</a></li>
+					<li><a href="#ComingSoon">Community</a></li>
+				</ul>
+			</li>
+
+			<li class="brain">
+				<ul>
+					<li><a href="http://teach.github.com">Teaching</a></li>
+					<li><a href="http://training.github.com">Training</a></li>
+					<li><a href="https://github.com/edu">Edu</a></li>
+					<li><a href="http://campus.github.com">Campus</a></li>
+				</ul>
+			</li>
+
+			<li class="book">
+				<ul>
+					<li><a href="http://git-scm.com">GitSCM</a></li>
+					<li><a href="http://gitref.org">GitRef</a></li>
+					<li><a href="http://developer.github.com">APIs</a></li>
+				</ul>
+			</li>
+		</ul>
+	</body>
 </html>
