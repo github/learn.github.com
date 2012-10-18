@@ -75,7 +75,7 @@ Now we're going to cover how to more carefully craft commits using what Git
 calles the 'staging area'.  For this example, let's say that we have updated
 your files like we did in the previous section.  However,
 now let's imagine that we wanted to commit the changes we've made as two
-seperate commits rather than one.  We can see what has been changed in our
+separate commits rather than one.  We can see what has been changed in our
 working directory by using the 'git status' command.
 
 	$ git status

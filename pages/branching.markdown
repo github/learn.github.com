@@ -2,7 +2,7 @@ As we touched on in the first lesson, the way that Git handles branching and
 merging is pretty unique.  First of all, it's incredibly fast, both to create
 new branches and to switch between them. Git has a single working directory
 that it replaces with the contents of the branch you're working on, so you
-don't have to have seperate directories for each branch.
+don't have to have separate directories for each branch.
 
 In this lesson, we'll create a new branch, do a bit of work, switch back to
 our stable branch (generally called 'master' in Git by default), do some work

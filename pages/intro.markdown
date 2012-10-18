@@ -74,7 +74,7 @@ Git and in Subversion.
 Git at 0.3 seconds vs Subversion at 3.7 seconds. That is a difference of a
 full order of magnatude.  You'll find similar
 differences with nearly any command comparison.  For example, adding the popular
-famfamfam icon set and committing them.  Since you can seperate the commit from the
+famfamfam icon set and committing them.  Since you can separate the commit from the
 network 'push' in Git, this action takes a quarter of a second in Git, but 45 seconds
 in Subversion.
 
@@ -143,7 +143,7 @@ For a more in-depth examination of how Git stores data, checkout
 
 Probably the most compelling feature of Git, since it often fundamentally
 changes the way that many developers work, is Gits branching model.  Instead
-of the popular VCS branching method of simply cloning into a seperate directory
+of the popular VCS branching method of simply cloning into a separate directory
 for a branch, Git lets you switch between branches in a single working directory.
 Add to that the fact that creating and switching between branches is nearly
 instant, not all of your branches need to be shared, and it's easy to stash
