@@ -231,7 +231,7 @@ This is a very useful command, because it tells you what changes you're introduc
 were you to run 'git commit' (without the '-a') at that point.
 
 OK, now we've seen how to modify, stage and commit changes to files.  Next we'll
-look at one of the killer features of Git, it's branching model.
+look at one of the killer features of Git, its branching model.
 
 For more information on basic Git usage, you can read [Chapter 2](http://progit.org/book/ch2-0.html)
 of the Pro Git book.
