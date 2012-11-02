@@ -19,7 +19,7 @@ We can see that we only have one branch 'master' and the '\*' indicates that we
 are currently on it.  For the purposes of illustrating this, I will show the
 commit history model.  Here, the green boxes are each commit and the arrows
 are where each commit points to for its parent or parents.  This is basically
-how Git actually stores it's commit data.
+how Git actually stores its commit data.
 
 ![Branch Step 1](../images/branch/step1.png)
 
@@ -52,7 +52,7 @@ that we know works perfectly.  We don't have to share the changes we make in our
 
 ### working in multiple branches ###
 
-So, lets add a TODO file, make a change to the 'simplegit.rb' file, and then
+So, let's add a TODO file, make a change to the 'simplegit.rb' file, and then
 make a commit with both changes in it.
 
 	$ vim lib/simplegit.rb
@@ -179,7 +179,7 @@ history look something like this.
 
 ![Branch Step 6](../images/branch/step6.png)
 
-Since Git does it's merges as a simple 3 way merge based on the commit history
+Since Git does its merges as a simple 3 way merge based on the commit history
 snapshots, doing multiple merges is often very easy.  It will only have to
 merge in changes introduced on both branches since the last merge - it will not
 have to re-merge anything.
