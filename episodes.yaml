@@ -17,7 +17,7 @@ episodes:
 
       - name: Normal Workflow
         page: normal
-        desc: Syncronize with a remote repository, make changes,
+        desc: Make and view changes made,
               then stage and commit them.
 
       - name: Branching and Merging
