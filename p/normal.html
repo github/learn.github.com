@@ -38,13 +38,13 @@
 
     <div class="span-21" id="welcome">
       <h1>Normal Workflow</h1>
-      <p>Syncronize with a remote repository, make changes, then stage and commit them.</p>
+      <p>Make and view changes made, then stage and commit them.</p>
     </div>
 
     <div class="content">
       <div class="span-21"><hr/><p>So you have a Git repository and everything is all setup. What now?</p>
 
-<p>Generally, it is not going to be much different than working with any other source control system, the only real difference should be the staging process. The workflow will generally go something like this:</p>
+<p>Generally, it is not going to be much different than working with any other source control system. The only real difference should be the staging process. The workflow will generally go something like this:</p>
 
 <ul>
 <li>modify files</li>
@@ -58,7 +58,7 @@
 <li>rinse, repeat</li>
 </ul>
 
-<p>That is the most complex case - if you&#8217;re not collaborating with anyone and so have no upstream repository to push to, and you want to ignore the staging area, it can be as simple as:</p>
+<p>That is the most complex case. If you&#8217;re not collaborating with anyone and so have no upstream repository to push to, and you want to ignore the staging area, it can be as simple as:</p>
 
 <ul>
 <li>modify files</li>
@@ -77,7 +77,9 @@
 <pre><code>$ git clone git://github.com/schacon/simplegit.git
 $ cd simplegit</code></pre>
 
-<p>For this first example we&#8217;ll modify the README file to add ourselves as an author on the project. So we simply edit the file. Now we want to commit that change, so we run the &#8216;git commit -a&#8217; command. The &#8216;-a&#8217; tells Git to stage all modified files and then commit - we&#8217;ll cover the &#8216;staging area&#8217; next, but for now just running &#8216;git commit -a&#8217; will act something like the &#8216;commit&#8217; command in SVN.</p>
+<p>For this first example we&#8217;ll modify the README file to add ourselves as an author on the project.</p>
+
+<p>First, we simply edit the file. Now we want to commit that change, so we run the &#8216;git commit -a&#8217; command. The &#8216;-a&#8217; tells Git to stage all modified files and then commit - we&#8217;ll cover the &#8216;staging area&#8217; next, but for now just running &#8216;git commit -a&#8217; will act something like the &#8216;commit&#8217; command in SVN.</p>
 
 <p>A prompt for a commit message will open in our editor (the $EDITOR environment variable or &#8216;core.editor&#8217; git config variable - by default it uses &#8216;vim&#8217;) that looks like this:</p>
 
@@ -100,13 +102,13 @@ $ cd simplegit</code></pre>
 [master]: created 5896d4d: &quot;added myself to the README as an author&quot;
  1 files changed, 2 insertions(+), 1 deletions(-)</code></pre>
 
-<p>Git will show us the commit message we typed and some statistics about what changes were introduced in that commit. It will also give us a checksum of the commit, &#8216;5896d4d&#8217;, that we can use to refer to this exact commit at any other time.</p>
+<p>Git will show us the commit message we typed and some statistics about what changes were introduced in that commit. It will also give us a checksum of the commit, &#8216;5896d4d&#8217;, that we can use to refer to this exact commit later on.</p>
 
 <p>That&#8217;s it - that&#8217;s the simple case. Edit files, &#8216;git commit -a&#8217;, repeat.</p>
 
 <h3 id='using_the_staging_area'>using the staging area</h3>
 
-<p>Now we&#8217;re going to cover how to more carefully craft commits using what Git calles the &#8216;staging area&#8217;. For this example, let&#8217;s say that we have updated your files like we did in the previous section. However, now let&#8217;s imagine that we wanted to commit the changes we&#8217;ve made as two separate commits rather than one. We can see what has been changed in our working directory by using the &#8216;git status&#8217; command.</p>
+<p>Now we&#8217;re going to cover how to more carefully craft commits using what Git calls the &#8216;staging area&#8217;. For this example, let&#8217;s say that we have updated your files like we did in the previous section. However, let&#8217;s now imagine that we wanted to commit the changes we&#8217;ve made as two separate commits rather than one. We can see what has been changed in our working directory by using the &#8216;git status&#8217; command.</p>
 
 <pre><code>$ git status
 # On branch master
@@ -123,7 +125,7 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 
 <p><img alt='Git Staging Workflow' src='../images/staging.png' /></p>
 
-<p>So, let&#8217;s stage the files. Git uses the &#8216;git add&#8217; command both to begin tracking files and also to stage changes to them. So let&#8217;s stage the changes in just the README file, then take a look at our status again.</p>
+<p>So, let&#8217;s stage the files. Git uses the &#8216;git add&#8217; command both to begin tracking files and also to stage changes to them. We&#8217;ll stage the changes in just the README file, then take a look at our status again.</p>
 
 <pre><code>$ git add README
 $ git status
@@ -139,13 +141,13 @@ $ git status
 #
 #	modified:   lib/simplegit.rb</code></pre>
 
-<p>Now the &#8216;lib/simplegit.rb&#8217; file is still unstaged, but the README file is now under the &#8216;Changes to be committed&#8217; section - it is <strong>staged</strong>. Now if we run the commit command (without the -a, which automatically stages everything), only the changes to that file will go into the commit - the simplegit.rb file will remain unstaged. In this instance, we&#8217;ll use the &#8216;-m&#8217; option to &#8216;git commit&#8217; to specify the commit message on the command line.</p>
+<p>The &#8216;lib/simplegit.rb&#8217; file is still unstaged, but the README file is now under the &#8216;Changes to be committed&#8217; section - it is <strong>staged</strong>. If we run the commit command (without the -a, which automatically stages everything), only the changes to that file will go into the commit - the &#8216;simplegit.rb&#8217; file will remain unstaged. In this instance, we&#8217;ll use the &#8216;-m&#8217; option with &#8216;git commit&#8217; to specify the commit message on the command line.</p>
 
 <pre><code>$ git commit -m &#39;updated the README&#39;
 [master]: created 14bb3c6: &quot;updated the README&quot;
  1 files changed, 1 insertions(+), 2 deletions(-)</code></pre>
 
-<p>Now if we run &#8216;git status&#8217; again, we can see that the staged file is now committed and all we have left is the unstaged &#8216;simplegit.rb&#8217; file.</p>
+<p>If we run &#8216;git status&#8217; again, we can see that the staged file is now committed and all we have left is the unstaged &#8216;simplegit.rb&#8217; file.</p>
 
 <pre><code>$ git status
 # On branch master
@@ -158,7 +160,7 @@ $ git status
 #	modified:   lib/simplegit.rb
 #</code></pre>
 
-<p>Now we can stage and commit that file into a second commit:</p>
+<p>We can stage and commit that file into a second commit:</p>
 
 <pre><code>$ git commit -a -m &#39;added a staging command to the library&#39;
 [master]: created bbaee85: &quot;added a staging command to the library&quot;
@@ -169,9 +171,9 @@ $ git status
 #
 nothing to commit (working directory clean)</code></pre>
 
-<p>Now we have all our changes stored in two commits thematically, so that it can be easier for our collaborators to understand what we&#8217;ve been working on. After the last file is committed, we can see that the &#8216;git status&#8217; command tells us that our working directory is clean (and also that our current branch has two commits that we haven&#8217;t pushed yet).</p>
+<p>Now we have all our changes stored in two commits thematically, so that it can be easier for our collaborators to understand what we&#8217;ve been working on. After the last file is committed we can see that the &#8216;git status&#8217; command tells us that our working directory is clean (and also that our current branch has two commits that we haven&#8217;t pushed yet).</p>
 
-<p>If during the &#8216;staging&#8217; part of this workflow you want to see not just want files have changed or are staged, but what the differences are, you can use the <code>git diff</code> command to find that out.</p>
+<p>If during the &#8216;staging&#8217; part of this workflow you want to see not just what files have changed or are staged, but what the differences are, you can use the <code>git diff</code> command to find that out.</p>
 
 <h3 id='changes_that_have_not_been_staged'>changes that have not been staged</h3>
 
@@ -196,7 +198,7 @@ $ git status
 #	modified:   lib/simplegit.rb
 #</code></pre>
 
-<p>However, what was actually changed in &#8216;simplegit.rb&#8217;? How can I see what changes I&#8217;ve made that I&#8217;m going to stage? The answer is to just run &#8216;git diff&#8217; with no arguments.</p>
+<p>However, what was actually changed in &#8216;simplegit.rb&#8217;? How can I see what changes I&#8217;ve made that I&#8217;m going to stage? The answer is to run &#8216;git diff&#8217; with no arguments.</p>
 
 <pre><code>$ git diff
 diff --git a/lib/simplegit.rb b/lib/simplegit.rb
@@ -232,11 +234,11 @@ index c526f88..879f0d4 100644
           Magnus O. Chacon (mchacon@gmail.com)
 +         Josephine Chacon (jo.chacon@gmail.com)</code></pre>
 
-<p>This is a very useful command, because it tells you what changes you&#8217;re introducing were you to run &#8216;git commit&#8217; (without the &#8216;-a&#8217;) at that point.</p>
+<p>This is a very useful command because it tells you what changes you&#8217;re introducing were you to run &#8216;git commit&#8217; (without the &#8216;-a&#8217;) at that point.</p>
 
 <p>OK, now we&#8217;ve seen how to modify, stage and commit changes to files. Next we&#8217;ll look at one of the killer features of Git, its branching model.</p>
 
-<p>For more information on basic Git usage, you can read <a href='http://progit.org/book/ch2-0.html'>Chapter 2</a> of the Pro Git book.</p><br/><br/><hr/></div><div class="span-10"><a href="setup.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="branching.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
+<p>For more information on basic Git usage, you can read <a href='http://git-scm.com/book/en/Git-Basics'>Chapter 2</a> of the Pro Git book.</p><br/><br/><hr/></div><div class="span-10"><a href="setup.html">&laquo; previous</a></div><div style="text-align:right" class="span-11 last"><a href="branching.html">next &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
