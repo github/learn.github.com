@@ -48,11 +48,11 @@
 
 <h3 id='what_is_a_remote'>what is a remote?</h3>
 
-<p>A <code>remote</code> in Git is basically a way to tell Git where another version of your repository is. Then you can ask Git to fetch data from it that you don&#8217;t have yet, or push your commits up to it (if you have write access). This is much like the main Subversion server, but you can have several of them.</p>
+<p>A <code>remote</code> is basically a way to tell Git where another version of your repository is. You can then ask Git to fetch data from it that you don&#8217;t have yet, or push your commits up to it (if you have write access). This is much like the main Subversion server, but you can have several remotes.</p>
 
 <h3 id='adding_remotes'>adding remotes</h3>
 
-<p>When you do a clone of a repository, Git will automatically add a remote reference for the repository you cloned, automatically naming it &#8216;origin&#8217;. This is an alias, so you don&#8217;t have to type the whole URL again when getting updates from it. Instead you can just run <code>git fetch origin</code> (instead of <code>git fetch git://server/path.git</code>).</p>
+<p>When you clone a repository, Git will automatically add a remote reference for the repository and name it &#8216;origin&#8217;. This is an alias, so you don&#8217;t have to type the whole URL again when getting updates from it. Instead, you can just run <code>git fetch origin</code> (instead of <code>git fetch git://server/path.git</code>).</p>
 
 <pre><code>$ git clone git://github.com/schacon/grack.git
 Initialized empty Git repository in /opt/grack/.git/
@@ -65,20 +65,36 @@ $ cd grack
 $ git remote
 origin</code></pre>
 
-<p>If you created your repository with <code>git init</code> or would simply like to add another remote to a repository that you cloned, you can do so with the <code>git remote</code> command.</p>
+<p>If you created your repository with <code>git init</code> or would simply like to add another remote to a repository that you cloned, you can do so with the <code>git remote add</code> command along with the necessary details.</p>
+
+<p>For example, we&#8217;ll add a new remote named &#8220;writey&#8221; located at &#8220;git@github.com:schacon/grack.git&#8221; and then see the list of remotes attached to the repository.</p>
 
 <pre><code>$ git remote add writey git@github.com:schacon/grack.git
 $ git remote
 origin
 writey</code></pre>
 
+<p>To see a list of all the named remotes with their corresponding URLs, add the <code>-v</code> flag.</p>
+
+<pre><code>$ git remote -v	
+origin git://github.com/schacon/grack.git (fetch)
+origin git://github.com/schacon/grack.git (push)
+writey git@github.com:schacon/grack.git (fetch)
+writey git@github.com:schacon/grack.git (push)</code></pre>
+
+<p>Note that the remote aliases will be listed twice as Git allows you to have different push and fetch URLs per remote.</p>
+
 <h3 id='fetching_and_pulling'>fetching and pulling</h3>
 
-<p>The name of the alias doesn&#8217;t really matter - you can call it just about anything you want. Now you have an alias for that URL, so you can use it to push to or fetch from. For instance, in this case if someone pushed to the URL I cloned my project from originally and I wanted to get the updates, I can just run:</p>
+<p>The name of the alias doesn&#8217;t really matter - you can call it just about anything you want. Now you have an alias for that URL, so you can use it to push to or fetch from. For instance, if someone pushed to the URL I cloned my project from originally and I wanted to get the updates, I can just run:</p>
 
 <pre><code>$ git fetch origin</code></pre>
 
-<p>That will fetch down any branches on that remote repository and add bookmarks (or <code>remote</code>)</p>
+<p>This will fetch any branches on that remote repository and add bookmarks of the remote branches at the time of synchronization. You can then merge from, diff or run logs on these branches.</p>
+
+<p><code>git pull</code> is a related command that will run a <code>git fetch</code> followed by a <code>git merge</code> and try to merge any pulled commits to the local branch you are currently working in.</p>
+
+<p>A pull will try and merge without review, and if you&#8217;re not careful, you may find some conflicts waiting on the other side.</p>
 
 <h3 id='pushing_to_remotes'>pushing to remotes</h3>
 
