@@ -39,15 +39,15 @@ def generate_page(page_data)
   @pcontent += '</div>'
   
   @pcontent += "<div class=\"span-10\">"
-  if n = @nextlast[:last][page]
-    @pcontent += "<a href=\"#{n}.html\">&laquo; previous</a>"
+  if (n = @nextlast[:last][page]) && (nname = @nextlast[:lastname][page])
+    @pcontent += "<a href=\"#{n}.html\">&laquo; #{nname}</a>"
   else
     @pcontent += "&nbsp;"
   end
   @pcontent += "</div>"
 
-  if n = @nextlast[:next][page]
-    @pcontent += "<div style=\"text-align:right\" class=\"span-11 last\"><a href=\"#{n}.html\">next &raquo;</a></div>"
+  if (n = @nextlast[:next][page]) && (nname = @nextlast[:nextname][page])
+    @pcontent += "<div style=\"text-align:right\" class=\"span-11 last\"><a href=\"#{n}.html\">#{nname} &raquo;</a></div>"
   end
 
   @pcontent += '<div class="span-24 last">&nbsp;</div><hr/>'
@@ -65,14 +65,17 @@ task :gensite do
   @content = ''
 
   # finding the next and last pages
-  last = nil
-  @nextlast = {:last => {}, :next => {}}
+  last = lastname = nil
+  @nextlast = {:last => {}, :lastname => {}, :next => {}, :nextname => {}}
   ep['episodes'].each do |section|
     section['values'].each do |episode|
-      if p = episode['page']
+      if (p = episode['page']) && (pname = episode['name'])
         @nextlast[:last][p] = last
+        @nextlast[:lastname][p] = lastname
         @nextlast[:next][last] = p
+        @nextlast[:nextname][last] = pname
         last = p
+        lastname = pname
       end
     end
   end
