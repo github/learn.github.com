@@ -20,6 +20,7 @@ h2 { background: #ddd; text-align: center; padding: 4px; }
 .content h3 { background: #dfd; font-size: 1.7em; padding: 6px 2px; }
 
 pre { padding: 20px; background: #ffd; font-size: 0.9em; }
+p code { background: #ffd; padding: 2px 5px; }
 
 #links { padding: 10px; }
 
