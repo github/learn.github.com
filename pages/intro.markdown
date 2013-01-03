@@ -9,7 +9,7 @@ introduction before we start using it.
 Git is a **fast, open source, distributed version** control system that is quickly
 replacing subversion in open source and corporate programming communities.
 
-### version control system ###
+### version control system 
 
 First off, Git is a _version control system_, a simple command line
 tool for keeping a history on the state of your source code projects. You
@@ -37,7 +37,7 @@ show you the _man_ page. You can also type 'git help _command_' for the same thi
 
 ### open source
 
-Git is an open source project, that has been active for several years and is
+Git is an open source project that has been active for several years and is
 written mostly in C.
 
 ![Git Language Breakdown](../images/git-lang.png)
@@ -104,7 +104,7 @@ difference - one that severely changes your workflow.
 Most commands in Git seem instantaneous - no more typing 'svn commit' and
 then going for a cup of coffee.
 
-### small (vs svn) ###
+### small (vs svn) 
 
 Git is also very space efficient.  For example, if you import the Django project
 from SVN into Git and compare their checkout/clone sizes, Git comes out very
@@ -165,7 +165,7 @@ of Git.
 
 ### installing git
 
-See the [Pro Git Book](http://progit.org/book/ch1-4.html)
+See the [Pro Git book](http://git-scm.com/book/en/Getting-Started-Installing-Git)
 for details on how to install Git on your particular operating system.  Or,
 simply go to the [download](http://git-scm.com/download) page on git-scm.com to
 get the source or an installer for your system.
@@ -173,9 +173,6 @@ get the source or an installer for your system.
 ### resources
 
 For more information on Git, the homepage is at [git-scm.com](http://git-scm.com).
-We will also be referring heavily to the CC-licenced [Pro Git Book](http://progit.org)
-for more information on each of these sections.
-
-
-
+We will also be referring heavily to the Creative Commons licenced 
+[Pro Git book](http://git-scm.com/book) for more information on each of these sections.
 
