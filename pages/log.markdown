@@ -180,7 +180,7 @@ from, since you know the format won't change from one Git release to another.
 	The author of 8a5cbc4 was Scott Chacon, 5 months ago
 	The title was >>updated readme<<
 
-See the [git log docs](http://www.kernel.org/pub/software/scm/git/docs/git-log.html)
+See the [git log docs](http://git-scm.com/docs/git-log)
 for all the different options you can put in that string.
 
 #### Branch Graph ####

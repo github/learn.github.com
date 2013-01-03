@@ -198,5 +198,5 @@ So, that is basic branching and merging in Git and should give you a good
 baseline for being able to effectively use this powerful and ultimately pretty
 simple tool.
 
-For more information on branching and merging in Git, you can read [Chapter 3](http://progit.org/book/ch3-0.html)
+For more information on branching and merging in Git, you can read [Chapter 3](http://git-scm.com/book/en/Git-Branching)
 of the Pro Git book.
