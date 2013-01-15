@@ -1,48 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="UTF-8">
   <title>Learn.GitHub - Branching and Merging</title>
-	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
-	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
-	<script type="text/javascript" src="../js/jquery.corner.js"></script>
-
-	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-  <!--[if IE]>
-    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
-  <![endif]-->
-
-	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
-  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
+<header>
   <div class="container">
-
-    <div class="span-21" id="header">
-      <div class="span-10">
-        <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
-      </div>
-
-      <div class="span-11 last">
-        <div id="links">
-          <a href="http://github.com">home</a>
-          <a href="http://github.com/login">login</a>
-          <a href="http://github.com/signup">signup!</a>
-        </div>
-      </div>
+    <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
+    <div id="githublinks">
+      <a href="https://github.com">home</a>
+      <a href="https://github.com/login">log in</a>
+      <a href="https://github.com/signup">sign up!</a>
     </div>
-
-    <div class="span-21" id="welcome">
-      <h1>Branching and Merging</h1>
-      <p>Create and work on topic and long running branches, merge between them and delete them.</p>
-    </div>
-
-    <div class="content">
-      <div class="span-21"><hr/><p>As we touched on in the first lesson, the way that Git handles branching and merging is pretty unique. First of all, it&#8217;s incredibly fast, both to create new branches and to switch between them. Git has a single working directory that it replaces with the contents of the branch you&#8217;re working on, so you don&#8217;t have to have separate directories for each branch.</p>
+  </div>
+</header>
+<div class="container">
+  <h1>Branching and Merging</h1>
+  <p id="welcome">Create and work on topic and long running branches, merge between them and delete them.</p>
+  <div class="content">
+    <p>As we touched on in the first lesson, the way that Git handles branching and merging is pretty unique. First of all, it&#8217;s incredibly fast, both to create new branches and to switch between them. Git has a single working directory that it replaces with the contents of the branch you&#8217;re working on, so you don&#8217;t have to have separate directories for each branch.</p>
 
 <p>In this lesson, we&#8217;ll create a new branch, do a bit of work, switch back to our stable branch (generally called &#8216;master&#8217; in Git by default), do some work there, switch back to our temporary branch to complete our work, and then merge it into our stable branch.</p>
 
@@ -182,39 +161,45 @@ $ git commit
 
 <p>So, that is basic branching and merging in Git and should give you a good baseline for being able to effectively use this powerful and ultimately pretty simple tool.</p>
 
-<p>For more information on branching and merging in Git, you can read <a href='http://git-scm.com/book/en/Git-Branching'>Chapter 3</a> of the Pro Git book.</p><br/><br/><hr/></div><div class="span-10"><a href="normal.html">&laquo; Normal Workflow</a></div><div style="text-align:right" class="span-11 last"><a href="remotes.html">Distributed Git &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
-    </div>
-
-    <div id="footer" class="span-21">
-      <div class="info span-12">
-        <div class="links">
-          <a href="https://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
-          <a href="https://github.com/blog">Blog</a> |
-          <a href="https://github.com/contact">Contact &amp; Support </a> |
-          <a href="http://training.github.com/">Git Training</a> |
-          <a href="https://status.github.com">Status</a>
-        </div>
-        <div class="company">
-          &copy; 2012 GitHub Inc. All rights reserved. | <a href="https://help.github.com/articles/github-terms-of-service">Terms of Service</a> | <a href="https://help.github.com/articles/github-privacy-policy">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="fork span-7">
-        This website is <a href="http://github.com/github/learn.github.com">open source</a>.
-        Please help us by forking the project and adding to it.
-      </div>
-    </div>
-
+<p>For more information on branching and merging in Git, you can read <a href='http://git-scm.com/book/en/Git-Branching'>Chapter 3</a> of the Pro Git book.</p><div class="page-turns"><a href="normal.html" class="page-prev">&laquo; Normal Workflow</a><a href="remotes.html" class="page-next">Distributed Git &raquo;</a></div>
   </div>
-
-  <script type="text/javascript">
+</div>
+<div class="container">
+  <div class="content">
+    <p>
+      This website is <a href="http://github.com/github/learn.github.com">open source</a>.
+      Please help us by forking the project and adding to it.
+    </p>
+    <div class="links">
+      <a href="https://github.com/contact">Contact &amp; Support </a> •
+      <a href="http://training.github.com/">Git Training</a> •
+      <a href="https://github.com/blog">Blog</a> •
+      <a href="https://github.com/blog/148-github-shirts-now-available">T-Shirts</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="content">
+      <a id="footerlogo" href="https://github.com">
+        <img src="/images/github-footer-logo.png" width="109" height="51" alt="GitHub">
+      </a>
+      <p>
+        <a href="https://help.github.com/articles/github-terms-of-service">Terms of Service</a> •
+        <a href="https://help.github.com/articles/github-privacy-policy">Privacy</a> •
+        <a href="https://help.github.com/articles/github-security">Security</a>
+        <br />
+        &copy; 2013 GitHub Inc. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+  <script>
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
   var pageTracker = _gat._getTracker("UA-3769691-2");
   pageTracker._initData();
   pageTracker._trackPageview();
   </script>
-
 </body>
 </html>

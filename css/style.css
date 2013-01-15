@@ -1,36 +1,205 @@
-a { color: #008; }
+html, body, header, footer {
+  margin: 0;
+  padding: 0;
+}
 
-#welcome h1 {
-  padding: 20px; 
-  text-align: center; 
-  background: #458; 
-  color: #fff;
-  }
+body {
+  color: #333;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+}
+
+header {
+  background: #fcfcfc;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.container {
+  clear: both;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 850px;
+}
+
+.content {
+  padding: 20px;
+}
+
+p {
+  margin: 0 0 1em 0; 
+  padding: 0;
+}
+
+a { 
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a img {
+  border: 0;
+}
+
+h1 {
+  margin: 30px 0 0.5em 0;
+  padding: 0;
+}
   
-h2 { background: #ddd; text-align: center; padding: 4px; }
+h2, h3 { 
+  border-bottom: 1px solid #069; 
+  color: #369; 
+  font-size: 1.7em; 
+  padding: 6px 0; 
+}
 
-#welcome p { font-size: 1.3em; color: #444; text-align:center;}
+h4 {
+  margin: 1em 0 0 0;
+  padding: 0;
+}
 
-#header { }
-#footer { background: #ddd;}
-#footer a { color: #444; }
+#welcome { 
+  font-size: 1.3em; 
+}
 
-.info, .fork { padding: 10px; }
-.content { font-size: 1.2em; }
-.content h3 { background: #dfd; font-size: 1.7em; padding: 6px 2px; }
+#githublinks {
+  float: right;
+  background: #89c;
+  border: 1px solid #569;
+  border-radius: 5px;
+  margin: 15px 0 0 0;
+}
 
-pre { padding: 20px; background: #ffd; font-size: 0.9em; }
-p code { background: #ffd; padding: 2px 5px; }
+#githublinks a {
+  color: #fff;
+  display: inline-block;
+  padding: 5px;
+  margin: 0 10px;
+}
 
-#links { padding: 10px; }
+.page-turns {
+  background: #458;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 10px;
+  overflow: hidden;
+}
 
-#header #links { text-align:right; }
-#header #links a { color: #555; font-size: 1.2em; padding: 5px; margin: 10px; }
+.page-prev, .page-next {
+  color: #fff;
+  font-weight: bold;
+}
 
-.button { text-align: center; padding: 10px; font-size: 1.2em; font-weight:bold; }
-.red   { border: 3px solid #a88; background: #fee;}
-.red a { color: #a44; }
-.green   { border: 3px solid #8a8; background: #efe;}
-.green a { color: #4a4; }
-.blue    { border: 3px solid #88a; background: #eef;}
-.blue a  { color: #44a; }
+.page-next {
+  float: right;
+}
+
+pre, p code { 
+  background: #f9f9f9; 
+  border: 1px solid #c0c0c0; 
+  border-radius: 3px; 
+  font-size: 0.9em; 
+}
+
+pre { 
+  padding: 10px 20px;
+}
+
+p code { 
+  padding: 2px 5px; 
+}
+
+.buttons {
+  clear: both;
+  overflow: hidden;
+}
+
+.button { 
+  border-radius: 3px;
+  border-style: solid; 
+  border-width: 2px; 
+  float: left;
+  font-size: 1.2em; 
+  font-weight: bold; 
+  margin: 0 5px;
+  padding: 10px; 
+  text-align: center; 
+  width: 245px;
+}
+
+#vcs {
+  background: #fee;
+  border-color: #a88; 
+}
+
+#vcs a{
+  color: #a44; 
+}
+
+#svn {
+  background: #efe;
+  border-color: #8a8; 
+}
+
+#svn a {
+  color: #4a4; 
+}
+
+#hour{
+  background: #eef;
+  border-color: #88a; 
+}
+
+#hour a{
+  color: #44a;
+}
+
+.episode-list {
+  margin-bottom: 3em;
+}
+
+.episode {
+}
+
+footer {
+  margin: 0;
+  clear: both;
+  background: #f0f0f0;
+  border-top: 1px solid #cfcfcf;
+  color: #404040;
+}
+
+#footerlogo {
+  float: left;
+  margin-right: 15px;
+}
+
+footer p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+footer a {
+  color: #444;
+  font-weight: bold;
+}
+
+footer .content {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 380px) {
+  footer {
+    height: 154px;
+  }
+  #footerlogo {
+    float: none;
+    margin-right: 0;
+  }
+  footer {
+    text-align: center;
+  }
+  footer p {
+    margin-top: 5px;
+    font-size: 0.9em;
+  }
+}

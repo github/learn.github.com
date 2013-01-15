@@ -1,48 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="UTF-8">
   <title>Learn.GitHub - Setup and Initialization</title>
-	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
-	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
-	<script type="text/javascript" src="../js/jquery.corner.js"></script>
-
-	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-  <!--[if IE]>
-    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
-  <![endif]-->
-
-	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
-  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
+<header>
   <div class="container">
-
-    <div class="span-21" id="header">
-      <div class="span-10">
-        <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
-      </div>
-
-      <div class="span-11 last">
-        <div id="links">
-          <a href="http://github.com">home</a>
-          <a href="http://github.com/login">login</a>
-          <a href="http://github.com/signup">signup!</a>
-        </div>
-      </div>
+    <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
+    <div id="githublinks">
+      <a href="https://github.com">home</a>
+      <a href="https://github.com/login">log in</a>
+      <a href="https://github.com/signup">sign up!</a>
     </div>
-
-    <div class="span-21" id="welcome">
-      <h1>Setup and Initialization</h1>
-      <p>Setup your Git environment, then create a new Git repository and clone an existing one.</p>
-    </div>
-
-    <div class="content">
-      <div class="span-21"><center><embed src="http://blip.tv/play/AeyWYQAI" type="application/x-shockwave-flash" width="790" height="444" allowscriptaccess="always" allowfullscreen="true"></embed></center><hr/><h3 id='setting_up_git'>setting up git</h3>
+  </div>
+</header>
+<div class="container">
+  <h1>Setup and Initialization</h1>
+  <p id="welcome">Setup your Git environment, then create a new Git repository and clone an existing one.</p>
+  <div class="content">
+    <center><embed src="http://blip.tv/play/AeyWYQAI" type="application/x-shockwave-flash" width="790" height="444" allowscriptaccess="always" allowfullscreen="true"></embed></center><h3 id='setting_up_git'>setting up git</h3>
 
 <p>When you first start using Git, there are a few things you will likely want to get setup before you start. Git records your name and email address when you create commits, so you need to tell Git what those are. You can use the <code>git config</code> command to set those. If you pass <code>--global</code>, it will save the values in the &#8216;~/.gitconfig&#8217; file so they are the default for all of your repositories.</p>
 
@@ -102,39 +81,45 @@ Rakefile       lib            spec</code></pre>
 
 <pre><code>$ git clone http://github.com/schacon/munger.git</code></pre>
 
-<p>This is only available if the server has enabled it - if you are hosting your repository on GitHub, both git:// and http:// access are enabled.</p><br/><br/><hr/></div><div class="span-10"><a href="intro.html">&laquo; Introduction To Git</a></div><div style="text-align:right" class="span-11 last"><a href="normal.html">Normal Workflow &raquo;</a></div><div class="span-24 last">&nbsp;</div><hr/>
-    </div>
-
-    <div id="footer" class="span-21">
-      <div class="info span-12">
-        <div class="links">
-          <a href="https://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
-          <a href="https://github.com/blog">Blog</a> |
-          <a href="https://github.com/contact">Contact &amp; Support </a> |
-          <a href="http://training.github.com/">Git Training</a> |
-          <a href="https://status.github.com">Status</a>
-        </div>
-        <div class="company">
-          &copy; 2012 GitHub Inc. All rights reserved. | <a href="https://help.github.com/articles/github-terms-of-service">Terms of Service</a> | <a href="https://help.github.com/articles/github-privacy-policy">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="fork span-7">
-        This website is <a href="http://github.com/github/learn.github.com">open source</a>.
-        Please help us by forking the project and adding to it.
-      </div>
-    </div>
-
+<p>This is only available if the server has enabled it - if you are hosting your repository on GitHub, both git:// and http:// access are enabled.</p><div class="page-turns"><a href="intro.html" class="page-prev">&laquo; Introduction To Git</a><a href="normal.html" class="page-next">Normal Workflow &raquo;</a></div>
   </div>
-
-  <script type="text/javascript">
+</div>
+<div class="container">
+  <div class="content">
+    <p>
+      This website is <a href="http://github.com/github/learn.github.com">open source</a>.
+      Please help us by forking the project and adding to it.
+    </p>
+    <div class="links">
+      <a href="https://github.com/contact">Contact &amp; Support </a> •
+      <a href="http://training.github.com/">Git Training</a> •
+      <a href="https://github.com/blog">Blog</a> •
+      <a href="https://github.com/blog/148-github-shirts-now-available">T-Shirts</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="content">
+      <a id="footerlogo" href="https://github.com">
+        <img src="/images/github-footer-logo.png" width="109" height="51" alt="GitHub">
+      </a>
+      <p>
+        <a href="https://help.github.com/articles/github-terms-of-service">Terms of Service</a> •
+        <a href="https://help.github.com/articles/github-privacy-policy">Privacy</a> •
+        <a href="https://help.github.com/articles/github-security">Security</a>
+        <br />
+        &copy; 2013 GitHub Inc. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+  <script>
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
   var pageTracker = _gat._getTracker("UA-3769691-2");
   pageTracker._initData();
   pageTracker._trackPageview();
   </script>
-
 </body>
 </html>

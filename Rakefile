@@ -9,7 +9,7 @@ def generate_page(page_data)
   
   @title = page_data['name']
   @desc = page_data['desc']
-  @pcontent = '<div class="span-21">'
+  @pcontent = ''
   
   if s = page_data['size']
     w, h = s.split('x')
@@ -25,33 +25,23 @@ def generate_page(page_data)
     @pcontent += 'allowscriptaccess="always" allowfullscreen="true"></embed></center>'
   end
   
-  @pcontent += '<hr/>'
-
   # render markdown from page, if present
   mpage = "pages/#{page}.markdown"
   if File.exists?(mpage)
     content = File.read(mpage)
     doc = Maruku.new(content)
     @pcontent += doc.to_html
-    @pcontent += '<br/><br/><hr/>'
   end
 
-  @pcontent += '</div>'
-  
-  @pcontent += "<div class=\"span-10\">"
+  @pcontent += '<div class="page-turns">'
   if (n = @nextlast[:last][page]) && (nname = @nextlast[:lastname][page])
-    @pcontent += "<a href=\"#{n}.html\">&laquo; #{nname}</a>"
-  else
-    @pcontent += "&nbsp;"
+    @pcontent += "<a href=\"#{n}.html\" class=\"page-prev\">&laquo; #{nname}</a>"
+  end
+  if (n = @nextlast[:next][page]) && (nname = @nextlast[:nextname][page])
+    @pcontent += "<a href=\"#{n}.html\" class=\"page-next\">#{nname} &raquo;</a>"
   end
   @pcontent += "</div>"
 
-  if (n = @nextlast[:next][page]) && (nname = @nextlast[:nextname][page])
-    @pcontent += "<div style=\"text-align:right\" class=\"span-11 last\"><a href=\"#{n}.html\">#{nname} &raquo;</a></div>"
-  end
-
-  @pcontent += '<div class="span-24 last">&nbsp;</div><hr/>'
-    
   pname = "p/#{page}.html"
   out = ERB.new(File.read('template/page.erb.html')).result
   File.open(pname, 'w') { |f| f.write(out) }
@@ -83,29 +73,28 @@ task :gensite do
   ep['episodes'].each do |section|
     counter = 0
     
-    @content += '<div class="span-24 last">'
+    @content += '<div class="episode-list">'
     @content += "<h2>" +  section['section'] + "</h2>"
-    @content += '</div>'
 
     section['values'].each do |episode|
       counter += 1
       if ((counter % 6) == 0)
-        @content += "<div class='span-4 episode last'>"
+        @content += "<div class='episode last'>"
       else
-        @content += "<div class='span-4 episode'>"
+        @content += "<div class='episode'>"
       end
       if episode['page'] 
-        @content += "<b><a href=\"p/" + episode['page'] + ".html\">" + episode['name'] + "</a></b>"
+        @content += "<h4><a href=\"p/" + episode['page'] + ".html\">" + episode['name'] + "</a></h4>"
         generate_page(episode)
       else
-        @content += '<b>' + episode['name'] + '</b>'
+        @content += '<h4>' + episode['name'] + '</h4>'
       end
       @content += '<p>' + episode['desc'] + '</p>'
       @content += "</div>"
-      if ((counter % 6) == 0)
-        @content += "<div class='span-24 last'><br/></div>"
-      end
     end
+
+    @content += "</div>"
+
   end
   
   out = ERB.new(File.read('template/index.erb.html')).result

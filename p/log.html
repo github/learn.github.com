@@ -1,48 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="UTF-8">
   <title>Learn.GitHub - Git History</title>
-	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
-	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
-	<script type="text/javascript" src="../js/jquery.corner.js"></script>
-
-	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
-  <!--[if IE]>
-    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
-  <![endif]-->
-
-	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
-  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
+<header>
   <div class="container">
-
-    <div class="span-21" id="header">
-      <div class="span-10">
-        <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
-      </div>
-
-      <div class="span-11 last">
-        <div id="links">
-          <a href="http://github.com">home</a>
-          <a href="http://github.com/login">login</a>
-          <a href="http://github.com/signup">signup!</a>
-        </div>
-      </div>
+    <a href="/"><img src="../images/learn.github.png" alt="github learn logo" /></a>
+    <div id="githublinks">
+      <a href="https://github.com">home</a>
+      <a href="https://github.com/login">log in</a>
+      <a href="https://github.com/signup">sign up!</a>
     </div>
-
-    <div class="span-21" id="welcome">
-      <h1>Git History</h1>
-      <p>Browse your project history, find specific commits and visualize the branching and merging actions.</p>
-    </div>
-
-    <div class="content">
-      <div class="span-21"><hr/><p>One of the most commonly used commands is the &#8216;git log&#8217; command. This command shows you the commit history of your project, so you can see what has happened up to this point. With no options, it will start from the last commit on the branch you&#8217;re currently on and show you all the commits that are ancestors of that in reverse chronological order.</p>
+  </div>
+</header>
+<div class="container">
+  <h1>Git History</h1>
+  <p id="welcome">Browse your project history, find specific commits and visualize the branching and merging actions.</p>
+  <div class="content">
+    <p>One of the most commonly used commands is the &#8216;git log&#8217; command. This command shows you the commit history of your project, so you can see what has happened up to this point. With no options, it will start from the last commit on the branch you&#8217;re currently on and show you all the commits that are ancestors of that in reverse chronological order.</p>
 
 <pre><code>$ git log
 commit 166ae0c4d3f420721acbb115cc33848dfcc2121a
@@ -380,39 +359,45 @@ cf9957875c3a27b6ae4593e1fa9d4dabbde68433 completion: Fix GIT_PS1_SHOWDIRTYSTA
 
 <pre><code>$ git log master.. --pretty=oneline</code></pre>
 
-<p>Very useful commands. We&#8217;ll explain why this works fully in a later section, but for now it&#8217;s useful to just remember that it does that.</p><br/><br/><hr/></div><div class="span-10"><a href="remotes.html">&laquo; Distributed Git</a></div><div class="span-24 last">&nbsp;</div><hr/>
-    </div>
-
-    <div id="footer" class="span-21">
-      <div class="info span-12">
-        <div class="links">
-          <a href="https://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
-          <a href="https://github.com/blog">Blog</a> |
-          <a href="https://github.com/contact">Contact &amp; Support </a> |
-          <a href="http://training.github.com/">Git Training</a> |
-          <a href="https://status.github.com">Status</a>
-        </div>
-        <div class="company">
-          &copy; 2012 GitHub Inc. All rights reserved. | <a href="https://help.github.com/articles/github-terms-of-service">Terms of Service</a> | <a href="https://help.github.com/articles/github-privacy-policy">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="fork span-7">
-        This website is <a href="http://github.com/github/learn.github.com">open source</a>.
-        Please help us by forking the project and adding to it.
-      </div>
-    </div>
-
+<p>Very useful commands. We&#8217;ll explain why this works fully in a later section, but for now it&#8217;s useful to just remember that it does that.</p><div class="page-turns"><a href="remotes.html" class="page-prev">&laquo; Distributed Git</a></div>
   </div>
-
-  <script type="text/javascript">
+</div>
+<div class="container">
+  <div class="content">
+    <p>
+      This website is <a href="http://github.com/github/learn.github.com">open source</a>.
+      Please help us by forking the project and adding to it.
+    </p>
+    <div class="links">
+      <a href="https://github.com/contact">Contact &amp; Support </a> •
+      <a href="http://training.github.com/">Git Training</a> •
+      <a href="https://github.com/blog">Blog</a> •
+      <a href="https://github.com/blog/148-github-shirts-now-available">T-Shirts</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="content">
+      <a id="footerlogo" href="https://github.com">
+        <img src="/images/github-footer-logo.png" width="109" height="51" alt="GitHub">
+      </a>
+      <p>
+        <a href="https://help.github.com/articles/github-terms-of-service">Terms of Service</a> •
+        <a href="https://help.github.com/articles/github-privacy-policy">Privacy</a> •
+        <a href="https://help.github.com/articles/github-security">Security</a>
+        <br />
+        &copy; 2013 GitHub Inc. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+  <script>
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
   var pageTracker = _gat._getTracker("UA-3769691-2");
   pageTracker._initData();
   pageTracker._trackPageview();
   </script>
-
 </body>
 </html>
