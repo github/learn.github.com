@@ -20,7 +20,7 @@ def generate_page(page_data)
   
   # add video if present
   if code = page_data['cast']
-    @pcontent += '<center><embed src="http://blip.tv/play/' + code  
+    @pcontent += '<center><embed src="http://www.youtube.com/v/' + code + '?hl=en_US&amp;version=3&amp;rel=0'
     @pcontent += '" type="application/x-shockwave-flash" width="' + w + '" height="' + h + '" '
     @pcontent += 'allowscriptaccess="always" allowfullscreen="true"></embed></center>'
   end
