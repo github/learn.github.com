@@ -3,14 +3,14 @@ episodes:
     values:
       - name: Introduction To Git
         page: intro
-        cast: Aeu2CAA
+        cast: hKfo0OXc1BI
         size: 790x430
         desc: What Git is, why you would want to use it
               and where to get it and learn about it.
 
       - name: Setup and Initialization
         page: setup
-        cast: AeyWYQAI
+        cast: cPlsn96n1d8
         size: 790x444
         desc: Setup your Git environment, then create a
               new Git repository and clone an existing one.
