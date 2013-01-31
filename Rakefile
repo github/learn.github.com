@@ -52,8 +52,6 @@ desc "Generate the html files for the site"
 task :gensite do
   ep = YAML::load( File.open('episodes.yaml') )
 
-  @content = ''
-
   # finding the next and last pages
   last = lastname = nil
   @nextlast = {:last => {}, :lastname => {}, :next => {}, :nextname => {}}
@@ -67,38 +65,13 @@ task :gensite do
         last = p
         lastname = pname
       end
-    end
-  end
-  
-  ep['episodes'].each do |section|
-    counter = 0
-    
-    @content += '<div class="episode-list">'
-    @content += "<h2>" +  section['section'] + "</h2>"
 
-    section['values'].each do |episode|
-      counter += 1
-      if ((counter % 6) == 0)
-        @content += "<div class='episode last'>"
-      else
-        @content += "<div class='episode'>"
-      end
       if episode['page'] 
-        @content += "<h4><a href=\"p/" + episode['page'] + ".html\">" + episode['name'] + "</a></h4>"
         generate_page(episode)
-      else
-        @content += '<h4>' + episode['name'] + '</h4>'
       end
-      @content += '<p>' + episode['desc'] + '</p>'
-      @content += "</div>"
     end
-
-    @content += "</div>"
-
   end
   
-  out = ERB.new(File.read('template/index.erb.html')).result
-  File.open('index.html', 'w') { |f| f.write(out) }
 end
 
 task :default => [:gensite]
