@@ -187,6 +187,10 @@ footer .content {
   padding-bottom: 20px;
 }
 
+.align-center { 
+  text-align: center; 
+}
+
 @media screen and (max-width: 380px) {
   footer {
     height: 154px;
