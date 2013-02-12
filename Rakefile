@@ -56,9 +56,9 @@ def generate_gitcasts
   @pcontent = ''
   @pcontent += '<div class="align-center"><iframe width="640" height="480" '
   @pcontent += 'src="http://www.youtube.com/embed/Esl439M154M?rel=0" '
-  @pcontent += 'frameborder="0" allowfullscreen></iframe></div>'
+  @pcontent += 'frameborder="0" allowfullscreen id="js-youtubed"></iframe></div>'
   @pcontent += '<h2>Episode Listing</h2>'
-  @pcontent += '<div class="gitcasts">'
+  @pcontent += '<div class="js-gitcasts">'
 
   # render markdown from page, if present
   rawpage = "pages/screencasts.md"
@@ -69,6 +69,8 @@ def generate_gitcasts
   end
 
   @pcontent += '</div>'
+  @pcontent += '<script src="../js/jquery-1.2.6.pack.js"></script>'
+  @pcontent += '<script src="../js/gitcasts.js"></script>'
 
   pname = "screencasts.html"
   out = ERB.new(File.read('template/page.erb.html')).result
