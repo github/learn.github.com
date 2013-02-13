@@ -47,6 +47,36 @@ def generate_page(page_data)
   File.open(pname, 'w') { |f| f.write(out) }
 end
 
+# generate the gitcast episode listing page
+def generate_gitcasts
+  puts "generating screencasts"
+  
+  @title = 'Git Screencasts'
+  @desc = ''
+  @pcontent = ''
+  @pcontent += '<div class="align-center"><iframe width="640" height="480" '
+  @pcontent += 'src="http://www.youtube.com/embed/Esl439M154M?rel=0" '
+  @pcontent += 'frameborder="0" allowfullscreen id="js-youtubed"></iframe></div>'
+  @pcontent += '<h2>Episode Listing</h2>'
+  @pcontent += '<div class="js-gitcasts">'
+
+  # render markdown from page, if present
+  rawpage = "pages/screencasts.md"
+  if File.exists?(rawpage)
+    content = File.read(rawpage)
+    doc = Maruku.new(content)
+    @pcontent += doc.to_html
+  end
+
+  @pcontent += '</div>'
+  @pcontent += '<script src="../js/jquery-1.2.6.pack.js"></script>'
+  @pcontent += '<script src="../js/gitcasts.js"></script>'
+
+  pname = "screencasts.html"
+  out = ERB.new(File.read('template/page.erb.html')).result
+  File.open(pname, 'w') { |f| f.write(out) }
+end
+
 # generate the site
 desc "Generate the html files for the site"
 task :gensite do
@@ -99,6 +129,8 @@ task :gensite do
   
   out = ERB.new(File.read('template/index.erb.html')).result
   File.open('index.html', 'w') { |f| f.write(out) }
+
+  generate_gitcasts
 end
 
 task :default => [:gensite]
