@@ -7,3 +7,5 @@
 - [Rebasing](http://www.youtube.com/watch?v=FyxiLdelSqc)
 - [Distributed Workflow](http://www.youtube.com/watch?v=KWNIKb6sftw)
 - [Creating Empty Branches](http://www.youtube.com/watch?v=vf8NVmLcqT8)
+
+ [Check out our YouTube channel](http://www.youtube.com/github) for more screencasts on Git and GitHub.
