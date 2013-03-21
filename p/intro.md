@@ -184,3 +184,6 @@ For more information on Git, the homepage is at [git-scm.com](http://git-scm.com
 We will also be referring heavily to the Creative Commons licenced 
 [Pro Git book](http://git-scm.com/book) for more information on each of these sections.
 
+<div class="page-turns">
+  <a href="setup.html" class="page-next">Setup and Initialization &raquo;</a>
+</div>
