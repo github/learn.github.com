@@ -1,3 +1,9 @@
+---
+layout: default
+title: Setup and Initialization
+description: Setup your Git environment, then create a new Git repository and clone an existing one.
+---
+
 ### setting up git
 
 When you first start using Git, there are a few things you will likely want

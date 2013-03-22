@@ -1,3 +1,8 @@
+---
+layout: default
+title: Distributed Git
+description: Fetch, merge, pull, and push between multiple remote repositories.
+---
 So you've heard that Git is a **distributed** version control system.  What
 does that really mean and how do you take advantage of it?
 
@@ -88,4 +93,6 @@ I can run this:
 	$ git push writey master
 
 That pushes my `master` branch to the `writey` aliased server.
-
+<div class="page-turns">
+  <a href="branching.html" class="page-prev">&laquo; Branching and Merging</a><a href="log.html" class="page-next">Git History &raquo;</a>
+</div>
