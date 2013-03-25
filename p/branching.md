@@ -1,3 +1,9 @@
+---
+layout: default
+title: Branching and Merging
+description: Create and work on topic and long running branches, merge between them and delete them.
+---
+
 As we touched on in the first lesson, the way that Git handles branching and
 merging is pretty unique.  First of all, it's incredibly fast, both to create
 new branches and to switch between them. Git has a single working directory
@@ -200,3 +206,6 @@ simple tool.
 
 For more information on branching and merging in Git, you can read [Chapter 3](http://git-scm.com/book/en/Git-Branching)
 of the Pro Git book.
+<div class="page-turns">
+  <a href="normal.html" class="page-prev">&laquo; Normal Workflow</a><a href="remotes.html" class="page-next">Distributed Git &raquo;</a>
+</div>

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Normal Workflow
+description: Make and view changes made, then stage and commit them.
+---
+
 So you have a Git repository and everything is all setup.  What now?
 
 Generally, it is not going to be much different than working with any other
@@ -236,3 +242,6 @@ look at one of the killer features of Git, its branching model.
 
 For more information on basic Git usage, you can read [Chapter 2](http://git-scm.com/book/en/Git-Basics)
 of the Pro Git book.
+<div class="page-turns">
+  <a href="setup.html" class="page-prev">&laquo; Setup and Initialization</a><a href="branching.html" class="page-next">Branching and Merging &raquo;</a>
+</div>

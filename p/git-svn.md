@@ -1,3 +1,9 @@
+---
+layout: default
+title: Git and Subversion
+description: Using the git-svn client with a Subversion server.  Specifically for existing SVN users, how Git is a better Subversion client than Subversion.
+---
+
 Does your IT staff mandate Subversion but you want to work in Git?  Hack on an open-source project that hasn't yet moved beyond Subversion?  Then git-svn, and by extension, this lesson, are for you.
 
 Git and Subversion actually play fairly well together, provided you follow certain rules and guidelines.  The 'git svn' command provides two-way communication between a Git and Subversion repository.  This guide provides a brief overview of the general Subversion to Git to Subversion workflow.
@@ -65,3 +71,7 @@ There are a few rules you should follow when using Git as a Subversion client.  
 * Do not dcommit Git merge commits to the Subversion repository.  Subversion doesn't handle merges in the same way as Git, and this will cause problems.  This means you should keep your Git development history linear (i.e., no merging from other branches, just rebasing).
 
 * Do not amend, reorder, or otherwise change commits that have been dcommited to Subversion.  This is essentially the same rule as not changing Git commits that have been pushed to public repositories.  Subversion cannot handle modifying or reordering commits.
+
+<div class="page-turns">
+  <a href="stashing.html" class="page-prev">&laquo; Stashing</a>
+</div>

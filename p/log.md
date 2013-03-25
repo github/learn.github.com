@@ -1,3 +1,9 @@
+---
+layout: default
+title: Git History
+description: Browse your project history, find specific commits, and visualize the branching and merging actions.
+---
+
 One of the most commonly used commands is the 'git log' command.  This command
 shows you the commit history of your project, so you can see what has happened
 up to this point.  With no options, it will start from the last commit on
@@ -406,3 +412,6 @@ yet, you can run this:
 
 Very useful commands.  We'll explain why this works fully in a later section,
 but for now it's useful to just remember that it does that.
+<div class="page-turns">
+  <a href="remotes.html" class="page-prev">&laquo; Distributed Git</a><a href="undoing.html" class="page-next">Git Reset &raquo;</a>
+</div>

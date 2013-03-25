@@ -1,3 +1,11 @@
+---
+layout: default
+title: Introduction To Git
+description: What Git is, why you would want to use it and where to get it and learn about it.
+---
+
+<center><embed src="http://www.youtube.com/v/hKfo0OXc1BI?hl=en_US&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed></center>
+
 Welcome to the first lesson of the GitHub Learning course.  This course
 will lead you through a series of lessons that will demonstrate how to use
 Git quickly and easily - many of the lessons will have screencasts that you
@@ -176,3 +184,6 @@ For more information on Git, the homepage is at [git-scm.com](http://git-scm.com
 We will also be referring heavily to the Creative Commons licenced 
 [Pro Git book](http://git-scm.com/book) for more information on each of these sections.
 
+<div class="page-turns">
+  <a href="setup.html" class="page-next">Setup and Initialization &raquo;</a>
+</div>

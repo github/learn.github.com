@@ -1,3 +1,9 @@
+---
+layout: default
+title: Undoing
+description: Revert, reset, checkout, or unstage a file or project state at any point.
+---
+
 There are a number of situations in Git where you may want to undo or revert
 a change that you made.  Perhaps you staged a file and then decided that you
 didn't want it staged, or you edited a file and then wanted to 'un-edit' it.
@@ -162,3 +168,6 @@ if we had branched separately from our 'test' branch originally.
 
 And now our commits are tucked away in a branch that we can come back to later
 if we want to.
+<div class="page-turns">
+  <a href="log.html" class="page-prev">&laquo; Git History</a><a href="rebasing.html" class="page-next">Git Rebase &raquo;</a>
+</div>
