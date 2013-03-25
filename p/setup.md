@@ -88,5 +88,5 @@ server has enabled it - if you are hosting your repository on GitHub, both
 git:// and http:// access are enabled.
 
 <div class="page-turns">
-  <a href="intro.html" class="page-prev">&laquo; Introduction To Git</a><a href="normal.html" class="page-next">Normal Workflow &raquo;</a>
+  <a href="index.html" class="page-prev">&laquo; Introduction To Git</a><a href="normal.html" class="page-next">Normal Workflow &raquo;</a>
 </div>
