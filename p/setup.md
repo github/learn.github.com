@@ -1,3 +1,9 @@
+---
+layout: default
+title: Setup and Initialization
+description: Setup your Git environment, then create a new Git repository and clone an existing one.
+---
+
 ### setting up git
 
 When you first start using Git, there are a few things you will likely want
@@ -80,3 +86,7 @@ the same, but with 'http' instead of 'git'.
 This is only available if the
 server has enabled it - if you are hosting your repository on GitHub, both
 git:// and http:// access are enabled.
+
+<div class="page-turns">
+  <a href="index.html" class="page-prev">&laquo; Introduction To Git</a><a href="normal.html" class="page-next">Normal Workflow &raquo;</a>
+</div>

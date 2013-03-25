@@ -16,3 +16,6 @@ Fetch, merge, pull and push between multiple remote repositories.
 ### pushing to remotes ###
 
 pushing and deleting branches
+<div class="page-turns">
+  <a href="diff.html">&laquo; previous</a><a href="rebasing.html">Rebasing &raquo;</a>
+</div>
