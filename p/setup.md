@@ -10,7 +10,7 @@ When you first start using Git, there are a few things you will likely want
 to get setup before you start.  Git records your name and email address when
 you create commits, so you need to tell Git what those are.  You can use the
 `git config` command to set those.  If you pass `--global`, it will save the values
-in the '~/.gitconfig' file so they are the default for all of your repositories.
+in the `~/.gitconfig` file so they are the default for all of your repositories.
 
 	$ git config --global user.name "Scott Chacon"
 	$ git config --global user.email "schacon@gmail.com"
@@ -25,8 +25,8 @@ To check your configuration values, you can just run something like this:
 
 	$ git config user.name
 
-Or you can edit the files yourself.  Git will first check '/etc/gitconfig', then
-'~/.gitconfig', and finally '.git/config' for these values.  The format looks
+Or you can edit the files yourself.  Git will first check `/etc/gitconfig`, then
+`~/.gitconfig`, and finally `.git/config` for these values.  The format looks
 like this:
 
 	$ cat ~/.gitconfig
@@ -44,7 +44,7 @@ for you in that directory.
 	$ cd myproject
 	$ git init
 
-Now you have an empty git repository (you can see the new '.git' directory there).
+Now you have an empty git repository (you can see the new `.git/` directory there).
 Now you can stage and commit files to it with the `git add` and `git commit`
 commands.  We'll cover these commands in depth in the next session.
 
@@ -79,7 +79,7 @@ the _url_ is something like "git://(hostname)/(path).git"
 	Rakefile       lib            spec
 
 You can also clone repositories over http in many cases.  That looks largely
-the same, but with 'http' instead of 'git'.
+the same, but with `http` instead of `git`.
 
 	$ git clone http://github.com/schacon/munger.git
 

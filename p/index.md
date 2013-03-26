@@ -37,7 +37,7 @@ have been a number of UI improvements that make Git a bit easier to use.
 	$ git --version
 	git version 1.7.1
 
-If you need help with any of the commands, you can type '--help' and it will
+If you need help with any of the commands, you can type `--help` and it will
 show you the _man_ page. You can also type 'git help _command_' for the same thing.
 
 	$ git log --help
