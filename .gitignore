@@ -1,1 +1,4 @@
 _site
+/bin/
+/.bundle/
+/vendor/gems/
