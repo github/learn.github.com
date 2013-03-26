@@ -43,7 +43,7 @@ author on the project.
 
 First, we simply edit the file.  Now we want to commit
 that change, so we run the `git commit -a` command.  The `-a` tells Git to
-stage all modified files and then commit - we'll cover the **staging area** next,
+stage all modified files and then commit - we'll cover the "staging area" next,
 but for now just running `git commit -a` will act something like the `commit`
 command in SVN.
 
@@ -79,7 +79,7 @@ That's it - that's the simple case.  Edit files, `git commit -a`, repeat.
 ### using the staging area ###
 
 Now we're going to cover how to more carefully craft commits using what Git
-calls the **staging area**.  For this example, let's say that we have updated
+calls the "staging area".  For this example, let's say that we have updated
 your files like we did in the previous section.  However, let's now imagine 
 that we wanted to commit the changes we've made as two
 separate commits rather than one.  We can see what has been changed in our
@@ -97,8 +97,8 @@ working directory by using the `git status` command.
 	no changes added to commit (use "git add" and/or "git commit -a")
 
 We can see that we have two files in the 'Changed but not updated' section, which
-means that they are **unstaged**.  That is, if we commit right now, nothing
-will happen.  You have to **stage** a file before you can commit it.
+means that they are "unstaged".  That is, if we commit right now, nothing
+will happen.  You have to "stage" a file before you can commit it.
 
 ![Git Staging Workflow](../images/staging.png)
 
@@ -121,7 +121,7 @@ the `README` file, then take a look at our status again.
 	#	modified:   lib/simplegit.rb
 
 The `lib/simplegit.rb` file is still unstaged, but the `README` file is now
-under the 'Changes to be committed' section - it is **staged**.  If we run
+under the 'Changes to be committed' section - it is "staged".  If we run
 the commit command (without the -a, which automatically stages everything), only
 the changes to that file will go into the commit - the `simplegit.rb` file will
 remain unstaged.  In this instance, we'll use the `-m` option with `git commit`
@@ -162,16 +162,16 @@ the last file is committed we can see that the `git status` command tells us
 that our working directory is clean (and also that our current branch has two
 commits that we haven't pushed yet).
 
-If during the **staging** part of this workflow you want to see not just what files
+If during the "staging" part of this workflow you want to see not just what files
 have changed or are staged, but what the differences are, you can use the `git diff`
 command to find that out.
 
 ### changes that have not been staged ###
 
 One of the most common things you'll do with `git diff` is to see what changes
-you've made in your working directory that have not been **staged** yet.
+you've made in your working directory that have not been "staged" yet.
 
-Let's say that we edit the simplegit.rb file to add a function, and we edit
+Let's say that we edit the `simplegit.rb` file to add a function, and we edit
 the `README` file to add a new author to the list.  Then we stage the `README`
 file with `git add README`.  Running `git status` will show us that `README` is staged
 and `simplegit.rb` is modified but not yet staged.
