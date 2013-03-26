@@ -25,15 +25,4 @@ $ jekyll --server
 
 # Contributing
 
-To contribute to the learn.github site, you can fork the repository,
-push your changes into it and send a pull request.
-
-If you want to run the site on GitHub pages for testing, you can push your
-changes into your fork of the repository and it will render at the usual
-convention of
-
-  http://YOURUSERNAME.github.com/THEREPONAME
-
-which, in this case, is:
-
-  http://YOURUSERNAME.github.com/learn.github.com
+Please see [the CONTRIBUTING.md](CONTRIBUTING.md) file for info.
