@@ -132,7 +132,7 @@ abandoning existing commits and creating new ones that are similar but still
 different.  That means that if you push commits somewhere that others can pull
 them down and base work off of them, then you rewrite those commits and push them
 up again, you collaborators will have to re-merge their work again and things
-will get messy when you try to pull thier work back into yours.
+will get messy when you try to pull their work back into yours.
 
 If you treat rebase as a way to clean up and work with commits _before_ you 
 push them, and only ever rebase commits that have never been available publicly,
