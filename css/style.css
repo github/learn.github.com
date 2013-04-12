@@ -15,6 +15,21 @@ header {
   border-bottom: 1px solid #cfcfcf;
 }
 
+.logo {
+  float: left;
+  margin: 0;
+}
+
+.logo a {
+  text-indent: -999em;
+  overflow: hidden;
+  float: left;
+  width: 201px;
+  height: 35px;
+  background-size: 201px 35px;
+  background-image: url("../images/logo.png");
+}
+
 .container {
   clear: both;
   margin: 0 auto;
