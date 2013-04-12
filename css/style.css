@@ -13,6 +13,7 @@ body {
 header {
   background: #fcfcfc;
   border-bottom: 1px solid #cfcfcf;
+  padding: 15px;
 }
 
 .logo {
@@ -81,7 +82,6 @@ h4 {
   background: #89c;
   border: 1px solid #569;
   border-radius: 5px;
-  margin: 15px 0 0 0;
 }
 
 #githublinks a {
