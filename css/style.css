@@ -181,16 +181,29 @@ footer {
   background: #f0f0f0;
   border-top: 1px solid #cfcfcf;
   color: #404040;
+  text-shadow: 0 1px 0 #fff;
 }
 
-#footerlogo {
-  float: left;
-  margin-right: 15px;
+.left { float: left; }
+.right { float: right; }
+
+.invertocat {
+  position: absolute;
+  left: 50%;
+  margin-left: -12px;
+  opacity: .25;
 }
 
-footer p {
-  margin: 8px 0;
+footer .links li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 10px;
+}
+
+footer p, footer .links {
+  margin: 0;
   font-size: 14px;
+  padding: 0;
 }
 
 footer a {
@@ -199,7 +212,7 @@ footer a {
 }
 
 footer .content {
-  padding-bottom: 20px;
+  overflow: hidden;
 }
 
 .align-center { 
