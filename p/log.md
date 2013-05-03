@@ -4,6 +4,8 @@ title: Git History
 description: Browse your project history, find specific commits, and visualize the branching and merging actions.
 ---
 
+<center><embed src="http://www.youtube.com/v/jnGbU-_m8oY" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed></center>
+
 One of the most commonly used commands is the 'git log' command.  This command
 shows you the commit history of your project, so you can see what has happened
 up to this point.  With no options, it will start from the last commit on
