@@ -4,6 +4,8 @@ title: Normal Workflow
 description: Make and view changes made, then stage and commit them.
 ---
 
+<embed src="http://www.youtube.com/v/U1ayH6KLqxo" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>
+
 So you have a Git repository and everything is all setup.  What now?
 
 Generally, it is not going to be much different than working with any other
