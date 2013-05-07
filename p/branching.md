@@ -4,6 +4,8 @@ title: Branching and Merging
 description: Create and work on topic and long running branches, merge between them and delete them.
 ---
 
+<embed src="http://www.youtube.com/v/tl5IDfwdvxo" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>
+
 As we touched on in the first lesson, the way that Git handles branching and
 merging is pretty unique.  First of all, it's incredibly fast, both to create
 new branches and to switch between them. Git has a single working directory

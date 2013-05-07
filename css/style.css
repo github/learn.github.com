@@ -16,6 +16,13 @@ header {
   padding: 15px;
 }
 
+embed[src*="youtube.com"]{
+  display: block;
+  margin: 0 auto 0 auto;
+  width: 100%;
+  max-width: 790px;
+}
+
 .logo {
   float: left;
   margin: 0;
