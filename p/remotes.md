@@ -4,7 +4,7 @@ title: Distributed Git
 description: Fetch, merge, pull, and push between multiple remote repositories.
 ---
 
-<center><embed src="http://www.youtube.com/v/KWNIKb6sftw" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed></center>
+<embed src="http://www.youtube.com/v/KWNIKb6sftw" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>
 
 So you've heard that Git is a **distributed** version control system.  What
 does that really mean and how do you take advantage of it?

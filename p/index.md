@@ -4,7 +4,7 @@ title: Introduction To Git
 description: What Git is, why you would want to use it and where to get it and learn about it.
 ---
 
-<center><embed src="http://www.youtube.com/v/hKfo0OXc1BI?hl=en_US&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed></center>
+<embed src="http://www.youtube.com/v/hKfo0OXc1BI?hl=en_US&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>
 
 Welcome to the first lesson of the GitHub Learning course.  This course
 will lead you through a series of lessons that will demonstrate how to use

@@ -4,7 +4,7 @@ title: Setup and Initialization
 description: Setup your Git environment, then create a new Git repository and clone an existing one.
 ---
 
-<center><embed src="http://www.youtube.com/v/Esl439M154M" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed></center>
+<embed src="http://www.youtube.com/v/Esl439M154M" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>
 
 ### setting up git
 

@@ -4,7 +4,7 @@ title: Rebasing
 description: Replay changes from one branch onto another branch to preserve a linear history.
 ---
 
-<center><embed src="http://www.youtube.com/v/FyxiLdelSqc" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed></center>
+<embed src="http://www.youtube.com/v/FyxiLdelSqc" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>
 
 In Git, there are two main ways to integrate changes from one branch into
 another - the 'merge' and the 'rebase'.  In this section we will learn what
