@@ -231,5 +231,5 @@ To do so, you have to explicitly add a **--tags** to the 'git push' command.
 And now when someone else clones or pulls from your repository, they will
 get all your tags as well.
 <div class="page-turns">
-  <a href="rebase.html" class="page-prev">&laquo; Git Rebase</a><a href="git-svn.html" class="page-next">Git-Svn &raquo;</a>
+  <a href="rebasing.html" class="page-prev">&laquo; Git Rebase</a><a href="git-svn.html" class="page-next">Git-Svn &raquo;</a>
 </div>
