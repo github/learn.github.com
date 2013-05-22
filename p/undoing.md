@@ -6,14 +6,14 @@ description: Revert, reset, checkout, or unstage a file or project state at any 
 
 There are a number of situations in Git where you may want to undo or revert
 a change that you made.  Perhaps you staged a file and then decided that you
-didn't want it staged, or you edited a file and then wanted to 'un-edit' it.
+didn't want it staged. Or you edited a file and then wanted to 'un-edit' it.
 This section will explore a couple of ways you can undo or revert actions in 
 Git.
  
 ### unstaging files ###
 
-Here we've staged changes to both our REAME and simplegit.rb files, but then
-we decide that we want the changes to be two separate commits.  So, we need to
+Here we've staged changes to both our README and simplegit.rb files, but then
+we decide that we want the changes to be in two separate commits.  So, we need to
 unstage one, do a commit, then stage it again and do our second commit.  Luckily,
 Git reminds you how to do this right in the 'git status' command output.
 
@@ -67,7 +67,7 @@ Now, let's say that we want to completely throw away the changes we made to
 the README file altogether.  **Be careful - this is almost never a great idea
 and there is no way to get changes back if you do this!**  Things you commit
 are almost always recoverable, but if you throw them away before you commit,
-you're out of luck if you ever want them back.  However, if you DID want to
+you're out of luck if you ever want them back.  However, if you _did_ want to
 do this, 'git status' again gives you a nice tip.
 
 	$ git status
@@ -114,7 +114,7 @@ Let's say your history log looked like this:
 	964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
 
 and you want to completely throw away the top two commits.  All you have to 
-do is reset your current branch to the sha of the commit you want to rewind to.
+do is reset your current branch to the SHA of the commit you want to rewind to.
 In this case, the 'beginning write support' or 'a6b4c974'.
 
 ![Reset 1](../images/undo/step1.png)
