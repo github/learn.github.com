@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Introduction To Git
-description: What Git is, why you would want to use it and where to get it and learn about it.
+layout: redirect
+redirecturl: http://youtube.com/GitHubGuides
+redirectdelay: 3000
 ---
 
 <embed src="http://www.youtube.com/v/hKfo0OXc1BI?hl=en_US&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>

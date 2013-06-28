@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Distributed Git
-description: Fetch, merge, pull, and push between multiple remote repositories.
+layout: redirect
+redirecturl: http://youtube.com/GitHubGuides
+redirectdelay: 3000
 ---
 
 <embed src="http://www.youtube.com/v/KWNIKb6sftw" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>

@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Diff
-description: Show differences between different versions of your projects or specific files within your project.
+layout: redirect
+redirecturl: http://youtube.com/GitHubGuides
+redirectdelay: 3000
 ---
 
 We saw in the 'log' section that adding a '-p' will show you the differences

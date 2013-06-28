@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Git History
-description: Browse your project history, find specific commits, and visualize the branching and merging actions.
+layout: redirect
+redirecturl: http://youtube.com/GitHubGuides
+redirectdelay: 3000
 ---
 
 <embed src="http://www.youtube.com/v/jnGbU-_m8oY" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>
