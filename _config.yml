@@ -1,4 +1,3 @@
-server: true
 exclude: [ Gemfile, Gemfile.lock, Procfile, vendor, gems ]
 
 domain: learn.github.com
