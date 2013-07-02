@@ -11,6 +11,13 @@ a {
   color: #4183c4
 }
 
+.banner{
+  background: url(/images/githubguides-header.png) center center;
+  width: 100%;
+  height: 175px;
+  margin-top: -20px;
+}
+
 .page {
   max-width: 978px;
   margin: 0 auto;
@@ -20,6 +27,14 @@ a {
 
 .preview-section {
   font-size: 14px;
+}
+
+h4{
+  display: inline-block;
+  margin: auto auto;
+  width: 96%;
+  line-height: 2em;
+  border-bottom: solid 1px #999;
 }
 
 
@@ -33,7 +48,6 @@ footer {
   line-height: 1.5;
   color: #777;
   border-top: 1px solid #eee;
-  height: 64px;
   font-family: Helvetica, arial, freesans, clean, sans-serif;
   font-size: 13px;
 }
