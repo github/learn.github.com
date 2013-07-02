@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Undoing
-description: Revert, reset, checkout, or unstage a file or project state at any point.
+layout: redirect
+redirecturl: http://youtube.com/GitHubGuides
+redirectdelay: 3000
 ---
 
 There are a number of situations in Git where you may want to undo or revert

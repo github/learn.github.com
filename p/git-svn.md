@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Git and Subversion
-description: Using the git-svn client with a Subversion server.  Specifically for existing SVN users, how Git is a better Subversion client than Subversion.
+layout: redirect
+redirecturl: http://youtube.com/GitHubGuides
+redirectdelay: 3000
 ---
 
 Does your IT staff mandate Subversion but you want to work in Git?  Hack on an open-source project that hasn't yet moved beyond Subversion?  Then git-svn, and by extension, this lesson, are for you.
