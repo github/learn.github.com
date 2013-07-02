@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Git Tagging
-description: Create signed, unsigned, or lightweight tags to permanantly mark important points in your project history
+layout: redirect
+redirecturl: http://youtube.com/GitHubGuides
+redirectdelay: 3000
 ---
 
 Like most VCSs, Git has the ability to 'tag' specific points in history as 

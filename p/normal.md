@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Normal Workflow
-description: Make and view changes made, then stage and commit them.
+layout: redirect
+redirecturl: http://youtube.com/GitHubGuides
+redirectdelay: 3000
 ---
 
 <embed src="http://www.youtube.com/v/U1ayH6KLqxo" type="application/x-shockwave-flash" width="790" height="430" allowscriptaccess="always" allowfullscreen="true"></embed>
