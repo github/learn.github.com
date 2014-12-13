@@ -96,7 +96,7 @@ and 1.6.1.2 releases of the Git project.
 
 ### what a merge would introduce ###
 
-Another intersting question that you can answer with 'diff' is what a merge
+Another interesting question that you can answer with 'diff' is what a merge
 would introduce.  This is a strange question, because if you have a line of
 work that diverged into two branches and you directly compare the snapshots, 
 it's going to try to tell you how to get from one state to the other.  

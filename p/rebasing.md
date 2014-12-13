@@ -57,8 +57,8 @@ parallel.
 Often one will do this to make sure that commits they did will apply
 cleanly on a remote branch, maybe to a project they are trying to contribute to
 that they are not the maintainer of.  In this case, the contributor would do 
-thier work in a branch, then rebase thier work onto 'origin/master' when they
-are ready to submit thier patches to the main project so the maintainer doesn't
+their work in a branch, then rebase their work onto 'origin/master' when they
+are ready to submit their patches to the main project so the maintainer doesn't
 have to do any integration work, it'll just be a fast forward or a clean apply.
 
 ### more interesting rebases ###

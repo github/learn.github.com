@@ -33,7 +33,7 @@ I couldn’t find a framework that matched this mental model of how I work, so I
 - Class names should be memorable and self-evident.
 - Gutters and basic content padding should be taken care of.
 - Clearing floats should be done automatically.
-- Wrapped grid sections should be independant of vertical page sections.
+- Wrapped grid sections should be independent of vertical page sections.
 - Frequently required utility classes should be provided.
 - Common patterns for Responsive Design™ should be built-in.
 
@@ -49,7 +49,7 @@ The easiest way to use Gridism in your project is via the [Bower](http://twitter
 bower install gridism
 ```
 
-Elsewise, [download the zip folder](https://github.com/cobyism/gridism/archive/gh-pages.zip), extract it, and copy `gridism.css` into your project’s folder. Boom. Done.
+Otherwise, [download the zip folder](https://github.com/cobyism/gridism/archive/gh-pages.zip), extract it, and copy `gridism.css` into your project’s folder. Boom. Done.
 
 ### 2. Link the stylesheet
 

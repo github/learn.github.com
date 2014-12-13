@@ -78,8 +78,8 @@ Now if we take a look, we can see that we have 3 files and one subdirectory.
 	$ ls
 	README		Rakefile	TODO		lib
 
-So, let's now suppose that we need to go back and make a bugfix on our original
-verison of the simplegit.rb file.  We can revert back to where our project
+So, let's now suppose that we need to go back and make a bug fix on our original
+version of the simplegit.rb file.  We can revert back to where our project
 was before we branched with the 'checkout command.
 
 	$ git checkout master
@@ -107,7 +107,7 @@ We could even go back to the master branch and create a new branch and start
 committing there.  Most Git developers will have several branches running at
 the same time, each with a specific theme or focus - a new feature or bug fix
 that lasts hours or even minutes, or longer running branches for large scale
-refactorings that periodically merge in changes from mainline branches.
+refactors that periodically merge in changes from mainline branches.
 
 This practice of cooking your features and changes in branch silos makes it
 easy and cheap to context switch rapidly and without complications.  If you
