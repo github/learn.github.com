@@ -1,3 +1,5 @@
+**NOTE: This repository is no longer supported or updated by GitHub. If you wish to continue to develop this code yourself, we recommend you fork it.**
+
 # Learn.GitHub.com
 
 This is the code and data behind [learn.github.com](http://learn.github.com). Its
