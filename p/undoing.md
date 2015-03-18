@@ -64,7 +64,7 @@ A bit nicer, yes?
 ### unmodifying files ###
 
 Now, let's say that we want to completely throw away the changes we made to 
-the README file altogether.  **Be careful - this is almost never a great idea
+the README file altogether. **Be careful - this is almost never a great idea
 and there is no way to get changes back if you do this!**  Things you commit
 are almost always recoverable, but if you throw them away before you commit,
 you're out of luck if you ever want them back.  However, if you _did_ want to

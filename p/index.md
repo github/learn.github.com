@@ -60,7 +60,7 @@ the GNU General Public License.
 Git is fully distributed, which means that it can work almost entirely offline.
 In stark contrast to VCS tools like Perforce or Subversion, Git does nearly all
 of its operations without needing a network connection, including history
-viewing, difference viewing and commiting.
+viewing, difference viewing and committing.
 
 This also means that Git is very fast compared to those systems partially due
 to the fact that none of these operations has any dependency on network latency.
@@ -80,7 +80,7 @@ Git and in Subversion.
 	sys	0m0.168s
 
 Git at 0.3 seconds vs Subversion at 3.7 seconds. That is a difference of a
-full order of magnatude.  You'll find similar
+full order of magnitude.  You'll find similar
 differences with nearly any command comparison.  For example, adding the popular
 famfamfam icon set and committing them.  Since you can separate the commit from the
 network 'push' in Git, this action takes a quarter of a second in Git, but 45 seconds
@@ -181,7 +181,7 @@ get the source or an installer for your system.
 ### resources
 
 For more information on Git, the homepage is at [git-scm.com](http://git-scm.com).
-We will also be referring heavily to the Creative Commons licenced 
+We will also be referring heavily to the Creative Commons licensed 
 [Pro Git book](http://git-scm.com/book) for more information on each of these sections.
 
 <div class="page-turns">
